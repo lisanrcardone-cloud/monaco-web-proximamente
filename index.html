@@ -77,10 +77,6 @@ body{
   padding:2rem 1.75rem 1.9rem;
   text-align:center;
 }
-@media (max-width:480px){
-  .stage{padding-left:.6rem;padding-right:.6rem}
-  .card{width:min(500px,92vw);padding:1.8rem 1.25rem 1.6rem}
-}
 .brandmark{
   width:220px;margin:0 auto 1.1rem;
   border-radius:10px;
@@ -222,6 +218,23 @@ input[type="email"]:focus-visible,input[type="tel"]:focus-visible{
 
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important}
+}
+
+@media (max-width:480px){
+  .stage{padding-left:.35rem;padding-right:.35rem}
+  .card{width:min(560px,97vw);padding:1.9rem 1rem 1.7rem}
+  .brandmark{width:280px}
+  .kicker{font-size:.82rem}
+  h1{font-size:clamp(1.9rem,7.2vw,2.4rem)}
+  .value{font-size:1.18rem}
+  .urgency{font-size:1.16rem;padding:.8rem 1.2rem}
+  input[type="email"],input[type="tel"]{font-size:1.05rem;padding:.95rem 1.05rem}
+  .cta{font-size:1.05rem;padding:.95rem 1.2rem}
+  .microcopy{font-size:.82rem}
+  .address{font-size:1.05rem}
+  .map-cta{font-size:.8rem}
+  .map-pin{width:48px;height:48px}
+  .map-pin svg{width:22px;height:22px}
 }
 </style>
 
