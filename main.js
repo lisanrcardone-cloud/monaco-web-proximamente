@@ -1,49 +1,128 @@
 (function () {
   "use strict";
 
-  var WORD = "PROXIMAMENTE";
-  var REPEATS_PER_ROW = 40; // suficiente para cubrir pantallas anchas (hasta ~5K) sin huecos
-  var wrap = document.getElementById("watermark");
-  if (!wrap) return;
+  const $ = (sel, scope) => (scope || document).querySelector(sel);
+  const $$ = (sel, scope) => Array.from((scope || document).querySelectorAll(sel));
 
-  function buildRowHTML() {
-    var out = "";
-    for (var i = 0; i < REPEATS_PER_ROW; i++) {
-      out += "<span>" + WORD + "</span>";
-    }
-    return out;
+  function safe(fn, name) {
+    try { fn(); } catch (e) { console.warn("[" + name + "] failed:", e); }
   }
 
-  function render() {
-    wrap.innerHTML = "";
-
-    var probe = document.createElement("div");
-    probe.className = "watermark-row";
-    probe.style.visibility = "hidden";
-    probe.style.position = "absolute";
-    probe.innerHTML = "<span>" + WORD + "</span>";
-    wrap.appendChild(probe);
-    var rowHeight = probe.getBoundingClientRect().height || 60;
-    wrap.removeChild(probe);
-
-    var vh = window.innerHeight || document.documentElement.clientHeight;
-    var rowCount = Math.ceil(vh / rowHeight) + 3; // margen extra por el desplazamiento de filas pares
-
-    var frag = document.createDocumentFragment();
-    for (var r = 0; r < rowCount; r++) {
-      var row = document.createElement("div");
-      row.className = "watermark-row";
-      row.innerHTML = buildRowHTML();
-      frag.appendChild(row);
-    }
-    wrap.appendChild(frag);
+  function initNav() {
+    const nav = $("#nav");
+    if (!nav) return;
+    const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  render();
+  function initReveals() {
+    const items = $$("[data-reveal]");
+    if (!items.length) return;
+    if (!("IntersectionObserver" in window)) {
+      items.forEach(el => el.classList.add("is-visible"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("is-visible"); });
+    }, { threshold: 0.05 });
+    items.forEach(el => io.observe(el));
+    setTimeout(() => items.forEach(el => el.classList.add("is-visible")), 6000);
+  }
 
-  var resizeTimer;
-  window.addEventListener("resize", function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(render, 150);
-  });
+  function initMobileMenu() {
+    const nav = $("#nav");
+    const toggle = $("#nav-toggle");
+    const menu = $("#nav-mobile-menu");
+    if (!nav || !toggle || !menu) return;
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("menu-open");
+      menu.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+    menu.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        nav.classList.remove("menu-open");
+        menu.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
+  }
+
+  function initBooksyCta() {
+    const cta = $("[data-booksy-cta]");
+    if (!cta) return;
+    cta.addEventListener("click", (e) => {
+      const href = cta.getAttribute("href") || "";
+      if (href === "#" || href.trim() === "") {
+        e.preventDefault();
+        $("[data-reserve-form]")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  }
+
+  function initContactForm() {
+    const form = $("[data-contact-form]");
+    const status = $("[data-contact-status]");
+    if (!form || !status) return;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      status.textContent = "Enviando...";
+      fetch(form.action, { method: "POST", mode: "no-cors", body: data })
+        .then(() => {
+          status.textContent = "¡Gracias! Recibimos tu mensaje, te respondemos a la brevedad.";
+          form.reset();
+        })
+        .catch(() => {
+          status.textContent = "Hubo un problema al enviar. Prueba de nuevo o escríbenos por Instagram.";
+        });
+    });
+  }
+
+  function initGoogleReviewsLink() {
+    const link = $("[data-google-reviews-link]");
+    if (!link) return;
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href") || "";
+      if (href === "#" || href.trim() === "") {
+        e.preventDefault();
+      }
+    });
+  }
+
+  function initBooksyWidgetA11y() {
+    const label = (el) => {
+      if (!el.textContent.trim() && !el.getAttribute("aria-label")) {
+        el.setAttribute("aria-label", "Reservar en Booksy");
+      }
+    };
+    const existing = $(".booksy-widget-container a.booksy-business-link");
+    if (existing) { label(existing); return; }
+    const observer = new MutationObserver(() => {
+      const link = $(".booksy-widget-container a.booksy-business-link");
+      if (link) { label(link); observer.disconnect(); }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    setTimeout(() => observer.disconnect(), 15000);
+  }
+
+  function boot() {
+    safe(initNav, "initNav");
+    safe(initReveals, "initReveals");
+    safe(initMobileMenu, "initMobileMenu");
+    safe(initBooksyCta, "initBooksyCta");
+    safe(initContactForm, "initContactForm");
+    safe(initGoogleReviewsLink, "initGoogleReviewsLink");
+    safe(initBooksyWidgetA11y, "initBooksyWidgetA11y");
+    document.documentElement.classList.add("is-ready");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
 })();
