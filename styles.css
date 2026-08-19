@@ -385,7 +385,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 .contact-status { margin-top: 1rem; font-size: .82rem; color: var(--accent-text); min-height: 1.2em; }
 .contact-privacy { margin-top: .5rem; font-size: .74rem; color: var(--ink-mute); }
 .contact-microcopy { margin-top: .5rem; font-size: .74rem; color: var(--ink-mute); }
-.contact-microcopy a { color: var(--accent-text); border-bottom: 1px solid transparent; transition: border-color .3s var(--ease-out); }
+.contact-microcopy a { color: var(--accent-text); border-bottom: 1px solid var(--accent-text); transition: border-color .3s var(--ease-out); }
 .contact-microcopy a:hover, .contact-microcopy a:focus-visible { border-bottom-color: var(--accent); }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .95rem 1.8rem;
