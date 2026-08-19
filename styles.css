@@ -219,17 +219,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
   border: 1px solid var(--line);
 }
 .bento-item:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -24px rgba(27,42,34,0.25); }
-.bento-item.b-1 {
-  background:
-    linear-gradient(to top, rgba(15,22,18,0.88) 0%, rgba(15,22,18,0.46) 32%, rgba(15,22,18,0) 64%),
-    url("assets/corte-4.webp?v=20260819i"),
-    url("assets/corte-5.webp?v=20260819i"),
-    url("assets/corte-7.webp?v=20260819i");
-  background-size: 100% 100%, 33.34% 100%, 33.34% 100%, 33.34% 100%;
-  background-position: center, 0% center, 50% center, 100% center;
-  background-repeat: no-repeat;
-  color: var(--paper);
+.bento-item.b-1 { color: var(--paper); }
+.bento-item.b-1::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(15,22,18,0.88) 0%, rgba(15,22,18,0.46) 32%, rgba(15,22,18,0) 64%);
 }
+.b1-photos { position: absolute; inset: 0; z-index: 0; display: flex; }
+.b1-photos span { flex: 1 1 0; background-size: cover; background-position: center 30%; background-repeat: no-repeat; }
+.b1-content { position: relative; z-index: 2; display: flex; flex-direction: column; }
 .bento-item.b-1 h3, .bento-item.b-1 .b-num { text-shadow: 0 1px 12px rgba(0,0,0,0.4); }
 .bento-item.b-1 p { color: rgba(255,253,248,0.8); }
 .bento-item.b-2 {
