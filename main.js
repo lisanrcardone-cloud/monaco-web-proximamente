@@ -51,6 +51,17 @@
     });
   }
 
+  function initStickyCta() {
+    const sticky = $(".mobile-sticky-cta");
+    const heroCta = $(".hero-cta");
+    if (!sticky || !heroCta) return;
+    if (!("IntersectionObserver" in window)) { sticky.classList.add("is-visible"); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => sticky.classList.toggle("is-visible", !e.isIntersecting));
+    }, { rootMargin: "0px 0px -20% 0px" });
+    io.observe(heroCta);
+  }
+
   function initBooksyCta() {
     const cta = $("[data-booksy-cta]");
     if (!cta) return;
@@ -113,6 +124,7 @@
     safe(initNav, "initNav");
     safe(initReveals, "initReveals");
     safe(initMobileMenu, "initMobileMenu");
+    safe(initStickyCta, "initStickyCta");
     safe(initBooksyCta, "initBooksyCta");
     safe(initContactForm, "initContactForm");
     safe(initGoogleReviewsLink, "initGoogleReviewsLink");

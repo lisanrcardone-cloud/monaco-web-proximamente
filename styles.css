@@ -139,6 +139,22 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
   font-size: .85rem; font-weight: 600; background: var(--accent); color: var(--ink);
 }
 
+.mobile-sticky-cta {
+  display: none; position: fixed; left: 50%;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 98; width: auto; white-space: nowrap; text-align: center; padding: .8rem 1.3rem; border-radius: 999px;
+  background: var(--ink); color: var(--paper); font-family: var(--sans);
+  font-size: .84rem; font-weight: 600; letter-spacing: .01em;
+  box-shadow: 0 10px 24px -8px rgba(27,42,34,0.5);
+  opacity: 0; transform: translate(-50%, 14px) scale(.95); pointer-events: none;
+  transition: transform .3s var(--ease-out), opacity .3s var(--ease-out);
+}
+.mobile-sticky-cta.is-visible { opacity: 1; transform: translate(-50%, 0) scale(1); pointer-events: auto; }
+.mobile-sticky-cta:hover, .mobile-sticky-cta:focus-visible { background: var(--accent); color: var(--ink); }
+.nav.menu-open ~ .mobile-sticky-cta { opacity: 0; pointer-events: none; }
+@media (max-width: 779px) { .mobile-sticky-cta { display: block; } }
+@media (min-width: 780px) { .mobile-sticky-cta { display: none; } }
+
 /* =============================================================
    4. Hero — full-bleed, eyebrow + italic serif + search-style picker
    ============================================================= */
@@ -171,8 +187,11 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 .hero-rating span { color: var(--accent); }
 .hero-rating:hover, .hero-rating:focus-visible { border-bottom-color: var(--accent); }
 @media (max-width: 779px) {
-  .hero-picker { margin-top: 1.6rem; padding: .4rem .5rem; gap: .4rem; }
-  .hero-picker a { padding: .55rem .9rem; font-size: 1rem; }
+  .hero-picker { margin-top: 1.6rem; padding: 0; gap: .5rem; background: none; border: none; }
+  .hero-picker a {
+    padding: .6rem 1rem; font-size: .95rem; background: var(--paper);
+    border: 1px solid var(--line); box-shadow: 0 8px 18px -12px rgba(27,42,34,0.3);
+  }
   .hero-cta { margin-top: 1.3rem; }
 }
 
@@ -182,7 +201,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 /* =============================================================
    6. Bento — asymmetric grid (no photos: color-block bento)
    ============================================================= */
-.bento { padding: 2.4rem 0 2.5rem; position: relative; overflow: hidden; }
+.bento { padding: 1.2rem 0 2.5rem; position: relative; overflow: hidden; }
 #servicios .wrap, #quienes-somos .wrap { position: relative; z-index: 1; }
 #quienes-somos { position: relative; overflow: hidden; }
 .bento-grid {
@@ -203,11 +222,12 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 .bento-item.b-1 {
   background:
     linear-gradient(to top, rgba(15,22,18,0.88) 0%, rgba(15,22,18,0.46) 32%, rgba(15,22,18,0) 64%),
-    url("assets/corte-1.webp"),
-    url("assets/corte-2.webp"),
-    url("assets/corte-3.webp");
-  background-size: 100% 100%, 34% 100%, 34% 100%, 34% 100%;
-  background-position: center, left center, center center, right center;
+    url("assets/corte-4.webp"),
+    url("assets/corte-5.webp"),
+    url("assets/corte-6.webp"),
+    url("assets/corte-7.webp");
+  background-size: 100% 100%, 25% 100%, 25% 100%, 25% 100%, 25% 100%;
+  background-position: center, 0% center, 33.33% center, 66.66% center, 100% center;
   background-repeat: no-repeat;
   color: var(--paper);
 }
