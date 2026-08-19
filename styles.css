@@ -182,7 +182,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 /* =============================================================
    6. Bento — asymmetric grid (no photos: color-block bento)
    ============================================================= */
-.bento { padding: 1.2rem 0 2.5rem; position: relative; overflow: hidden; }
+.bento { padding: 2.4rem 0 2.5rem; position: relative; overflow: hidden; }
 #servicios .wrap, #quienes-somos .wrap { position: relative; z-index: 1; }
 #quienes-somos { position: relative; overflow: hidden; }
 .bento-grid {
