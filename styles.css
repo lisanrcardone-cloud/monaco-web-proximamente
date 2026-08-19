@@ -222,9 +222,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 .bento-item.b-1 {
   background:
     linear-gradient(to top, rgba(15,22,18,0.88) 0%, rgba(15,22,18,0.46) 32%, rgba(15,22,18,0) 64%),
-    url("assets/corte-4.webp"),
-    url("assets/corte-5.webp"),
-    url("assets/corte-7.webp");
+    url("assets/corte-4.webp?v=20260819h"),
+    url("assets/corte-5.webp?v=20260819h"),
+    url("assets/corte-7.webp?v=20260819h");
   background-size: 100% 100%, 33.34% 100%, 33.34% 100%, 33.34% 100%;
   background-position: center, 0% center, 50% center, 100% center;
   background-repeat: no-repeat;
