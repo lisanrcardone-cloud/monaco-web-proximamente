@@ -104,12 +104,13 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 1.4rem 0; transition: background .4s var(--ease-out), padding .4s var(--ease-out), box-shadow .4s var(--ease-out);
+  pointer-events: none;
 }
 .nav.is-scrolled { background: rgba(246,239,227,0.88); backdrop-filter: blur(10px); padding: .9rem 0; box-shadow: 0 1px 0 var(--line); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; }
 .nav-mark-logo { height: 34px; width: auto; display: block; margin: 0; line-height: 0; }
 .nav-links { display: none; gap: 2rem; align-items: center; }
-.nav-links a { font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); transition: color .3s var(--ease-out); }
+.nav-links a { font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-soft); transition: color .3s var(--ease-out); pointer-events: auto; }
 .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); }
 .nav-links a.nav-cta-booksy {
   padding: .55rem 1.1rem; border-radius: 999px; background: var(--accent); color: var(--ink);
@@ -120,7 +121,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 
 .nav-hamburger {
   display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
-  color: var(--ink); position: relative; z-index: 2;
+  color: var(--ink); position: relative; z-index: 2; pointer-events: auto;
 }
 .nav-hamburger .ham-close { display: none; }
 .nav.menu-open .nav-hamburger .ham-open { display: none; }
