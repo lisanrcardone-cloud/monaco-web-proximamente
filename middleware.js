@@ -1,5 +1,3 @@
-import { NextResponse } from 'next/server';
-
 export const config = {
   matcher: '/',
 };
@@ -13,6 +11,11 @@ function prefersMarkdown(acceptHeader) {
   return idxMarkdown < idxHtml;
 }
 
+// Framework-agnostic Edge Middleware (no Next.js in this project, so
+// `next/server` is unavailable — use the standard Web Request/Response APIs).
+// Returning `undefined` lets the request continue unmodified to static
+// hosting; the Vary header on normal HTML responses is set via vercel.json
+// instead, since there is no chained response object to mutate here.
 export default async function middleware(request) {
   const accept = request.headers.get('accept') || '';
 
@@ -28,8 +31,4 @@ export default async function middleware(request) {
       },
     });
   }
-
-  const response = NextResponse.next();
-  response.headers.set('Vary', 'Accept');
-  return response;
 }
