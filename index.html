@@ -43,10 +43,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Barbershop",
+  "@type": ["Barbershop", "Organization"],
   "name": "Mónaco Barbershop",
   "priceRange": "€€",
   "telephone": "+34698140641",
+  "email": "contacto@monacobarberia.com",
   "url": "https://monacobarberia.com",
   "address": {
     "@type": "PostalAddress",
@@ -62,7 +63,14 @@
       "opens": "09:00",
       "closes": "20:00"
     }
-  ]
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+34698140641",
+    "email": "contacto@monacobarberia.com",
+    "contactType": "customer service",
+    "areaServed": "ES"
+  }
 }
 </script>
 <script>document.documentElement.classList.add('js');</script>

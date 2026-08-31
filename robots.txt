@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.monacobarberia.com/sitemap.xml
+# Agent-readable info: https://www.monacobarberia.com/llms.txt
