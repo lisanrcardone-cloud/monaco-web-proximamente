@@ -1,0 +1,40 @@
+{
+  "productos": [
+    {
+      "id": "p1",
+      "slug": "producto-1",
+      "nombre": "[Pendiente: nombre producto 1]",
+      "precio": null,
+      "imagenes": [],
+      "etiqueta": null,
+      "destacado": true
+    },
+    {
+      "id": "p2",
+      "slug": "producto-2",
+      "nombre": "[Pendiente: nombre producto 2]",
+      "precio": null,
+      "imagenes": [],
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "p3",
+      "slug": "producto-3",
+      "nombre": "[Pendiente: nombre producto 3]",
+      "precio": null,
+      "imagenes": [],
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "p4",
+      "slug": "producto-4",
+      "nombre": "[Pendiente: nombre producto 4]",
+      "precio": null,
+      "imagenes": [],
+      "etiqueta": null,
+      "destacado": false
+    }
+  ]
+}
