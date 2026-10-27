@@ -92,7 +92,7 @@ export function header(productos) {
 
 export function footer(productos) {
   const tienda = productos.map((p) => `<li><a href="${productUrl(p)}">${txt(p.nombre)}</a></li>`).join('');
-  return `<footer class="footer on-green">
+  return `<footer class="footer">
   <div class="wrap">
     <div class="foot-top">
       <div><span class="it">Sigue en contacto</span><a class="link-ul" href="/contact">Escríbenos</a></div>
@@ -108,7 +108,7 @@ export function footer(productos) {
           <li><a href="/privacy">Privacidad</a></li></ul></div>
       </div>
     </div>
-    <div class="foot-word"><img src="/assets/tienda/wordmark.webp" alt="Mónaco Barbershop" width="1014" height="390"></div>
+    <div class="foot-word"><img src="/assets/tienda/wordmark-green.webp" alt="Mónaco Barbershop" width="1014" height="390"></div>
     <div class="foot-legal"><span>&copy; 2026 Mónaco Barbershop</span><a href="/privacy">Privacidad</a></div>
   </div>
 </footer>`;
