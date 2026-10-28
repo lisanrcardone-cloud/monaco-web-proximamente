@@ -252,7 +252,23 @@
     });
   }
 
+  /* Catálogo: filtro por categoría (sin JS se ve todo) */
+  function initFilter() {
+    var chips = $$('.chip[data-filter]'); if (!chips.length) return;
+    var secs = $$('[data-cat-sec]');
+    function apply(id, setHash) {
+      if (!chips.some(function (c) { return c.getAttribute('data-filter') === id; })) id = 'todo';
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-filter') === id ? 'true' : 'false'); });
+      secs.forEach(function (s) { s.hidden = id !== 'todo' && s.getAttribute('data-cat-sec') !== id; });
+      if (setHash && window.history && history.replaceState) history.replaceState(null, '', id === 'todo' ? location.pathname : '#' + id);
+    }
+    chips.forEach(function (c) { c.addEventListener('click', function () { apply(c.getAttribute('data-filter'), true); }); });
+    window.addEventListener('hashchange', function () { apply(location.hash.slice(1)); });
+    if (location.hash) apply(location.hash.slice(1));
+  }
+
   function init() {
+    initFilter();
     buildPanel(); initNav(); initCarousels(); initGallery(); updateCount();
     var pid = document.body.getAttribute('data-product-id');
     var gone = document.body.getAttribute('data-clear-cart') === '1' && /session_id=/.test(location.search);

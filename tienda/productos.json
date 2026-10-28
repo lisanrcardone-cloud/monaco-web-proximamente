@@ -1,38 +1,537 @@
 {
+  "_nota": "Contenido real de la tienda (28-oct-2026). Fuente: fichas oficiales de Kppel (proveedor) e hipertin.com. Precios null a propósito: el usuario los pondrá después. id = clave estable para carrito/Stripe/GA4.",
+  "categorias": [
+    {
+      "id": "peinado",
+      "nombre": "Peinado"
+    },
+    {
+      "id": "champus",
+      "nombre": "Champús"
+    },
+    {
+      "id": "barba",
+      "nombre": "Barba"
+    },
+    {
+      "id": "tratamientos",
+      "nombre": "Tratamientos"
+    },
+    {
+      "id": "packs",
+      "nombre": "Packs"
+    }
+  ],
   "productos": [
     {
-      "id": "p1",
-      "slug": "producto-1",
-      "nombre": "[Pendiente: nombre producto 1]",
+      "id": "polvo-texturizante",
+      "slug": "polvo-texturizante",
+      "categoria": "peinado",
+      "marca": "Ossion",
+      "nombre": "Polvo texturizante",
+      "nombre_largo": "Ossion Morfose Hair Styling Powder",
+      "formato": "20 g",
+      "resumen": "Cuerpo y volumen al momento, con acabado mate.",
+      "descripcion": "Un polvo que da cuerpo y textura al pelo fino y levanta el peinado desde la raíz en cuanto lo aplicas. El acabado es mate y la fijación, flexible y natural: el pelo se mueve, pero el peinado aguanta.",
+      "beneficios": [
+        "Volumen inmediato desde la raíz",
+        "Acabado mate",
+        "Fijación flexible",
+        "Ideal para pelo fino"
+      ],
+      "ingredientes": null,
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/polvo-texturizante.webp"
+      ],
       "precio": null,
-      "imagenes": [],
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "spray-sal-marina",
+      "slug": "spray-sal-marina",
+      "categoria": "peinado",
+      "marca": "Ossion",
+      "nombre": "Spray de sal marina",
+      "nombre_largo": "Ossion Morfose Sea Salt Hair Spray",
+      "formato": "250 ml",
+      "resumen": "Ondas y volumen con efecto playa, sin apelmazar.",
+      "descripcion": "Ondas naturales y volumen, como recién salido del mar. Lleva minerales marinos y extracto de algas para dar forma, y proteínas de avena para cuidar el pelo. Su textura ligera no apelmaza ni endurece, y protege del sol (filtro UV) y del calor del secador.",
+      "beneficios": [
+        "Ondas y volumen naturales",
+        "Textura ligera, no apelmaza",
+        "Filtro UV",
+        "Protege del calor del secador"
+      ],
+      "ingredientes": "Minerales marinos, extracto de algas y proteínas de avena.",
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/spray-sal-marina.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "espuma-rizos",
+      "slug": "espuma-rizos",
+      "categoria": "peinado",
+      "marca": "Ossion",
+      "nombre": "Espuma de rizos",
+      "nombre_largo": "Ossion Morfose Curl Mousse",
+      "formato": "350 ml",
+      "resumen": "Rizos definidos, sin encrespamiento y con fijación fuerte.",
+      "descripcion": "Espuma de fijación ultrafuerte para moldear el pelo: define los rizos, quita el encrespamiento y suma volumen. Funciona en pelo seco o húmedo y se reparte fácil con el cepillo.",
+      "beneficios": [
+        "Define los rizos",
+        "Controla el encrespamiento",
+        "Más volumen",
+        "En seco o en húmedo"
+      ],
+      "ingredientes": null,
+      "modo_uso": "Aplica sobre el pelo seco o húmedo y reparte con el cepillo.",
+      "imagenes": [
+        "/assets/tienda/productos/espuma-rizos.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "cera-matte-hold",
+      "slug": "cera-matte-hold",
+      "categoria": "peinado",
+      "marca": "Ossion",
+      "nombre": "Cera Matte Hold",
+      "nombre_largo": "Ossion Morfose Hair Styling Wax Matte Hold",
+      "formato": "150 ml",
+      "resumen": "Fijación fuerte con acabado mate.",
+      "descripcion": "Cera de fijación fuerte y flexible con acabado mate. Da grosor, textura y cuerpo, y funciona especialmente bien en pelo corto o corto y rizado. Es de base acuosa: se va con agua y no deja restos.",
+      "beneficios": [
+        "Fijación fuerte",
+        "Acabado mate",
+        "Se lava con agua, sin restos",
+        "Deja el pelo perfumado"
+      ],
+      "ingredientes": null,
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/cera-matte-hold.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "cera-extra-hold",
+      "slug": "cera-extra-hold",
+      "categoria": "peinado",
+      "marca": "Ossion",
+      "nombre": "Cera Extra Hold",
+      "nombre_largo": "Ossion Morfose Hair Styling Wax Extra Hold",
+      "formato": "150 ml",
+      "resumen": "Fijación fuerte con acabado brillo.",
+      "descripcion": "Cera de fijación fuerte y flexible con acabado brillo. Da grosor, textura y cuerpo, y funciona especialmente bien en pelo corto o corto y rizado. Es de base acuosa: se va con agua y no deja restos. Aroma frutal a melón.",
+      "beneficios": [
+        "Fijación fuerte",
+        "Acabado brillo",
+        "Se lava con agua, sin restos",
+        "Aroma a melón"
+      ],
+      "ingredientes": null,
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/cera-extra-hold.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "cera-medium-hold",
+      "slug": "cera-medium-hold",
+      "categoria": "peinado",
+      "marca": "Ossion",
+      "nombre": "Cera Medium Hold",
+      "nombre_largo": "Ossion Morfose Hair Styling Wax Medium Hold",
+      "formato": "150 ml",
+      "resumen": "Fijación media con brillo, ideal para pelo largo.",
+      "descripcion": "Cera de fijación media con acabado brillo, pensada para pelo más largo o peinados con movimiento. Da textura y cuerpo, se va con agua y no deja restos. Aroma fresco a chicle.",
+      "beneficios": [
+        "Fijación media",
+        "Acabado brillo",
+        "Se lava con agua, sin restos",
+        "Aroma a chicle"
+      ],
+      "ingredientes": null,
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/cera-medium-hold.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "champu-anticaspa",
+      "slug": "champu-anticaspa",
+      "categoria": "champus",
+      "marca": "Linecure",
+      "nombre": "Champú anticaspa",
+      "nombre_largo": "Linecure Dandruff Control",
+      "formato": "300 ml",
+      "resumen": "Para cuero cabelludo con caspa. Fórmula vegana.",
+      "descripcion": "Champú de fórmula vegana para cuero cabelludo con caspa. Ayuda a eliminarla y a que no vuelva, calma el picor y devuelve el equilibrio al cuero cabelludo, con un pelo suave y con brillo.",
+      "beneficios": [
+        "Ayuda a eliminar la caspa",
+        "Calma el picor",
+        "Equilibra el cuero cabelludo",
+        "Fórmula vegana"
+      ],
+      "ingredientes": "Extracto natural de jengibre: antioxidante y antiinflamatorio.",
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/champu-anticaspa.webp",
+        "/assets/tienda/productos/champu-anticaspa-2.jpg"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "champu-cabello-graso",
+      "slug": "champu-cabello-graso",
+      "categoria": "champus",
+      "marca": "Linecure",
+      "nombre": "Champú cabello graso",
+      "nombre_largo": "Linecure Grease Control",
+      "formato": "300 ml",
+      "resumen": "Regula la grasa del cuero cabelludo. Fórmula vegana.",
+      "descripcion": "Champú de fórmula vegana para pelo graso. Regula y equilibra la producción de grasa, refresca, evita el picor durante y después del lavado y reduce la electricidad estática.",
+      "beneficios": [
+        "Regula la grasa",
+        "Efecto refrescante",
+        "Evita el picor",
+        "Fórmula vegana"
+      ],
+      "ingredientes": "Extracto natural de semilla de uva: antioxidante, nutritivo y regulador de la grasa.",
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/champu-cabello-graso.webp",
+        "/assets/tienda/productos/champu-cabello-graso-2.jpg"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "champu-anticaida",
+      "slug": "champu-anticaida",
+      "categoria": "champus",
+      "marca": "Linecure",
+      "nombre": "Champú anticaída",
+      "nombre_largo": "Linecure Hair Loss Prevention",
+      "formato": "300 ml",
+      "resumen": "Para raíces débiles. Estimula y fortalece.",
+      "descripcion": "Champú para pelo con raíces débiles y tendencia a caerse. Estimula el riego del cuero cabelludo, fortalece la fibra y la hidrata. Es suave, calma el picor y tiene una textura densa y agradable.",
+      "beneficios": [
+        "Ayuda a prevenir la caída",
+        "Estimula el cuero cabelludo",
+        "Hidrata y acondiciona",
+        "Calma el picor"
+      ],
+      "ingredientes": "Extracto de guaraná (rico en cafeína), Capilia Longa (de la cúrcuma) y aceites esenciales de limón, romero, mejorana, lavanda y naranja amarga.",
+      "modo_uso": "Aplica un poco sobre el pelo mojado y masajea con la yema de los dedos hasta hacer espuma. Para más efecto, repite y déjalo actuar unos minutos. Aclara con abundante agua.",
+      "imagenes": [
+        "/assets/tienda/productos/champu-anticaida.webp",
+        "/assets/tienda/productos/champu-anticaida-2.jpg"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "champu-nutri-repair",
+      "slug": "champu-nutri-repair",
+      "categoria": "champus",
+      "marca": "Linecure",
+      "nombre": "Champú pelo seco y dañado",
+      "nombre_largo": "Linecure Nutri-Repair",
+      "formato": "300 ml",
+      "resumen": "Nutre y repara el pelo seco. Fórmula vegana.",
+      "descripcion": "Champú nutritivo de fórmula vegana para pelo seco o dañado. Hidrata, nutre y repara la fibra para frenar la sequedad, y deja el pelo con brillo, suave y fácil de peinar.",
+      "beneficios": [
+        "Nutre y repara",
+        "Hidrata",
+        "Brillo y suavidad",
+        "Facilita el peinado"
+      ],
+      "ingredientes": null,
+      "modo_uso": "Aplica un poco sobre el pelo mojado, masajea hasta hacer espuma y aclara. Para más efecto, repite y déjalo actuar unos minutos antes de aclarar.",
+      "imagenes": [
+        "/assets/tienda/productos/champu-nutri-repair.webp",
+        "/assets/tienda/productos/champu-nutri-repair-2.jpg"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "champu-pro-keratin",
+      "slug": "champu-pro-keratin",
+      "categoria": "champus",
+      "marca": "Linecure",
+      "nombre": "Champú Pro Keratin",
+      "nombre_largo": "Linecure Pro Keratin Repair",
+      "formato": "300 ml",
+      "resumen": "Fuerza para el pelo frágil. Menos encrespamiento.",
+      "descripcion": "Champú de fórmula vegana para pelo frágil o debilitado. Hidrata y nutre, reduce el encrespamiento y deja una capa que protege y sella la fibra. Más brillo, más textura y mejor peinado.",
+      "beneficios": [
+        "Fortalece el pelo frágil",
+        "Reduce el encrespamiento",
+        "Protege y sella la fibra",
+        "Fórmula vegana"
+      ],
+      "ingredientes": "Proteínas vegetales hidrolizadas: aminoácidos que dan fuerza y estabilidad al pelo.",
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/champu-pro-keratin.webp",
+        "/assets/tienda/productos/champu-pro-keratin-2.jpg"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "champu-cuero-sensible",
+      "slug": "champu-cuero-sensible",
+      "categoria": "champus",
+      "marca": "Linecure",
+      "nombre": "Champú cuero cabelludo sensible",
+      "nombre_largo": "Linecure Sensitive Scalp",
+      "formato": "300 ml",
+      "resumen": "Calma la irritación y regula el pH. Fórmula vegana.",
+      "descripcion": "Champú de fórmula vegana para cuero cabelludo sensible. Regula el pH, calma la irritación y deja el pelo acondicionado y suave.",
+      "beneficios": [
+        "Calma la irritación",
+        "Regula el pH",
+        "Acondiciona y suaviza",
+        "Fórmula vegana"
+      ],
+      "ingredientes": "Extracto natural de piña (bromelina) y aloe vera, calmante y antiinflamatorio.",
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/champu-cuero-sensible.webp",
+        "/assets/tienda/productos/champu-cuero-sensible-2.jpg"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "serum-sideral-peptide",
+      "slug": "serum-sideral-peptide",
+      "categoria": "tratamientos",
+      "marca": "Linecure",
+      "nombre": "Sérum Sideral Peptide",
+      "nombre_largo": "Linecure Sideral Peptide Total Rescue",
+      "formato": "50 ml",
+      "resumen": "Rescate para pelo dañado por tintes, decoloración o calor.",
+      "descripcion": "Tratamiento de polipéptidos inspirado en la estructura de la queratina, para pelo dañado por procesos químicos (tintes, decoloraciones) o por el calor. Se usa junto a la decoloración o por sí solo. Fórmula vegana sin sulfatos, siliconas ni parabenos, con más del 97 % de ingredientes de origen natural.",
+      "beneficios": [
+        "Para pelo muy dañado",
+        "Con péptidos y ácido hialurónico",
+        "Sin sulfatos, siliconas ni parabenos",
+        "97 % de origen natural"
+      ],
+      "ingredientes": "Péptidos y ácido hialurónico.",
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/serum-sideral-peptide.webp",
+        "/assets/tienda/productos/serum-sideral-peptide-2.jpg"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "barba-balsamo",
+      "slug": "barba-balsamo",
+      "categoria": "barba",
+      "marca": "Ossion",
+      "nombre": "Bálsamo de barba",
+      "nombre_largo": "Ossion Morfose Beard Care Balsam",
+      "formato": "100 ml",
+      "resumen": "Barba suave e hidratada, con argán y almendra.",
+      "descripcion": "Bálsamo que deja la barba suave e hidratada durante mucho tiempo. Su fórmula con aceite de argán y de almendras amargas la cuida y la nutre.",
+      "beneficios": [
+        "Suaviza la barba",
+        "Hidratación duradera",
+        "Con argán y almendra amarga"
+      ],
+      "ingredientes": "Aceite de argán y aceite de almendras amargas.",
+      "modo_uso": "Aplica un poco en la barba y espera 1-2 minutos. Aclara con agua. Para más efecto, aplica otra vez antes de aclarar.",
+      "imagenes": [
+        "/assets/tienda/productos/barba-balsamo.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "barba-aceite",
+      "slug": "barba-aceite",
+      "categoria": "barba",
+      "marca": "Ossion",
+      "nombre": "Aceite de barba",
+      "nombre_largo": "Ossion Morfose Beard Care Oil",
+      "formato": "20 ml",
+      "resumen": "Aceites vegetales para una barba sana y con vida.",
+      "descripcion": "Aceite de barba con aceites vegetales de alta calidad que le dan un aspecto sano y con vida.",
+      "beneficios": [
+        "Aspecto sano",
+        "Aceites vegetales",
+        "Aplicación directa"
+      ],
+      "ingredientes": "Aceites vegetales.",
+      "modo_uso": "Aplica directamente en la barba, de la base a las puntas.",
+      "imagenes": [
+        "/assets/tienda/productos/barba-aceite.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "barba-serum",
+      "slug": "barba-serum",
+      "categoria": "barba",
+      "marca": "Ossion",
+      "nombre": "Sérum de barba",
+      "nombre_largo": "Ossion Morfose Beard Care Serum",
+      "formato": "50 ml",
+      "resumen": "Barba cuidada y piel sin irritación.",
+      "descripcion": "Sérum que da a la barba un aspecto cuidado y sano y evita la irritación de la piel de debajo.",
+      "beneficios": [
+        "Barba cuidada",
+        "Evita la irritación",
+        "Dos gotas bastan"
+      ],
+      "ingredientes": null,
+      "modo_uso": "Pon dos gotas y aplícalas directamente en la barba.",
+      "imagenes": [
+        "/assets/tienda/productos/barba-serum.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "barba-champu",
+      "slug": "barba-champu",
+      "categoria": "barba",
+      "marca": "Ossion",
+      "nombre": "Champú de barba",
+      "nombre_largo": "Ossion Morfose Beard Care Shampoo",
+      "formato": "100 ml",
+      "resumen": "Limpia e hidrata la barba a la vez.",
+      "descripcion": "Champú pensado para la barba: la limpia y la hidrata al mismo tiempo.",
+      "beneficios": [
+        "Limpia la barba",
+        "Hidrata mientras lava",
+        "Vale para pelo y barba"
+      ],
+      "ingredientes": null,
+      "modo_uso": "Aplica sobre el pelo y la barba bien mojados. Masajea con los dedos hasta hacer espuma y aclara con abundante agua.",
+      "imagenes": [
+        "/assets/tienda/productos/barba-champu.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false
+    },
+    {
+      "id": "pack-textura",
+      "slug": "pack-textura",
+      "categoria": "packs",
+      "marca": "Ossion",
+      "nombre": "Pack Textura",
+      "nombre_largo": "Pack Textura: polvo texturizante + spray de sal marina",
+      "formato": null,
+      "incluye": [
+        "polvo-texturizante",
+        "spray-sal-marina"
+      ],
+      "resumen": "Polvo texturizante + spray de sal: volumen y textura de barbería en casa.",
+      "descripcion": "Los dos básicos para un peinado con volumen y textura. Primero el spray de sal en el pelo húmedo para dar forma y ondas; después, el polvo en la raíz para levantar y fijar con acabado mate.",
+      "beneficios": [
+        "Volumen desde la raíz",
+        "Textura y ondas naturales",
+        "Acabado mate"
+      ],
+      "ingredientes": null,
+      "modo_uso": "Spray de sal en el pelo húmedo y seca. Después, un poco de polvo en la raíz y peina con los dedos.",
+      "imagenes": [
+        "/assets/tienda/productos/pack-textura.webp"
+      ],
+      "precio": null,
       "etiqueta": null,
       "destacado": true
     },
     {
-      "id": "p2",
-      "slug": "producto-2",
-      "nombre": "[Pendiente: nombre producto 2]",
+      "id": "pack-peinado",
+      "slug": "pack-peinado",
+      "categoria": "packs",
+      "marca": "Ossion",
+      "nombre": "Pack Peinado",
+      "nombre_largo": "Pack Peinado: cera Matte Hold + polvo texturizante",
+      "formato": null,
+      "incluye": [
+        "cera-matte-hold",
+        "polvo-texturizante"
+      ],
+      "resumen": "Cera mate + polvo texturizante: fijación fuerte con volumen.",
+      "descripcion": "Volumen con el polvo y fijación fuerte con la cera mate. Un peinado que aguanta todo el día sin brillo ni restos.",
+      "beneficios": [
+        "Fijación fuerte",
+        "Volumen",
+        "Acabado mate"
+      ],
+      "ingredientes": null,
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/pack-peinado.webp"
+      ],
       "precio": null,
-      "imagenes": [],
       "etiqueta": null,
       "destacado": false
     },
     {
-      "id": "p3",
-      "slug": "producto-3",
-      "nombre": "[Pendiente: nombre producto 3]",
+      "id": "pack-rizos",
+      "slug": "pack-rizos",
+      "categoria": "packs",
+      "marca": "Ossion",
+      "nombre": "Pack Rizos",
+      "nombre_largo": "Pack Rizos: espuma de rizos + spray de sal marina",
+      "formato": null,
+      "incluye": [
+        "espuma-rizos",
+        "spray-sal-marina"
+      ],
+      "resumen": "Espuma de rizos + spray de sal: rizos definidos y con volumen.",
+      "descripcion": "La espuma define el rizo y controla el encrespamiento; el spray de sal le da volumen y movimiento natural.",
+      "beneficios": [
+        "Rizos definidos",
+        "Sin encrespamiento",
+        "Volumen natural"
+      ],
+      "ingredientes": null,
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/pack-rizos.webp"
+      ],
       "precio": null,
-      "imagenes": [],
-      "etiqueta": null,
-      "destacado": false
-    },
-    {
-      "id": "p4",
-      "slug": "producto-4",
-      "nombre": "[Pendiente: nombre producto 4]",
-      "precio": null,
-      "imagenes": [],
       "etiqueta": null,
       "destacado": false
     }

@@ -1,4 +1,4 @@
-import { page, hueco, huecoIn, txt, esc, isPending, productUrl, SITE } from './lib.mjs';
+import { page, hueco, huecoIn, txt, esc, isPending, productUrl, cardSub, CATS, SITE } from './lib.mjs';
 
 const sec = (id, title, inner, cls = '') => `<section class="pdp-sec ${cls}"${id ? ` id="${id}"` : ''}><div class="wrap">${title ? `<h2 class="sec-title"><span class="caps">${esc(title)}</span></h2>` : ''}${inner}</div></section>`;
 
@@ -11,20 +11,23 @@ export function product(p, productos) {
     ? p.imagenes.map((src, i) => `<button type="button" class="g-thumb" data-src="${esc(src)}" aria-label="Ver foto ${i + 1}"><img src="${esc(src)}" alt="" width="120" height="120" loading="lazy"></button>`).join('')
     : [1, 2, 3, 4].map((i) => `<div>${hueco('miniatura ' + i, '1/1')}</div>`).join('');
 
+  const catName = (CATS.find(([id]) => id === p.categoria) || [, p.categoria])[1];
+  const incluye = (p.incluye || []).map((id) => productos.find((x) => x.id === id)).filter(Boolean);
   const crumbName = isPending(p.nombre) ? `Producto ${n}` : p.nombre;
   const ld = [{
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Mónaco', item: SITE + '/' },
       { '@type': 'ListItem', position: 2, name: 'Tienda', item: SITE + '/tienda' },
-      { '@type': 'ListItem', position: 3, name: crumbName, item: SITE + productUrl(p) },
+      { '@type': 'ListItem', position: 3, name: catName, item: SITE + '/tienda/productos/#' + p.categoria },
+      { '@type': 'ListItem', position: 4, name: crumbName, item: SITE + productUrl(p) },
     ],
   }];
   if (real) {
     ld.push({
       '@context': 'https://schema.org', '@type': 'Product', name: p.nombre,
       image: p.imagenes.map((i) => (i.startsWith('http') ? i : SITE + i)),
-      brand: { '@type': 'Brand', name: 'Mónaco' },
+      brand: { '@type': 'Brand', name: p.marca },
       offers: { '@type': 'Offer', url: SITE + productUrl(p), priceCurrency: 'EUR', price: (p.precio / 100).toFixed(2), availability: 'https://schema.org/InStock' },
     });
   }
@@ -32,7 +35,7 @@ export function product(p, productos) {
   const faq = [1, 2, 3, 4, 5, 6].map((i) => `<details class="acc"><summary>${huecoIn('pregunta ' + i)}</summary><div class="acc-body">${hueco('respuesta ' + i, '16/4')}</div></details>`).join('');
 
   const main = `
-<div class="wrap"><nav class="crumbs" aria-label="Migas de pan"><a href="/">Mónaco</a> / <a href="/tienda">Tienda</a> / <span>${txt(crumbName)}</span></nav></div>
+<div class="wrap"><nav class="crumbs" aria-label="Migas de pan"><a href="/">Mónaco</a> / <a href="/tienda">Tienda</a> / <a href="/tienda/productos/#${p.categoria}">${esc(catName)}</a> / <span>${txt(crumbName)}</span></nav></div>
 <section class="wrap pdp" aria-label="Producto">
   <div class="gallery">
     <div class="g-main">${mainMedia}</div>
@@ -40,18 +43,19 @@ export function product(p, productos) {
   </div>
   <div class="pdp-info">
     <h1>${txt(p.nombre)}</h1>
-    <div>${huecoIn('valoración')}</div>
-    <div>${hueco('descripción del producto', '16/5')}</div>
-    <div class="benefits">${[1, 2, 3, 4].map((i) => huecoIn('beneficio ' + i)).join('')}</div>
+    <p class="card-sub">${cardSub(p)}</p>
+    <p>${esc(p.descripcion)}</p>
+    <ul class="benefits">${p.beneficios.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
+    ${incluye.length ? `<div class="incluye"><h2>Incluye</h2><ul>${incluye.map((x) => `<li><a href="${productUrl(x)}">${esc(x.nombre)}</a></li>`).join('')}</ul></div>` : ''}
     <div class="pdp-price" data-price-for="${p.id}"><span class="price-soon">Precio próximamente</span></div>
     <div class="buy">
       <div class="qty" role="group" aria-label="Cantidad"><button type="button" data-pdp-q="-1" aria-label="Menos">&minus;</button><output id="pdp-qty" aria-live="polite">1</output><button type="button" data-pdp-q="1" aria-label="Más">+</button></div>
       <button type="button" class="btn" id="add-main" data-add="${p.id}" data-add-label="1" disabled>Precio próximamente</button>
     </div>
-    <div>${huecoIn('garantía')}</div>
+    <p>Preparamos tu pedido en 24-48 h. Envío gratis en pedidos de 49 € o más. Recogida gratis en la barbería.</p>
     <div>
-      <details class="acc"><summary>Ingredientes</summary><div class="acc-body">${hueco('ingredientes', '16/4')}</div></details>
-      <details class="acc"><summary>Modo de uso</summary><div class="acc-body">${hueco('modo de uso', '16/4')}</div></details>
+      ${p.ingredientes ? `<details class="acc"><summary>Ingredientes</summary><div class="acc-body"><p>${esc(p.ingredientes)}</p></div></details>` : ''}
+      ${p.modo_uso ? `<details class="acc"><summary>Modo de uso</summary><div class="acc-body"><p>${esc(p.modo_uso)}</p></div></details>` : ''}
     </div>
     <div>${hueco('reseña destacada', '16/6')}</div>
     <a class="more-reviews" href="#resenas">Ver reseñas</a>
@@ -77,8 +81,8 @@ ${sec('resenas', 'Reseñas', `<div class="reviews-box">${hueco('valoración medi
 </div>`;
 
   return page({
-    title: `${isPending(p.nombre) ? 'Producto ' + n : p.nombre} | Tienda Mónaco Barbershop`,
-    description: 'Ficha de producto de la tienda de Mónaco Barbershop.',
+    title: `${p.nombre} ${p.marca} | Tienda Mónaco Barbershop`,
+    description: p.resumen,
     path: productUrl(p),
     bodyClass: 'pdp-page',
     bodyAttrs: `data-product-id="${p.id}"`,

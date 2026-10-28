@@ -13,6 +13,9 @@ export const hueco = (label, ar = '1/1', extra = '') =>
 export const huecoIn = (label) => `<span class="hueco-in">[Pendiente: ${esc(label)}]</span>`;
 // Texto que puede ser hueco (nombre sin definir)
 export const txt = (t) => (isPending(t) ? `<span class="hueco-in">${esc(t)}</span>` : esc(t));
+export const CATS = [['peinado', 'Peinado'], ['champus', 'Champús'], ['barba', 'Barba'], ['tratamientos', 'Tratamientos'], ['packs', 'Packs']];
+const catLinks = () => CATS.map(([id, n]) => `<li><a href="/tienda/productos/#${id}">${n}</a></li>`).join('') + '<li><a href="/tienda/productos/">Ver todo</a></li>';
+export const cardSub = (p) => `${esc(p.marca)}${p.formato ? ' · ' + esc(p.formato) : ''}`;
 export const productUrl = (p) => `/tienda/producto/${p.slug}`;
 
 const GA = `<!-- Google tag (gtag.js) -->
@@ -56,7 +59,7 @@ ${ld}
 </head>
 <body class="${bodyClass}" ${bodyAttrs}>
 <a class="skip-link" href="#main">Saltar al contenido</a>
-<div class="promo">${huecoIn('promoción')}</div>
+<div class="promo">Preparamos tu pedido en 24-48 h · Recogida gratis en la barbería</div>
 ${header(productos)}
 <main id="main">
 ${main}
@@ -69,7 +72,7 @@ ${footer(productos)}
 }
 
 export function header(productos) {
-  const subs = productos.map((p) => `<li><a href="${productUrl(p)}">${txt(p.nombre)}</a></li>`).join('');
+  const subs = catLinks();
   return `<header class="header">
   <div class="wrap">
     <a class="logo" href="/tienda" aria-label="Mónaco Barbershop, tienda"><img src="/assets/logo-wordmark-nav.png" alt="Mónaco Barbershop" width="128" height="34"></a>
@@ -91,7 +94,7 @@ export function header(productos) {
 }
 
 export function footer(productos) {
-  const tienda = productos.map((p) => `<li><a href="${productUrl(p)}">${txt(p.nombre)}</a></li>`).join('');
+  const tienda = catLinks();
   return `<footer class="footer">
   <div class="wrap">
     <div class="foot-top">
@@ -117,13 +120,13 @@ export function footer(productos) {
 // Tarjeta de producto
 export function card(p, list, index) {
   const media = p.imagenes && p.imagenes[0]
-    ? `<img src="${esc(p.imagenes[0])}" alt="${esc(p.nombre)}" width="600" height="600" loading="lazy">`
+    ? `<img src="${esc(p.imagenes[0])}" alt="${esc(p.nombre)}" width="1000" height="1000" loading="lazy">`
     : hueco('foto del producto', '1/1');
-  return `<a class="card" href="${productUrl(p)}" data-list="${list}" data-item="${p.id}" data-index="${index}">
+  return `<a class="card" href="${productUrl(p)}" data-cat="${p.categoria}" data-list="${list}" data-item="${p.id}" data-index="${index}">
     <div class="card-media">${media}</div>
-    <span class="tag">${p.etiqueta ? esc(p.etiqueta) : huecoIn('etiqueta')}</span>
+    ${p.etiqueta ? `<span class="tag">${esc(p.etiqueta)}</span>` : ''}
     <h3>${txt(p.nombre)}</h3>
-    <div>${huecoIn('valoración')}</div>
+    <p class="card-sub">${cardSub(p)}</p>
     <div class="price" data-price-for="${p.id}"><span class="price-soon">Precio próximamente</span></div>
   </a>`;
 }

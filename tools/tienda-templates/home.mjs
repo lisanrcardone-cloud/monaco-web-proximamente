@@ -5,19 +5,19 @@ const CINTA_DEFS = '<svg width="0" height="0" style="position:absolute" aria-hid
 
 export function home(productos) {
   const feat = productos.find((p) => p.destacado) || productos[0];
-  const rest = productos.filter((p) => p !== feat);
-  const cinta = Array.from({ length: 6 }, () => `<span class="cinta-item">${huecoIn('condición de envío')}${CINTA_ICO}</span>`).join('');
+  const cat = (...ids) => ids.flatMap((id) => productos.filter((p) => p.categoria === id));
+  const cinta = Array.from({ length: 6 }, () => `<span class="cinta-item">${'Envío gratis en pedidos de 49 € o más'}${CINTA_ICO}</span>`).join('');
   const featMedia = feat.imagenes && feat.imagenes[0]
-    ? `<img src="${esc(feat.imagenes[0])}" alt="${esc(feat.nombre)}" width="600" height="600">`
+    ? `<img src="${esc(feat.imagenes[0])}" alt="${esc(feat.nombre)}" width="1000" height="1000">`
     : hueco('foto del producto protagonista', '1/1');
 
   const main = `
 <section class="hero" aria-label="Producto protagonista">
   <div class="wrap">
     <div>
-      <h1><span class="it">${huecoIn('titular en cursiva')}</span><span class="caps">${huecoIn('titular en mayúsculas')}</span></h1>
-      <p>${huecoIn('línea de apoyo')}</p>
-      <a class="btn" href="${productUrl(feat)}" data-list="portada" data-item="${feat.id}" data-index="0">Comprar</a>
+      <h1><span class="it">Pack Textura</span><span class="caps">Volumen y textura en casa</span></h1>
+      <p>${esc(feat.resumen)}</p>
+      <a class="btn" href="${productUrl(feat)}" data-list="portada" data-item="${feat.id}" data-index="0">Ver el pack</a>
     </div>
     <div class="hero-media">${featMedia}</div>
   </div>
@@ -29,7 +29,7 @@ ${CINTA_DEFS}
 <section class="sec bg-white" id="mas-vendidos">
   <div class="wrap">
     ${sectionTitle('¿Primera vez?', 'Los más vendidos')}
-    ${carousel(rest.map((p, i) => card(p, 'mas_vendidos', i)), 'c3', 'Los más vendidos')}
+    ${carousel(cat('peinado').map((p, i) => card(p, 'mas_vendidos', i)), 'c3', 'Los más vendidos')}
   </div>
 </section>
 
@@ -44,7 +44,21 @@ ${CINTA_DEFS}
 <section class="sec bg-white" id="packs">
   <div class="wrap">
     ${sectionTitle('', 'Packs')}
-    ${carousel([1, 2, 3].map((n) => `<div class="card">${hueco('pack ' + n, '1/1')}</div>`), 'c3', 'Packs')}
+    ${carousel(cat('packs').map((p, i) => card(p, 'packs', i)), 'c3', 'Packs')}
+  </div>
+</section>
+
+<section class="sec bg-white" id="cuidado-cabello">
+  <div class="wrap">
+    ${sectionTitle('Para cada tipo de pelo', 'Cuidado del cabello')}
+    ${carousel(cat('champus', 'tratamientos').map((p, i) => card(p, 'cuidado_cabello', i)), 'c3', 'Cuidado del cabello')}
+  </div>
+</section>
+
+<section class="sec bg-white" id="barba">
+  <div class="wrap">
+    ${sectionTitle('', 'Barba')}
+    ${carousel(cat('barba').map((p, i) => card(p, 'barba', i)), 'c3', 'Barba')}
   </div>
 </section>
 
@@ -81,7 +95,7 @@ ${CINTA_DEFS}
 
   return page({
     title: 'Tienda | Mónaco Barbershop',
-    description: 'Tienda de Mónaco Barbershop. Productos de cuidado.',
+    description: 'Productos de peinado, champús y cuidado de barba que usamos en Mónaco Barbershop, en Vigo.',
     path: '/tienda',
     productos,
     main,

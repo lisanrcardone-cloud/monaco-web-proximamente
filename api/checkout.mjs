@@ -25,7 +25,7 @@ export async function POST(request) {
 
   let lines;
   try { lines = JSON.parse(raw); } catch { return json(400, { error: 'JSON no válido' }); }
-  if (!Array.isArray(lines) || lines.length < 1 || lines.length > 4) return json(400, { error: 'Carrito no válido' });
+  if (!Array.isArray(lines) || lines.length < 1 || lines.length > 10) return json(400, { error: 'Carrito no válido' });
 
   let productos;
   try {
