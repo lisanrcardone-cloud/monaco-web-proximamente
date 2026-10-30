@@ -38,9 +38,9 @@ ${CINTA_DEFS}
 
 <section class="manifiesto" aria-label="Manifiesto">
   <div class="wrap">
-    <p class="quote">${huecoIn('frase de la casa')}</p>
-    <p class="sign">${huecoIn('firma')}</p>
-    <a class="link-ul" href="/">Conocer la barbería</a>
+    <p class="quote">Cuando te cuidas, todo lo demás se nota.</p>
+    <p class="sign">Felipe Denti, Mónaco Barbershop</p>
+    <a class="link-ul" href="/#quienes-somos">Conocer la barbería</a>
   </div>
 </section>
 
