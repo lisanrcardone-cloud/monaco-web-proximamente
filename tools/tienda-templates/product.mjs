@@ -52,7 +52,7 @@ export function product(p, productos) {
       <div class="qty" role="group" aria-label="Cantidad"><button type="button" data-pdp-q="-1" aria-label="Menos">&minus;</button><output id="pdp-qty" aria-live="polite">1</output><button type="button" data-pdp-q="1" aria-label="Más">+</button></div>
       <button type="button" class="btn" id="add-main" data-add="${p.id}" data-add-label="1" disabled>Precio próximamente</button>
     </div>
-    <p>Preparamos tu pedido en 24-48 h. Envío gratis en pedidos de 49 € o más. Recogida gratis en la barbería.</p>
+    <p>Preparamos tu pedido en 24-48 h. Envío gratis en pedidos de 35 € o más. Recogida gratis en la barbería.</p>
     <div>
       ${p.ingredientes ? `<details class="acc"><summary>Ingredientes</summary><div class="acc-body"><p>${esc(p.ingredientes)}</p></div></details>` : ''}
       ${p.modo_uso ? `<details class="acc"><summary>Modo de uso</summary><div class="acc-body"><p>${esc(p.modo_uso)}</p></div></details>` : ''}

@@ -9,7 +9,7 @@ const IG = JSON.parse(readFileSync(new URL('../../tienda/instagram.json', import
 export function home(productos) {
   const feat = productos.find((p) => p.destacado) || productos[0];
   const cat = (...ids) => ids.flatMap((id) => productos.filter((p) => p.categoria === id));
-  const cinta = Array.from({ length: 6 }, () => `<span class="cinta-item">${'Envío gratis en pedidos de 49 € o más'}${CINTA_ICO}</span>`).join('');
+  const cinta = Array.from({ length: 6 }, () => `<span class="cinta-item">${'Envío gratis en pedidos de 35 € o más'}${CINTA_ICO}</span>`).join('');
   const featMedia = feat.imagen_hero
     ? `<img src="${esc(feat.imagen_hero)}" alt="${esc(feat.nombre)}" width="422" height="884">`
     : feat.imagenes && feat.imagenes[0]

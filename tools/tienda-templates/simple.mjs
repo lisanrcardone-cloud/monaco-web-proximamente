@@ -15,7 +15,7 @@ export function legal(slug, titulo, label, productos) {
   <h1 class="it" style="text-align:center">${titulo}</h1>
   ${slug === 'envios-devoluciones' ? `<ul class="envios">
     <li>Preparamos tu pedido en 24-48 h laborables.</li>
-    <li>Envío gratis en pedidos de 49 € o más.</li>
+    <li>Envío gratis en pedidos de 35 € o más.</li>
     <li>Recogida gratis en la barbería, en Vigo.</li>
     <li>${huecoIn('plazo de entrega de la empresa de transporte y coste del envío')}</li>
   </ul>
