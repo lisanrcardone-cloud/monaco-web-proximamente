@@ -15,9 +15,11 @@ export function legal(slug, titulo, label, productos) {
   <h1 class="it" style="text-align:center">${titulo}</h1>
   ${slug === 'envios-devoluciones' ? `<ul class="envios">
     <li>Preparamos tu pedido en 24-48 h laborables.</li>
-    <li>Envío gratis en pedidos de 35 € o más.</li>
-    <li>Recogida gratis en la barbería, en Vigo.</li>
-    <li>${huecoIn('plazo de entrega de la empresa de transporte y coste del envío')}</li>
+    <li>Península: 4,95 €, gratis en pedidos de 35 € o más. Entrega con Correos en 2-4 días laborables.</li>
+    <li>Baleares: 6,95 €. Entrega en 3-5 días laborables.</li>
+    <li>Recogida gratis en la barbería (Rúa de Venezuela 71, Vigo), de lunes a sábado de 9:00 a 20:00. Te avisamos cuando esté listo y lo guardamos 15 días.</li>
+    <li>No enviamos a Canarias, Ceuta ni Melilla.</li>
+    <li>La espuma de rizos y el Pack Rizos son aerosoles: solo se pueden recoger en la barbería.</li>
   </ul>
   ` : ''}${hueco(label, '16/9')}
 </div></section>`;

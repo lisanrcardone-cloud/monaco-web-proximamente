@@ -1,5 +1,10 @@
 {
   "_nota": "Contenido real de la tienda (28-oct-2026). Fuente: fichas oficiales de Kppel (proveedor) e hipertin.com. Precios null a propósito: el usuario los pondrá después. id = clave estable para carrito/Stripe/GA4.",
+  "envio": {
+    "umbral_gratis": 3500,
+    "peninsula": 495,
+    "baleares": 695
+  },
   "categorias": [
     {
       "id": "peinado",
@@ -103,6 +108,7 @@
     },
     {
       "id": "espuma-rizos",
+      "solo_recogida": true,
       "slug": "espuma-rizos",
       "categoria": "peinado",
       "textura": "espuma",
@@ -907,6 +913,7 @@
     },
     {
       "id": "pack-rizos",
+      "solo_recogida": true,
       "slug": "pack-rizos",
       "categoria": "packs",
       "textura": "combo-rizos",

@@ -2,6 +2,9 @@
 (function () {
   'use strict';
   var KEY = 'monaco_tienda_cart_v1';
+  var EKEY = 'monaco_tienda_entrega_v1';
+  var envio = { umbral_gratis: 3500, peninsula: 495, baleares: 695 };
+  var entrega = loadEntrega();
   var catalog = [];
   var cart = load();
   var lastFocus = null;
@@ -20,6 +23,10 @@
       return v.filter(function (l) { return l && typeof l.id === 'string' && l.qty >= 1; }).map(function (l) { return { id: l.id, qty: Math.min(10, Math.floor(l.qty)) }; });
     } catch (e) { return []; }
   }
+  function loadEntrega() { try { var v = localStorage.getItem(EKEY); return v === 'baleares' || v === 'recogida' ? v : 'peninsula'; } catch (e) { return 'peninsula'; } }
+  function saveEntrega() { try { localStorage.setItem(EKEY, entrega); } catch (e) {} }
+  function onlyPickup() { return cart.some(function (l) { var p = byId(l.id); return p && p.solo_recogida; }); }
+  function shipCost(sub, e) { return e === 'peninsula' ? (sub >= envio.umbral_gratis ? 0 : envio.peninsula) : e === 'baleares' ? envio.baleares : 0; }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} }
 
   /* GA4 */
@@ -108,6 +115,20 @@
     });
     body.innerHTML = html;
     $('.cart-subtotal', foot).textContent = eur(total);
+    var must = onlyPickup();
+    if (must) entrega = 'recogida';
+    $$('input[name="entrega"]', foot).forEach(function (r) {
+      r.disabled = must && r.value !== 'recogida';
+      r.checked = r.value === entrega;
+    });
+    var cost = shipCost(total, entrega);
+    $('.ship-p-pen', foot).textContent = total >= envio.umbral_gratis ? 'Gratis' : eur(envio.peninsula);
+    $('.ship-p-bal', foot).textContent = eur(envio.baleares);
+    $('.cart-shipcost', foot).textContent = cost ? eur(cost) : 'Gratis';
+    $('.cart-total', foot).textContent = eur(total + cost);
+    var miss = $('.cart-miss', foot);
+    if (entrega === 'peninsula' && total < envio.umbral_gratis) { miss.textContent = 'Te faltan ' + eur(envio.umbral_gratis - total) + ' para el envío gratis'; miss.hidden = false; } else miss.hidden = true;
+    $('.cart-only', foot).hidden = !must;
   }
   function focusables() { return $$('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])', panel).filter(function (e) { return e.offsetParent !== null || e === document.activeElement; }); }
   function openCart(silent) {
@@ -132,7 +153,7 @@
     overlay = document.createElement('div'); overlay.className = 'cart-overlay'; overlay.setAttribute('data-cart-overlay', '');
     panel = document.createElement('aside'); panel.className = 'cart-panel'; panel.id = 'cart-panel';
     panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'true'); panel.setAttribute('aria-label', 'Carrito'); panel.setAttribute('aria-hidden', 'true');
-    panel.innerHTML = '<div class="cart-head"><h2>Tu carrito</h2><button type="button" class="cart-close" aria-label="Cerrar carrito">&times;</button></div><div class="cart-body" aria-live="polite"></div><div class="cart-foot" hidden><div class="cart-sub"><span>Subtotal</span><span class="cart-subtotal"></span></div><p class="cart-msg" role="status" hidden></p><button type="button" class="btn btn-block cart-pay">Pagar</button></div>';
+    panel.innerHTML = '<div class="cart-head"><h2>Tu carrito</h2><button type="button" class="cart-close" aria-label="Cerrar carrito">&times;</button></div><div class="cart-body" aria-live="polite"></div><div class="cart-foot" hidden><fieldset class="cart-ship"><legend>Entrega</legend><label class="ship-opt"><input type="radio" name="entrega" value="peninsula"><span class="ship-t">Envío a península<small>Correos, 2-4 días laborables</small></span><span class="ship-p ship-p-pen"></span></label><label class="ship-opt"><input type="radio" name="entrega" value="baleares"><span class="ship-t">Envío a Baleares<small>3-5 días laborables</small></span><span class="ship-p ship-p-bal"></span></label><label class="ship-opt"><input type="radio" name="entrega" value="recogida"><span class="ship-t">Recogida en la barbería<small>Rúa de Venezuela 71, Vigo. Lunes a sábado, 9:00-20:00</small></span><span class="ship-p">Gratis</span></label></fieldset><p class="cart-note">No enviamos a Canarias, Ceuta ni Melilla.</p><p class="cart-note cart-miss" hidden></p><p class="cart-note cart-only" hidden>La espuma de rizos es un aerosol y no se puede enviar por mensajería: solo recogida en la barbería.</p><div class="cart-row"><span>Subtotal</span><span class="cart-subtotal"></span></div><div class="cart-row"><span>Envío</span><span class="cart-shipcost"></span></div><div class="cart-row total"><span>Total</span><span class="cart-total"></span></div><p class="cart-msg" role="status" hidden></p><button type="button" class="btn btn-block cart-pay">Pagar</button></div>';
     document.body.appendChild(overlay); document.body.appendChild(panel);
     body = $('.cart-body', panel); foot = $('.cart-foot', panel); msg = $('.cart-msg', panel); payBtn = $('.cart-pay', panel);
     overlay.addEventListener('click', closeCart);
@@ -143,6 +164,7 @@
       if (e.target.closest('[data-rm]')) { removeLine(id); }
       var q = e.target.closest('[data-q]'); if (q && l) setQty(id, l.qty + parseInt(q.getAttribute('data-q'), 10));
     });
+    foot.addEventListener('change', function (e) { if (e.target && e.target.name === 'entrega') { entrega = e.target.value; saveEntrega(); renderCart(); } });
     payBtn.addEventListener('click', pay);
     document.addEventListener('keydown', function (e) {
       if (!panel.classList.contains('open')) return;
@@ -159,11 +181,11 @@
   function pay() {
     if (!cart.length) return;
     var items = cart.map(function (l) { var p = byId(l.id); return p ? item(p, l.qty) : null; }).filter(Boolean);
-    ev('begin_checkout', { currency: 'EUR', value: value(items), items: items });
+    ev('begin_checkout', { currency: 'EUR', value: value(items), shipping_tier: entrega, items: items });
     payBtn.disabled = true; msg.hidden = true;
     var ctl = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var to = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
-    fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(cart.map(function (l) { return { id: l.id, qty: l.qty }; })), signal: ctl ? ctl.signal : undefined })
+    fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ lineas: cart.map(function (l) { return { id: l.id, qty: l.qty }; }), entrega: entrega }), signal: ctl ? ctl.signal : undefined })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { s: r.status, d: d }; }); })
       .then(function (o) {
         clearTimeout(to);
@@ -282,7 +304,7 @@
     var gone = document.body.getAttribute('data-clear-cart') === '1' && /session_id=/.test(location.search);
     if (gone) { cart = []; save(); }
     fetch('/tienda/productos.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
-      catalog = d.productos || d; hydrate(); initPdp(); initListEvents();
+      catalog = d.productos || d; if (d.envio) envio = d.envio; hydrate(); initPdp(); initListEvents();
       if (pid) { var p = byId(pid); if (p) ev('view_item', { currency: 'EUR', value: value([item(p)]), items: [item(p)] }); }
     }).catch(function () { renderCart(); });
   }
