@@ -127,6 +127,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 .nav.menu-open .nav-hamburger .ham-open { display: none; }
 .nav.menu-open .nav-hamburger .ham-close { display: block; }
 @media (min-width: 780px) { .nav-hamburger { display: none; } }
+@media (min-width: 780px) and (max-width: 1099px) { .nav--full .nav-links { display: none; } .nav--full .nav-hamburger { display: inline-flex; } }
 
 .nav-mobile-menu {
   display: none; position: fixed; inset: 0; z-index: 99; background: var(--bg);
@@ -348,6 +349,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 .split .wrap { display: grid; gap: 2rem; grid-template-columns: 1fr; align-items: center; }
 @media (min-width: 780px) { .split .wrap { grid-template-columns: 1fr 1fr; } }
 .split-text p { margin-top: 1rem; color: var(--ink-soft); max-width: 48ch; }
+.split-text a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .split-block {
   border-radius: 18px; min-height: 260px;
   background: url("assets/la-casa.webp") center 75% / cover no-repeat;
