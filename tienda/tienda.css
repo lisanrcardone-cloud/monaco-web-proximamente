@@ -185,7 +185,7 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--head-h) + 12px)}
 
 .follow-band{background:var(--s-follow);padding-block:1rem}
 .follow-sec{padding-top:clamp(3rem,8vw,6rem);background:var(--s-gente)}
-.follow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.6rem 1.5rem}
+.follow{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:.6rem 1.5rem}
 .follow .it{font-size:clamp(1.6rem,4vw,2.4rem);color:var(--green)}
 .follow a{display:inline-flex;align-items:center;min-height:44px;font-family:var(--caps);font-weight:500;letter-spacing:.08em;text-transform:uppercase}
 
@@ -336,3 +336,5 @@ ul.benefits li::before{content:"";position:absolute;left:.2rem;top:.55em;width:.
 .cart-note[hidden]{display:none}
 .cart-row{display:flex;justify-content:space-between;font-size:.95rem}
 .cart-row.total{font-weight:700;font-size:1.1rem}
+.foot-ig{display:inline-flex;align-items:center;gap:.45rem}
+.foot-ig svg{width:1.15em;height:1.15em;flex:none}
