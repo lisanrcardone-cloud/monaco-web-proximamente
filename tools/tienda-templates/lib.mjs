@@ -123,7 +123,7 @@ export function card(p, list, index) {
     ? `<img src="${esc(p.imagenes[0])}" alt="${esc(p.nombre)}" width="1000" height="1000" loading="lazy">`
     : hueco('foto del producto', '1/1');
   return `<a class="card" href="${productUrl(p)}" data-cat="${p.categoria}" data-list="${list}" data-item="${p.id}" data-index="${index}">
-    <div class="card-media">${media}</div>
+    <div class="card-media"${p.textura ? ` data-tex="${p.textura}"` : ''}>${media}</div>
     ${p.etiqueta ? `<span class="tag">${esc(p.etiqueta)}</span>` : ''}
     <h3>${txt(p.nombre)}</h3>
     <p class="card-sub">${cardSub(p)}</p>

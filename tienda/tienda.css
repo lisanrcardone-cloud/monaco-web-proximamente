@@ -140,11 +140,15 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--head-h) + 12px)}
 .card{display:flex;flex-direction:column;gap:.7rem;text-decoration:none;color:inherit;background:#fff;border-radius:12px;overflow:hidden;padding-bottom:1rem}
 .card-media{border-radius:0;overflow:hidden;background:var(--s-blush)}
 .card-media img{width:100%;height:100%;object-fit:contain;aspect-ratio:1/1}
-.card[data-cat="peinado"] .card-media,.g-main[data-cat="peinado"]{background:var(--s-blush) url(/assets/tienda/texturas/peinado.webp) center/cover no-repeat}
-.card[data-cat="champus"] .card-media,.g-main[data-cat="champus"]{background:var(--s-blush) url(/assets/tienda/texturas/champus.webp) center/cover no-repeat}
-.card[data-cat="barba"] .card-media,.g-main[data-cat="barba"]{background:var(--s-blush) url(/assets/tienda/texturas/barba.webp) center/cover no-repeat}
-.card[data-cat="tratamientos"] .card-media,.g-main[data-cat="tratamientos"]{background:var(--s-blush) url(/assets/tienda/texturas/tratamientos.webp) center/cover no-repeat}
-.card[data-cat="packs"] .card-media,.g-main[data-cat="packs"]{background:var(--s-blush) url(/assets/tienda/texturas/packs.webp) center/cover no-repeat}
+[data-tex="polvo"]{background:var(--s-blush) url(/assets/tienda/texturas/polvo.webp) center/cover no-repeat}
+[data-tex="spray"]{background:var(--s-blush) url(/assets/tienda/texturas/spray.webp) center/cover no-repeat}
+[data-tex="espuma"]{background:var(--s-blush) url(/assets/tienda/texturas/espuma.webp) center/cover no-repeat}
+[data-tex="combo-textura"]{background:var(--s-blush) url(/assets/tienda/texturas/combo-textura.webp) center/cover no-repeat}
+[data-tex="combo-rizos"]{background:var(--s-blush) url(/assets/tienda/texturas/combo-rizos.webp) center/cover no-repeat}
+[data-tex="champus"]{background:var(--s-blush) url(/assets/tienda/texturas/champus.webp) center/cover no-repeat}
+[data-tex="barba"]{background:var(--s-blush) url(/assets/tienda/texturas/barba.webp) center/cover no-repeat}
+[data-tex="tratamientos"]{background:var(--s-blush) url(/assets/tienda/texturas/tratamientos.webp) center/cover no-repeat}
+[data-tex="champus"] img{transform:scale(1.22)}
 .card>.hueco{border-radius:0;border-width:0 0 2px;background:var(--s-blush)}
 .card>:not(.card-media):not(.hueco){margin-inline:1rem}
 .card .tag{align-self:flex-start;font-family:var(--caps);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--gold-text)}

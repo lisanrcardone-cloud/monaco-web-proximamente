@@ -38,7 +38,7 @@ export function product(p, productos) {
 <div class="wrap"><nav class="crumbs" aria-label="Migas de pan"><a href="/">Mónaco</a> / <a href="/tienda">Tienda</a> / <a href="/tienda/productos/#${p.categoria}">${esc(catName)}</a> / <span>${txt(crumbName)}</span></nav></div>
 <section class="wrap pdp" aria-label="Producto">
   <div class="gallery">
-    <div class="g-main" data-cat="${p.categoria}">${mainMedia}</div>
+    <div class="g-main"${p.textura ? ` data-tex="${p.textura}"` : ''}>${mainMedia}</div>
     <div class="g-thumbs">${thumbs}</div>
   </div>
   <div class="pdp-info">
