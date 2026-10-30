@@ -163,6 +163,10 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--head-h) + 12px)}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.8rem,2vw,1.5rem)}
 .grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:0}
 .grid6 .hueco{border-radius:0}
+.grid6 a{display:block;aspect-ratio:1/1;overflow:hidden}
+.grid6 a:focus-visible{border-radius:0;outline-offset:-3px}
+.grid6 img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s}
+.grid6 a:hover img{opacity:.85}
 .expert{display:flex;flex-direction:column;gap:.75rem}
 @media(max-width:760px){.grid3{grid-template-columns:1fr;max-width:420px;margin-inline:auto}.grid4{grid-template-columns:repeat(2,1fr)}.grid6{grid-template-columns:repeat(3,1fr)}}
 
