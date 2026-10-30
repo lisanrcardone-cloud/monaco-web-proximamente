@@ -252,6 +252,13 @@
     });
   }
 
+  /* Síguenos: clic en las fotos de Instagram */
+  function initIg() {
+    $$('[data-ig]').forEach(function (a) {
+      a.addEventListener('click', function () { ev('click_instagram', { link_url: a.getAttribute('href') }); });
+    });
+  }
+
   /* Catálogo: filtro por categoría (sin JS se ve todo) */
   function initFilter() {
     var chips = $$('.chip[data-filter]'); if (!chips.length) return;
@@ -269,6 +276,7 @@
 
   function init() {
     initFilter();
+    initIg();
     buildPanel(); initNav(); initCarousels(); initGallery(); updateCount();
     var pid = document.body.getAttribute('data-product-id');
     var gone = document.body.getAttribute('data-clear-cart') === '1' && /session_id=/.test(location.search);

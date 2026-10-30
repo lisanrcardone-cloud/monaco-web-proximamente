@@ -44,9 +44,24 @@
       "imagenes": [
         "/assets/tienda/productos/polvo-texturizante-v3.webp"
       ],
-      "precio": null,
+      "precio": 1300,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Gira el bote",
+          "texto": "Pon el bote boca abajo, como un salero."
+        },
+        {
+          "titulo": "Aplica en el pelo",
+          "texto": "Espolvorea el polvo directamente sobre el pelo para darle volumen al momento."
+        },
+        {
+          "titulo": "Sin aclarar",
+          "texto": "No necesita aclarado."
+        }
+      ],
+      "ingredientes_destacados": null
     },
     {
       "id": "spray-sal-marina",
@@ -69,9 +84,20 @@
       "imagenes": [
         "/assets/tienda/productos/spray-sal-marina-v3.webp"
       ],
-      "precio": null,
+      "precio": 1250,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": null,
+      "ingredientes_destacados": [
+        {
+          "nombre": "Minerales marinos y extracto de algas",
+          "beneficio": "Aportan forma y volumen al pelo."
+        },
+        {
+          "nombre": "Proteínas de avena",
+          "beneficio": "Ayudan a proteger la salud del pelo."
+        }
+      ]
     },
     {
       "id": "espuma-rizos",
@@ -94,9 +120,28 @@
       "imagenes": [
         "/assets/tienda/productos/espuma-rizos.webp"
       ],
-      "precio": null,
+      "precio": 1200,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Agita el bote",
+          "texto": "Agita bien el envase antes de usar."
+        },
+        {
+          "titulo": "Ponla en la mano",
+          "texto": "Gira el bote boca abajo y echa un poco de espuma en la palma."
+        },
+        {
+          "titulo": "Reparte por el pelo",
+          "texto": "Aplícala de forma uniforme sobre el pelo seco o húmedo y repártela con el cepillo."
+        },
+        {
+          "titulo": "Sin aclarar",
+          "texto": "No necesita aclarado."
+        }
+      ],
+      "ingredientes_destacados": null
     },
     {
       "id": "cera-matte-hold",
@@ -119,9 +164,24 @@
       "imagenes": [
         "/assets/tienda/productos/cera-matte-hold-v3.webp"
       ],
-      "precio": null,
+      "precio": 1000,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Calienta en las manos",
+          "texto": "Coge un poco de cera y frótala entre las palmas."
+        },
+        {
+          "titulo": "Aplica en el pelo",
+          "texto": "Repártela por igual sobre el pelo seco o un poco húmedo, en las zonas que quieras peinar."
+        },
+        {
+          "titulo": "Peina a tu gusto",
+          "texto": "Da forma con los dedos o con un peine."
+        }
+      ],
+      "ingredientes_destacados": null
     },
     {
       "id": "cera-extra-hold",
@@ -144,9 +204,24 @@
       "imagenes": [
         "/assets/tienda/productos/cera-extra-hold.webp"
       ],
-      "precio": null,
+      "precio": 1000,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Calienta en las manos",
+          "texto": "Coge un poco de cera y frótala entre las palmas."
+        },
+        {
+          "titulo": "Aplica en el pelo",
+          "texto": "Repártela por igual sobre el pelo seco o un poco húmedo, en las zonas que quieras peinar."
+        },
+        {
+          "titulo": "Peina a tu gusto",
+          "texto": "Da forma con los dedos o con un peine."
+        }
+      ],
+      "ingredientes_destacados": null
     },
     {
       "id": "cera-medium-hold",
@@ -171,7 +246,22 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Calienta en las manos",
+          "texto": "Coge un poco de cera y frótala entre las palmas."
+        },
+        {
+          "titulo": "Aplica en el pelo",
+          "texto": "Repártela por igual sobre el pelo seco o un poco húmedo, en las zonas que quieras peinar."
+        },
+        {
+          "titulo": "Peina a tu gusto",
+          "texto": "Da forma con los dedos o con un peine."
+        }
+      ],
+      "ingredientes_destacados": null
     },
     {
       "id": "champu-anticaspa",
@@ -197,7 +287,35 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Moja el pelo",
+          "texto": "Aplica el champú sobre el pelo mojado."
+        },
+        {
+          "titulo": "Masajea",
+          "texto": "Emulsiona con un masaje hasta que haga espuma."
+        },
+        {
+          "titulo": "Aclara bien",
+          "texto": "Aclara hasta retirar el champú por completo."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Extracto de jengibre",
+          "beneficio": "Antiinflamatorio y antioxidante: ayuda a prevenir y reducir la caspa y a equilibrar el cuero cabelludo."
+        },
+        {
+          "nombre": "Piroctona olamina (Piroctone Olamine)",
+          "beneficio": "Controla la producción exagerada de células del cuero cabelludo y tiene acción antibacteriana y antifúngica."
+        },
+        {
+          "nombre": "Cocoglucósido (Coco-Glucoside)",
+          "beneficio": "Tensioactivo vegetal que, junto con la betaína, reduce la irritación y da más espuma."
+        }
+      ]
     },
     {
       "id": "champu-cabello-graso",
@@ -223,7 +341,31 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Moja el pelo",
+          "texto": "Aplica el champú sobre el pelo mojado."
+        },
+        {
+          "titulo": "Masajea",
+          "texto": "Emulsiona con un masaje hasta que haga espuma."
+        },
+        {
+          "titulo": "Aclara bien",
+          "texto": "Aclara hasta retirar el champú por completo."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Extracto de semillas de uva",
+          "beneficio": "Antioxidante, nutritivo y reparador; regula el flujo seborreico."
+        },
+        {
+          "nombre": "Cocoglucósido y betaína (Coco-Glucoside, Betaine)",
+          "beneficio": "Reducen la irritación, frecuente en pelo graso, y aumentan la espuma para facilitar el lavado."
+        }
+      ]
     },
     {
       "id": "champu-anticaida",
@@ -242,14 +384,46 @@
         "Calma el picor"
       ],
       "ingredientes": "Extracto de guaraná (rico en cafeína), Capilia Longa (de la cúrcuma) y aceites esenciales de limón, romero, mejorana, lavanda y naranja amarga.",
-      "modo_uso": "Aplica un poco sobre el pelo mojado y masajea con la yema de los dedos hasta hacer espuma. Para más efecto, repite y déjalo actuar unos minutos. Aclara con abundante agua.",
+      "modo_uso": "Aplica un poco sobre el pelo mojado y masajea con la yema de los dedos hasta hacer espuma. Para más efecto, repite. Aclara con abundante agua.",
       "imagenes": [
         "/assets/tienda/productos/champu-anticaida.webp",
         "/assets/tienda/productos/champu-anticaida-2.jpg"
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Moja el pelo",
+          "texto": "Aplica el champú sobre el pelo mojado."
+        },
+        {
+          "titulo": "Masajea",
+          "texto": "Emulsiona con un masaje hasta que haga espuma."
+        },
+        {
+          "titulo": "Aclara",
+          "texto": "Aclara el pelo."
+        },
+        {
+          "titulo": "Repite y aclara",
+          "texto": "Repite la aplicación y aclara hasta retirar el champú por completo."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Extracto de guaraná",
+          "beneficio": "Rico en cafeína: estimula el cuero cabelludo y el folículo y mejora el riego sanguíneo."
+        },
+        {
+          "nombre": "Capilia Longa (de la cúrcuma)",
+          "beneficio": "Reactiva el ciclo de crecimiento del pelo y regenera el bulbo piloso."
+        },
+        {
+          "nombre": "Termogen (aceites esenciales de limón, romero, mejorana, lavanda y naranja amarga)",
+          "beneficio": "Efecto rubefaciente: da calor y estimula la circulación."
+        }
+      ]
     },
     {
       "id": "champu-nutri-repair",
@@ -267,15 +441,47 @@
         "Brillo y suavidad",
         "Facilita el peinado"
       ],
-      "ingredientes": null,
-      "modo_uso": "Aplica un poco sobre el pelo mojado, masajea hasta hacer espuma y aclara. Para más efecto, repite y déjalo actuar unos minutos antes de aclarar.",
+      "ingredientes": "Ínula marítima, extracto de alga marina y oligogeline (silicona vegetal).",
+      "modo_uso": "Aplica un poco sobre el pelo mojado, masajea hasta hacer espuma y aclara. Para más efecto, repite y aclara.",
       "imagenes": [
         "/assets/tienda/productos/champu-nutri-repair.webp",
         "/assets/tienda/productos/champu-nutri-repair-2.jpg"
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Moja el pelo",
+          "texto": "Aplica el champú sobre el pelo mojado."
+        },
+        {
+          "titulo": "Masajea",
+          "texto": "Emulsiona con un masaje hasta que haga espuma."
+        },
+        {
+          "titulo": "Aclara",
+          "texto": "Aclara el pelo."
+        },
+        {
+          "titulo": "Repite y aclara",
+          "texto": "Repite la aplicación y aclara hasta retirar el champú por completo."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Ínula marítima",
+          "beneficio": "Sus glucolípidos refuerzan la cohesión de los lípidos del pelo, lo protegen y aportan brillo y suavidad."
+        },
+        {
+          "nombre": "Extracto de alga marina",
+          "beneficio": "Vitaminas, minerales y oligoelementos que reparan, tonifican e hidratan el pelo y facilitan el peinado."
+        },
+        {
+          "nombre": "Oligogeline (silicona vegetal)",
+          "beneficio": "Mejora el brillo y la suavidad."
+        }
+      ]
     },
     {
       "id": "champu-pro-keratin",
@@ -301,7 +507,39 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Moja el pelo",
+          "texto": "Aplica el champú sobre el pelo mojado."
+        },
+        {
+          "titulo": "Masajea",
+          "texto": "Emulsiona con un masaje hasta que haga espuma."
+        },
+        {
+          "titulo": "Aclara",
+          "texto": "Aclara el pelo."
+        },
+        {
+          "titulo": "Repite y aclara",
+          "texto": "Repite la aplicación y aclara hasta retirar el champú por completo."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Hidrolizado de proteínas vegetales (trigo y soja)",
+          "beneficio": "Aumenta la fuerza y la elasticidad del pelo, lo protege y reduce la electricidad estática y el encrespamiento."
+        },
+        {
+          "nombre": "Proteína de trigo",
+          "beneficio": "Hidrata y acondiciona; ayuda a reparar y nutrir y mejora el peinado y el brillo."
+        },
+        {
+          "nombre": "Polyquaternium-70",
+          "beneficio": "Aumenta la resistencia de la fibra al encrespamiento y retiene el brillo."
+        }
+      ]
     },
     {
       "id": "champu-cuero-sensible",
@@ -327,7 +565,35 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Moja el pelo",
+          "texto": "Aplica el champú sobre el pelo mojado."
+        },
+        {
+          "titulo": "Masajea",
+          "texto": "Emulsiona con un masaje hasta que haga espuma."
+        },
+        {
+          "titulo": "Aclara bien",
+          "texto": "Aclara hasta retirar el champú por completo."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Extracto de piña (con bromelina)",
+          "beneficio": "Antioxidante y fuente de vitaminas; alivia las afecciones del cuero cabelludo y nutre el pelo."
+        },
+        {
+          "nombre": "Aloe vera",
+          "beneficio": "Antiinflamatorio: alivia irritaciones y picor y mejora la circulación del cuero cabelludo."
+        },
+        {
+          "nombre": "Caléndula",
+          "beneficio": "Efecto calmante."
+        }
+      ]
     },
     {
       "id": "serum-sideral-peptide",
@@ -345,7 +611,7 @@
         "Sin sulfatos, siliconas ni parabenos",
         "97 % de origen natural"
       ],
-      "ingredientes": "Péptidos y ácido hialurónico.",
+      "ingredientes": "Péptido BGT Hair-KPro, ácido hialurónico y betaína (de la remolacha).",
       "modo_uso": null,
       "imagenes": [
         "/assets/tienda/productos/serum-sideral-peptide.webp",
@@ -353,7 +619,39 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Agita el bote",
+          "texto": "Agita bien antes de usar."
+        },
+        {
+          "titulo": "Pelo húmedo",
+          "texto": "Aplica de 3 a 5 pipetas de medios a puntas, según el largo, y masajea."
+        },
+        {
+          "titulo": "Pelo seco",
+          "texto": "Pon de 1 a 2 pipetas en la mano y repártelas solo en las puntas."
+        },
+        {
+          "titulo": "Con tu mascarilla",
+          "texto": "También puedes mezclar de 3 a 5 pipetas con tu tratamiento, aplicarlo de medios a puntas, dejarlo actuar y aclarar."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Péptido BGT Hair-KPro",
+          "beneficio": "Polipéptido basado en la queratina que penetra en el córtex y ayuda a reparar y fortalecer la fibra capilar."
+        },
+        {
+          "nombre": "Ácido hialurónico",
+          "beneficio": "Hidrata mucho el pelo, evita la pérdida de agua y le devuelve textura."
+        },
+        {
+          "nombre": "Betaína (de la remolacha)",
+          "beneficio": "Fortalece el pelo, lo protege del calor y mejora brillo y suavidad."
+        }
+      ]
     },
     {
       "id": "barba-balsamo",
@@ -377,7 +675,27 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Aplica en la barba",
+          "texto": "Pon una pequeña cantidad en la barba."
+        },
+        {
+          "titulo": "Deja actuar",
+          "texto": "Espera de 1 a 2 minutos."
+        },
+        {
+          "titulo": "Aclara",
+          "texto": "Aclara con agua; para más efecto, aplica una vez más antes de aclarar."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Aceite de argán y aceite de almendras amargas",
+          "beneficio": "Su fórmula enriquecida con ellos cuida y nutre la barba durante mucho tiempo y la mantiene suave e hidratada."
+        }
+      ]
     },
     {
       "id": "barba-aceite",
@@ -401,7 +719,27 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Dosifica",
+          "texto": "Usa el cuentagotas para controlar la cantidad."
+        },
+        {
+          "titulo": "Aplica en la barba",
+          "texto": "Aplica el aceite directamente en la barba."
+        },
+        {
+          "titulo": "Reparte",
+          "texto": "Extiéndelo de la base a las puntas."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Aceites de argán y jojoba",
+          "beneficio": "Nutren y acondicionan la barba en profundidad y la dejan suave."
+        }
+      ]
     },
     {
       "id": "barba-serum",
@@ -425,7 +763,23 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Toma dos gotas",
+          "texto": "Saca dos gotas del sérum."
+        },
+        {
+          "titulo": "Aplica en la barba",
+          "texto": "Aplícalas directamente en la barba."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Aceite de argán y aceite de almendras amargas",
+          "beneficio": "Nutren, suavizan e hidratan la barba en profundidad."
+        }
+      ]
     },
     {
       "id": "barba-champu",
@@ -449,7 +803,27 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Moja bien",
+          "texto": "Aplica el champú sobre el pelo y la barba bien mojados."
+        },
+        {
+          "titulo": "Haz espuma",
+          "texto": "Masajea con los dedos hasta que haga espuma."
+        },
+        {
+          "titulo": "Aclara",
+          "texto": "Aclara con abundante agua."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Aceite de argán y aceite de almendras amargas",
+          "beneficio": "Aportan nutrientes a la barba y la dejan suave y fácil de peinar."
+        }
+      ]
     },
     {
       "id": "pack-textura",
@@ -477,7 +851,9 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": true
+      "destacado": true,
+      "pasos": null,
+      "ingredientes_destacados": null
     },
     {
       "id": "pack-peinado",
@@ -505,7 +881,9 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": null,
+      "ingredientes_destacados": null
     },
     {
       "id": "pack-rizos",
@@ -533,7 +911,9 @@
       ],
       "precio": null,
       "etiqueta": null,
-      "destacado": false
+      "destacado": false,
+      "pasos": null,
+      "ingredientes_destacados": null
     }
   ]
 }

@@ -224,6 +224,11 @@ details.acc .acc-body{padding:.25rem 0 1rem}
 .pdp-sec{padding-block:clamp(2.5rem,6vw,4.5rem)}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,3vw,2.5rem);align-items:center}
 .steps{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.steps-full{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.steps p{line-height:1.5}
+.ing-card{background:#fff;border-radius:12px;padding:1.25rem}
+.ing-card h3{font-family:var(--caps);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:1rem;margin-bottom:.5rem;color:var(--green)}
+.ing-card p{line-height:1.5}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .timeline h3,.steps h3{font-family:var(--caps);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:1rem;margin-bottom:.5rem;color:var(--green)}

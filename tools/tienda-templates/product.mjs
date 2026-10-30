@@ -1,6 +1,6 @@
 import { page, hueco, huecoIn, txt, esc, isPending, productUrl, cardSub, CATS, SITE } from './lib.mjs';
 
-const sec = (id, title, inner, cls = '') => `<section class="pdp-sec ${cls}"${id ? ` id="${id}"` : ''}><div class="wrap">${title ? `<h2 class="sec-title"><span class="caps">${esc(title)}</span></h2>` : ''}${inner}</div></section>`;
+const sec = (id, title, inner, cls = '', hiddenMsg = '') => `${hiddenMsg ? `<!-- Oculta hasta ${hiddenMsg}: quitar "hidden" para mostrarla -->\n` : ''}<section class="pdp-sec ${cls}"${id ? ` id="${id}"` : ''}${hiddenMsg ? ' hidden' : ''}><div class="wrap">${title ? `<h2 class="sec-title"><span class="caps">${esc(title)}</span></h2>` : ''}${inner}</div></section>`;
 
 export function product(p, productos) {
   const n = p.slug.replace(/^producto-/, '');
@@ -57,23 +57,30 @@ export function product(p, productos) {
       ${p.ingredientes ? `<details class="acc"><summary>Ingredientes</summary><div class="acc-body"><p>${esc(p.ingredientes)}</p></div></details>` : ''}
       ${p.modo_uso ? `<details class="acc"><summary>Modo de uso</summary><div class="acc-body"><p>${esc(p.modo_uso)}</p></div></details>` : ''}
     </div>
-    <div>${hueco('reseña destacada', '16/6')}</div>
-    <a class="more-reviews" href="#resenas">Ver reseñas</a>
+    <!-- Oculto hasta tener reseñas de clientes: quitar "hidden" para mostrarlo -->
+    <div hidden>
+      <div>${hueco('reseña destacada', '16/6')}</div>
+      <a class="more-reviews" href="#resenas">Ver reseñas</a>
+    </div>
   </div>
 </section>
 
 ${sec('resultados', 'Resultados reales', `<div class="split">${hueco('antes', '3/4')}${hueco('después', '3/4')}</div>`, 'sec-alt')}
 ${sec('cifras', 'Cifras', `<div class="stats">${[1, 2, 3].map((i) => hueco('cifra ' + i, '4/3')).join('')}</div>`)}
-${sec('como-usarlo', 'Cómo usarlo', `<div class="split"><div class="steps">${[1, 2, 3, 4].map((i) => `<div><h3>${huecoIn('paso ' + i)}</h3>${hueco('texto del paso ' + i, '16/7')}</div>`).join('')}</div>${hueco('vídeo de uso', '9/16')}</div>`, 'sec-alt')}
+${p.pasos
+  ? sec('como-usarlo', 'Cómo usarlo', `<div class="steps steps-full">${p.pasos.map((x) => `<div><h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div>`, 'sec-alt')
+  : sec('como-usarlo', 'Cómo usarlo', `<div class="split"><div class="steps">${[1, 2, 3, 4].map((i) => `<div><h3>${huecoIn('paso ' + i)}</h3>${hueco('texto del paso ' + i, '16/7')}</div>`).join('')}</div>${hueco('vídeo de uso', '9/16')}</div>`, 'sec-alt', 'tener el modo de uso')}
 ${sec('evolucion', 'Evolución', `<div class="timeline">${[['1', 'día 1'], ['7', 'día 7'], ['30', 'día 30']].map(([k, l]) => `<div><h3>${huecoIn(l)}</h3>${hueco('foto del ' + l, '3/4')}</div>`).join('')}</div>`)}
 ${sec('opinion', 'Opinión del barbero', `<div class="split">${hueco('foto del barbero', '3/4')}${hueco('opinión del barbero', '16/9')}</div>`, 'sec-alt')}
 ${sec('comparativa', 'Comparativa', `<div class="compare">${hueco('comparativa: criterios', '4/3')}${hueco('comparativa: Mónaco', '4/3')}${hueco('comparativa: otros', '4/3')}</div>`)}
-${sec('ingredientes-destacados', 'Ingredientes destacados', `<div class="grid3">${[1, 2, 3].map((i) => hueco('ingrediente destacado ' + i, '1/1')).join('')}</div>`, 'sec-alt')}
+${p.ingredientes_destacados
+  ? sec('ingredientes-destacados', 'Ingredientes destacados', `<div class="grid3">${p.ingredientes_destacados.map((x) => `<div class="ing-card"><h3>${esc(x.nombre)}</h3><p>${esc(x.beneficio)}</p></div>`).join('')}</div>`, 'sec-alt')
+  : sec('ingredientes-destacados', 'Ingredientes destacados', `<div class="grid3">${[1, 2, 3].map((i) => hueco('ingrediente destacado ' + i, '1/1')).join('')}</div>`, 'sec-alt', 'tener los ingredientes destacados')}
 ${sec('pruebas', 'Pruebas', `<div class="split">${hueco('pruebas y datos', '16/9')}${hueco('pruebas: imagen', '16/9')}</div>`)}
 ${sec('faq', 'Preguntas frecuentes', `<div class="faq" style="max-width:780px;margin-inline:auto">${faq}</div>`, 'sec-alt')}
-${sec('gente-real', 'Vídeos de clientes', `<div class="grid4">${[1, 2, 3, 4].map((i) => hueco('vídeo de cliente ' + i, '9/16')).join('')}</div>`)}
+${sec('gente-real', 'Vídeos de clientes', `<div class="grid4">${[1, 2, 3, 4].map((i) => hueco('vídeo de cliente ' + i, '9/16')).join('')}</div>`, '', 'tener los vídeos de clientes')}
 <section class="on-green" aria-label="Prensa"><div class="wrap"><div class="logos">${[1, 2, 3, 4, 5].map((i) => hueco('logo de prensa ' + i, '3/1')).join('')}</div></div></section>
-${sec('resenas', 'Reseñas', `<div class="reviews-box">${hueco('valoración media y resumen', '16/4')}${hueco('reseñas de clientes', '16/6')}</div>`)}
+${sec('resenas', 'Reseñas', `<div class="reviews-box">${hueco('valoración media y resumen', '16/4')}${hueco('reseñas de clientes', '16/6')}</div>`, '', 'tener reseñas de clientes')}
 
 <div class="sticky-add" aria-label="Añadir al carrito">
   <span class="s-name">${txt(p.nombre)}</span>
