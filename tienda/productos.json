@@ -42,7 +42,7 @@
       "ingredientes": null,
       "modo_uso": null,
       "imagenes": [
-        "/assets/tienda/productos/polvo-texturizante-v2.webp"
+        "/assets/tienda/productos/polvo-texturizante-v3.webp"
       ],
       "precio": null,
       "etiqueta": null,
@@ -67,7 +67,7 @@
       "ingredientes": "Minerales marinos, extracto de algas y proteínas de avena.",
       "modo_uso": null,
       "imagenes": [
-        "/assets/tienda/productos/spray-sal-marina-v2.webp"
+        "/assets/tienda/productos/spray-sal-marina-v3.webp"
       ],
       "precio": null,
       "etiqueta": null,
@@ -117,7 +117,7 @@
       "ingredientes": null,
       "modo_uso": null,
       "imagenes": [
-        "/assets/tienda/productos/cera-matte-hold-v2.webp"
+        "/assets/tienda/productos/cera-matte-hold-v3.webp"
       ],
       "precio": null,
       "etiqueta": null,
@@ -473,7 +473,7 @@
       "ingredientes": null,
       "modo_uso": "Spray de sal en el pelo húmedo y seca. Después, un poco de polvo en la raíz y peina con los dedos.",
       "imagenes": [
-        "/assets/tienda/productos/pack-textura-v2.webp"
+        "/assets/tienda/productos/pack-textura-v3.webp"
       ],
       "precio": null,
       "etiqueta": null,
@@ -501,7 +501,7 @@
       "ingredientes": null,
       "modo_uso": null,
       "imagenes": [
-        "/assets/tienda/productos/pack-peinado-v2.webp"
+        "/assets/tienda/productos/pack-peinado-v3.webp"
       ],
       "precio": null,
       "etiqueta": null,
@@ -529,7 +529,7 @@
       "ingredientes": null,
       "modo_uso": null,
       "imagenes": [
-        "/assets/tienda/productos/pack-rizos-v2.webp"
+        "/assets/tienda/productos/pack-rizos-v3.webp"
       ],
       "precio": null,
       "etiqueta": null,
