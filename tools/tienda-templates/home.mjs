@@ -10,7 +10,9 @@ export function home(productos) {
   const feat = productos.find((p) => p.destacado) || productos[0];
   const cat = (...ids) => ids.flatMap((id) => productos.filter((p) => p.categoria === id));
   const cinta = Array.from({ length: 6 }, () => `<span class="cinta-item">${'Envío gratis en pedidos de 49 € o más'}${CINTA_ICO}</span>`).join('');
-  const featMedia = feat.imagenes && feat.imagenes[0]
+  const featMedia = feat.imagen_hero
+    ? `<img src="${esc(feat.imagen_hero)}" alt="${esc(feat.nombre)}" width="422" height="884">`
+    : feat.imagenes && feat.imagenes[0]
     ? `<img src="${esc(feat.imagenes[0])}" alt="${esc(feat.nombre)}" width="1000" height="1000">`
     : hueco('foto del producto protagonista', '1/1');
 
@@ -32,11 +34,11 @@ ${CINTA_DEFS}
 <section class="sec bg-white" id="mas-vendidos">
   <div class="wrap">
     ${sectionTitle('¿Primera vez?', 'Los más vendidos')}
-    ${carousel(cat('peinado').map((p, i) => card(p, 'mas_vendidos', i)), 'c3', 'Los más vendidos')}
+    ${carousel(cat('peinado').map((p, i) => card(p, 'mas_vendidos', i)), 'c4', 'Los más vendidos')}
   </div>
 </section>
 
-<section class="manifiesto" aria-label="Manifiesto">
+<section class="manifiesto on-green" aria-label="Manifiesto">
   <div class="wrap">
     <p class="quote">Cuando te cuidas, todo lo demás se nota.</p>
     <p class="sign">Felipe Denti, Mónaco Barbershop</p>
@@ -54,14 +56,14 @@ ${CINTA_DEFS}
 <section class="sec bg-white" id="cuidado-cabello">
   <div class="wrap">
     ${sectionTitle('Para cada tipo de pelo', 'Cuidado del cabello')}
-    ${carousel(cat('champus', 'tratamientos').map((p, i) => card(p, 'cuidado_cabello', i)), 'c3', 'Cuidado del cabello')}
+    ${carousel(cat('champus', 'tratamientos').map((p, i) => card(p, 'cuidado_cabello', i)), 'c4', 'Cuidado del cabello')}
   </div>
 </section>
 
 <section class="sec bg-white" id="barba">
   <div class="wrap">
     ${sectionTitle('', 'Barba')}
-    ${carousel(cat('barba').map((p, i) => card(p, 'barba', i)), 'c3', 'Barba')}
+    ${carousel(cat('barba').map((p, i) => card(p, 'barba', i)), 'c4', 'Barba')}
   </div>
 </section>
 

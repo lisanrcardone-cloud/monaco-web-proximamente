@@ -828,6 +828,7 @@
     {
       "id": "pack-textura",
       "slug": "pack-textura",
+      "imagen_hero": "/assets/tienda/productos/pack-textura-v3-hero.webp",
       "categoria": "packs",
       "marca": "Ossion",
       "nombre": "Pack Textura",
