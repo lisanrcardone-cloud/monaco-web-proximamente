@@ -35,7 +35,8 @@ export function product(p, productos) {
     });
   }
 
-  const faq = [1, 2, 3, 4, 5, 6].map((i) => `<details class="acc"><summary>${huecoIn('pregunta ' + i)}</summary><div class="acc-body">${hueco('respuesta ' + i, '16/4')}</div></details>`).join('');
+  const hasFaq = Array.isArray(p.faq) && p.faq.length > 0;
+  const faq = hasFaq ? p.faq.map((x) => `<details class="acc"><summary>${esc(x.p)}</summary><div class="acc-body"><p>${esc(x.r)}</p></div></details>`).join('') : [1, 2, 3, 4, 5, 6].map((i) => `<details class="acc"><summary>${huecoIn('pregunta ' + i)}</summary><div class="acc-body">${hueco('respuesta ' + i, '16/4')}</div></details>`).join('');
 
   const main = `
 <div class="wrap"><nav class="crumbs" aria-label="Migas de pan"><a href="/">Mónaco</a> / <a href="/tienda">Tienda</a> / <a href="/tienda/productos/#${p.categoria}">${esc(catName)}</a> / <span>${txt(crumbName)}</span></nav></div>
@@ -72,21 +73,22 @@ export function product(p, productos) {
   </div>
 </section>
 
-${sec('resultados', 'Resultados reales', `<div class="split">${hueco('antes', '3/4')}${hueco('después', '3/4')}</div>`, 'sec-alt')}
-${sec('cifras', 'Cifras', `<div class="stats">${[1, 2, 3].map((i) => hueco('cifra ' + i, '4/3')).join('')}</div>`)}
+${sec('resultados', 'Resultados reales', `<div class="split">${hueco('antes', '3/4')}${hueco('después', '3/4')}</div>`, 'sec-alt', 'tener fotos de antes y después')}
+${sec('cifras', 'Cifras', `<div class="stats">${[1, 2, 3].map((i) => hueco('cifra ' + i, '4/3')).join('')}</div>`, '', 'tener cifras reales')}
 ${p.pasos
   ? sec('como-usarlo', 'Cómo usarlo', `<div class="steps steps-full">${p.pasos.map((x) => `<div><h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div>`, 'sec-alt')
   : sec('como-usarlo', 'Cómo usarlo', `<div class="split"><div class="steps">${[1, 2, 3, 4].map((i) => `<div><h3>${huecoIn('paso ' + i)}</h3>${hueco('texto del paso ' + i, '16/7')}</div>`).join('')}</div>${hueco('vídeo de uso', '9/16')}</div>`, 'sec-alt', 'tener el modo de uso')}
-${sec('evolucion', 'Evolución', `<div class="timeline">${[['1', 'día 1'], ['7', 'día 7'], ['30', 'día 30']].map(([k, l]) => `<div><h3>${huecoIn(l)}</h3>${hueco('foto del ' + l, '3/4')}</div>`).join('')}</div>`)}
-${sec('opinion', 'Opinión del barbero', `<div class="split">${hueco('foto del barbero', '3/4')}${hueco('opinión del barbero', '16/9')}</div>`, 'sec-alt')}
-${sec('comparativa', 'Comparativa', `<div class="compare">${hueco('comparativa: criterios', '4/3')}${hueco('comparativa: Mónaco', '4/3')}${hueco('comparativa: otros', '4/3')}</div>`)}
+${sec('evolucion', 'Evolución', `<div class="timeline">${[['1', 'día 1'], ['7', 'día 7'], ['30', 'día 30']].map(([k, l]) => `<div><h3>${huecoIn(l)}</h3>${hueco('foto del ' + l, '3/4')}</div>`).join('')}</div>`, '', 'tener fotos de evolución')}
+${sec('opinion', 'Opinión del barbero', `<div class="split">${hueco('foto del barbero', '3/4')}${hueco('opinión del barbero', '16/9')}</div>`, 'sec-alt', 'tener la opinión del barbero')}
+${sec('comparativa', 'Comparativa', `<div class="compare">${hueco('comparativa: criterios', '4/3')}${hueco('comparativa: Mónaco', '4/3')}${hueco('comparativa: otros', '4/3')}</div>`, '', 'tener la comparativa validada')}
 ${p.ingredientes_destacados
   ? sec('ingredientes-destacados', 'Ingredientes destacados', `<div class="grid3">${p.ingredientes_destacados.map((x) => `<div class="ing-card"><h3>${esc(x.nombre)}</h3><p>${esc(x.beneficio)}</p></div>`).join('')}</div>`, 'sec-alt')
   : sec('ingredientes-destacados', 'Ingredientes destacados', `<div class="grid3">${[1, 2, 3].map((i) => hueco('ingrediente destacado ' + i, '1/1')).join('')}</div>`, 'sec-alt', 'tener los ingredientes destacados')}
-${sec('pruebas', 'Pruebas', `<div class="split">${hueco('pruebas y datos', '16/9')}${hueco('pruebas: imagen', '16/9')}</div>`)}
-${sec('faq', 'Preguntas frecuentes', `<div class="faq" style="max-width:780px;margin-inline:auto">${faq}</div>`, 'sec-alt')}
+${sec('pruebas', 'Pruebas', `<div class="split">${hueco('pruebas y datos', '16/9')}${hueco('pruebas: imagen', '16/9')}</div>`, '', 'tener pruebas y datos')}
+${sec('faq', 'Preguntas frecuentes', `<div class="faq" style="max-width:780px;margin-inline:auto">${faq}</div>`, 'sec-alt', hasFaq ? '' : 'tener preguntas frecuentes')}
 ${sec('gente-real', 'Vídeos de clientes', `<div class="grid4">${[1, 2, 3, 4].map((i) => hueco('vídeo de cliente ' + i, '9/16')).join('')}</div>`, '', 'tener los vídeos de clientes')}
-<section class="on-green" aria-label="Prensa"><div class="wrap"><div class="logos">${[1, 2, 3, 4, 5].map((i) => hueco('logo de prensa ' + i, '3/1')).join('')}</div></div></section>
+<!-- Oculta hasta tener logos de prensa: quitar "hidden" para mostrarla -->
+<section class="on-green" aria-label="Prensa" hidden><div class="wrap"><div class="logos">${[1, 2, 3, 4, 5].map((i) => hueco('logo de prensa ' + i, '3/1')).join('')}</div></div></section>
 ${sec('resenas', 'Reseñas', `<div class="reviews-box">${hueco('valoración media y resumen', '16/4')}${hueco('reseñas de clientes', '16/6')}</div>`, '', 'tener reseñas de clientes')}
 
 <div class="sticky-add" aria-label="Añadir al carrito">

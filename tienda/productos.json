@@ -69,7 +69,25 @@
           "texto": "No necesita aclarado."
         }
       ],
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Sirve para pelo fino?",
+          "r": "Sí, es para lo que mejor funciona. Da cuerpo y textura al pelo fino y levanta el peinado desde la raíz al momento."
+        },
+        {
+          "p": "¿Cómo se aplica?",
+          "r": "Pon el bote boca abajo, como un salero, y espolvorea el polvo directamente sobre el pelo, mejor en la raíz. No hace falta aclararlo."
+        },
+        {
+          "p": "¿Deja brillo?",
+          "r": "No. El acabado es mate y la fijación, flexible: el pelo se mueve, pero el peinado aguanta."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
+      ]
     },
     {
       "id": "spray-sal-marina",
@@ -107,6 +125,24 @@
         {
           "nombre": "Proteínas de avena",
           "beneficio": "Ayudan a proteger la salud del pelo."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Se usa con el pelo mojado o seco?",
+          "r": "Con las dos. Para ondas, pulveriza en los largos y las puntas con el pelo húmedo y después en las puntas ya secas. Para volumen, pulveriza en las raíces con el pelo húmedo y da forma."
+        },
+        {
+          "p": "¿Deja el pelo duro o apelmazado?",
+          "r": "No. Su textura es ligera, no apelmaza ni endurece, y el pelo se peina con facilidad."
+        },
+        {
+          "p": "¿Protege del secador?",
+          "r": "Sí. Lleva filtro UV contra el sol y protege el pelo del calor del secador."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -156,7 +192,21 @@
           "texto": "No necesita aclarado."
         }
       ],
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Funciona en pelo liso?",
+          "r": "Está pensada sobre todo para definir rizos y quitar el encrespamiento, pero también moldea el pelo y le da volumen y fijación."
+        },
+        {
+          "p": "¿Se aplica en seco o en húmedo?",
+          "r": "En las dos. Agita bien el bote, pon un poco de espuma en la palma de la mano y repártela por el pelo con el cepillo. No se aclara."
+        },
+        {
+          "p": "¿Me lo podéis enviar a casa?",
+          "r": "No. Es un aerosol y no se puede mandar por mensajería, así que solo se recoge en la barbería, gratis, en Rúa de Venezuela 71 (Vigo). Te avisamos cuando esté listo y te lo guardamos 15 días."
+        }
+      ]
     },
     {
       "id": "cera-matte-hold",
@@ -199,7 +249,25 @@
           "texto": "Da forma con los dedos o con un peine."
         }
       ],
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Qué diferencia hay con las otras ceras?",
+          "r": "La Matte Hold fija fuerte y deja el pelo mate, sin brillo. La Extra Hold fija igual de fuerte pero con brillo, y la Medium Hold fija menos, para peinados con más movimiento."
+        },
+        {
+          "p": "¿Se quita fácil?",
+          "r": "Sí. Es de base acuosa: se va con agua y no deja restos."
+        },
+        {
+          "p": "¿Para qué pelo va mejor?",
+          "r": "Para pelo corto o corto y rizado, donde da grosor, textura y cuerpo."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
+      ]
     },
     {
       "id": "cera-extra-hold",
@@ -242,7 +310,25 @@
           "texto": "Da forma con los dedos o con un peine."
         }
       ],
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Qué diferencia hay con las otras ceras?",
+          "r": "La Extra Hold fija fuerte y deja brillo. La Matte Hold fija igual de fuerte pero con acabado mate, y la Medium Hold fija menos, para peinados con más movimiento."
+        },
+        {
+          "p": "¿Se quita fácil?",
+          "r": "Sí. Es de base acuosa: se va con agua y no deja restos."
+        },
+        {
+          "p": "¿A qué huele?",
+          "r": "Tiene un aroma frutal a melón."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
+      ]
     },
     {
       "id": "cera-medium-hold",
@@ -285,7 +371,25 @@
           "texto": "Da forma con los dedos o con un peine."
         }
       ],
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Qué diferencia hay con las otras ceras?",
+          "r": "La Medium Hold fija menos que la Matte y la Extra, y deja brillo. Va mejor en pelo más largo o en peinados con movimiento."
+        },
+        {
+          "p": "¿Se quita fácil?",
+          "r": "Sí. Es de base acuosa: se va con agua y no deja restos."
+        },
+        {
+          "p": "¿A qué huele?",
+          "r": "Tiene un aroma fresco a chicle."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
+      ]
     },
     {
       "id": "champu-anticaspa",
@@ -340,6 +444,24 @@
           "nombre": "Cocoglucósido (Coco-Glucoside)",
           "beneficio": "Tensioactivo vegetal que, junto con la betaína, reduce la irritación y da más espuma."
         }
+      ],
+      "faq": [
+        {
+          "p": "¿Sirve si me pica el cuero cabelludo?",
+          "r": "Sí. Además de ayudar a quitar la caspa y a que no vuelva, calma el picor."
+        },
+        {
+          "p": "¿Qué lleva?",
+          "r": "Extracto natural de jengibre, antiinflamatorio y antioxidante. La fórmula es vegana."
+        },
+        {
+          "p": "¿Cuánto trae?",
+          "r": "El bote es de 300 ml."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
       ]
     },
     {
@@ -390,6 +512,24 @@
         {
           "nombre": "Cocoglucósido y betaína (Coco-Glucoside, Betaine)",
           "beneficio": "Reducen la irritación, frecuente en pelo graso, y aumentan la espuma para facilitar el lavado."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Cómo ayuda con la grasa?",
+          "r": "Regula y equilibra la producción de grasa del cuero cabelludo. Además refresca y evita el picor durante y después del lavado."
+        },
+        {
+          "p": "¿Qué lleva?",
+          "r": "Extracto natural de semilla de uva, antioxidante y regulador de la grasa. La fórmula es vegana."
+        },
+        {
+          "p": "¿Cuánto trae?",
+          "r": "El bote es de 300 ml."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -450,6 +590,24 @@
           "nombre": "Termogen (aceites esenciales de limón, romero, mejorana, lavanda y naranja amarga)",
           "beneficio": "Efecto rubefaciente: da calor y estimula la circulación."
         }
+      ],
+      "faq": [
+        {
+          "p": "¿Para quién es?",
+          "r": "Para pelo con raíces débiles y tendencia a caerse. Estimula el riego del cuero cabelludo, fortalece la fibra y la hidrata."
+        },
+        {
+          "p": "¿Cómo se usa?",
+          "r": "Aplica un poco con el pelo mojado, masajea con la yema de los dedos hasta hacer espuma y aclara. Para más efecto, repite y vuelve a aclarar."
+        },
+        {
+          "p": "¿Qué lleva?",
+          "r": "Extracto de guaraná, rico en cafeína, Capilia Longa (de la cúrcuma) y aceites esenciales de limón, romero, mejorana, lavanda y naranja amarga."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
       ]
     },
     {
@@ -508,6 +666,24 @@
         {
           "nombre": "Oligogeline (silicona vegetal)",
           "beneficio": "Mejora el brillo y la suavidad."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Para qué pelo es?",
+          "r": "Para pelo seco o dañado. Hidrata, nutre y repara la fibra, y lo deja con brillo, suave y fácil de peinar."
+        },
+        {
+          "p": "¿Con qué lo combino?",
+          "r": "Con el sérum Sideral Peptide, para pelo muy castigado por tintes, decoloraciones o calor. Los dos juntos forman el Pack Reparación."
+        },
+        {
+          "p": "¿Cuánto trae?",
+          "r": "El bote es de 300 ml y la fórmula es vegana."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -568,6 +744,24 @@
           "nombre": "Polyquaternium-70",
           "beneficio": "Aumenta la resistencia de la fibra al encrespamiento y retiene el brillo."
         }
+      ],
+      "faq": [
+        {
+          "p": "¿Para qué pelo es?",
+          "r": "Para pelo frágil o debilitado. Hidrata, nutre, reduce el encrespamiento y deja una capa que protege y sella la fibra."
+        },
+        {
+          "p": "¿Qué lleva?",
+          "r": "Proteínas vegetales hidrolizadas, aminoácidos que dan fuerza y estabilidad al pelo. La fórmula es vegana."
+        },
+        {
+          "p": "¿Cómo se usa?",
+          "r": "Aplica con el pelo mojado, masajea hasta hacer espuma y aclara. Repite y vuelve a aclarar."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
       ]
     },
     {
@@ -623,6 +817,24 @@
           "nombre": "Caléndula",
           "beneficio": "Efecto calmante."
         }
+      ],
+      "faq": [
+        {
+          "p": "¿Sirve si se me irrita el cuero cabelludo?",
+          "r": "Sí, es para eso. Regula el pH y calma la irritación, y deja el pelo acondicionado y suave."
+        },
+        {
+          "p": "¿Qué lleva?",
+          "r": "Extracto natural de piña, con bromelina, y aloe vera, calmante y antiinflamatorio. La fórmula es vegana."
+        },
+        {
+          "p": "¿Cuánto trae?",
+          "r": "El bote es de 300 ml."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
       ]
     },
     {
@@ -672,6 +884,24 @@
         {
           "nombre": "Extracto de melocotón",
           "beneficio": "Con proteínas y minerales: repara la fibra capilar y aporta nutrición y suavidad."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Sirve para mechas?",
+          "r": "Sí. Es para pelo teñido o con mechas: fija el color y evita que se apague."
+        },
+        {
+          "p": "¿Qué lleva?",
+          "r": "Aceite de argán y extracto de melocotón. La fórmula es vegana."
+        },
+        {
+          "p": "¿Cuánto trae?",
+          "r": "El bote es de 300 ml."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -732,6 +962,28 @@
           "nombre": "Betaína (de la remolacha)",
           "beneficio": "Fortalece el pelo, lo protege del calor y mejora brillo y suavidad."
         }
+      ],
+      "faq": [
+        {
+          "p": "¿Para qué pelo es?",
+          "r": "Para pelo dañado por tintes, decoloraciones o calor. Es un tratamiento de péptidos inspirado en la estructura de la queratina."
+        },
+        {
+          "p": "¿Cómo se usa?",
+          "r": "Agita el bote. Con el pelo húmedo, aplica de 3 a 5 pipetas de medios a puntas y masajea. Con el pelo seco, reparte de 1 a 2 pipetas solo en las puntas."
+        },
+        {
+          "p": "¿Lo puedo mezclar con mi mascarilla?",
+          "r": "Sí. Mezcla de 3 a 5 pipetas con tu tratamiento, aplícalo de medios a puntas, déjalo actuar y aclara."
+        },
+        {
+          "p": "¿Qué lleva?",
+          "r": "Péptidos, ácido hialurónico y betaína. Es vegano, sin sulfatos, siliconas ni parabenos, con más del 97 % de ingredientes de origen natural."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
       ]
     },
     {
@@ -776,6 +1028,20 @@
         {
           "nombre": "Aceite de argán y aceite de almendras amargas",
           "beneficio": "Su fórmula enriquecida con ellos cuida y nutre la barba durante mucho tiempo y la mantiene suave e hidratada."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Se aclara?",
+          "r": "Sí. Aplica un poco en la barba, deja actuar 1 o 2 minutos y aclara con agua. Para más efecto, aplica otra vez antes de aclarar."
+        },
+        {
+          "p": "¿Qué lleva?",
+          "r": "Aceite de argán y aceite de almendras amargas, que nutren la barba y la dejan suave."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -822,6 +1088,20 @@
           "nombre": "Aceites de argán y jojoba",
           "beneficio": "Nutren y acondicionan la barba en profundidad y la dejan suave."
         }
+      ],
+      "faq": [
+        {
+          "p": "¿Cómo se aplica?",
+          "r": "Con el cuentagotas, directamente en la barba, y lo repartes de la base a las puntas."
+        },
+        {
+          "p": "¿Cuánto trae?",
+          "r": "El bote es de 20 ml."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
       ]
     },
     {
@@ -862,6 +1142,20 @@
         {
           "nombre": "Aceite de argán y aceite de almendras amargas",
           "beneficio": "Nutren, suavizan e hidratan la barba en profundidad."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Cuánto hay que poner?",
+          "r": "Dos gotas, aplicadas directamente en la barba."
+        },
+        {
+          "p": "¿Sirve si me pica la piel debajo de la barba?",
+          "r": "Sí. Además de dejar la barba cuidada, ayuda a evitar la irritación de la piel."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -907,6 +1201,20 @@
         {
           "nombre": "Aceite de argán y aceite de almendras amargas",
           "beneficio": "Aportan nutrientes a la barba y la dejan suave y fácil de peinar."
+        }
+      ],
+      "faq": [
+        {
+          "p": "¿Lo puedo usar también en el pelo?",
+          "r": "Sí. Se aplica sobre el pelo y la barba bien mojados, se masajea hasta hacer espuma y se aclara."
+        },
+        {
+          "p": "¿Qué hace?",
+          "r": "Limpia la barba y la hidrata al mismo tiempo."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -959,7 +1267,21 @@
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Qué cera y qué champú puedo elegir?",
+          "r": "Cualquiera de las tres ceras (Matte Hold, Extra Hold o Medium Hold) y cualquiera de nuestros champús de 300 ml salvo el Pro Keratin. Lo eliges en los desplegables antes de añadirlo al carrito."
+        },
+        {
+          "p": "¿Son los mismos productos que usáis en la barbería?",
+          "r": "Sí. Son los que usamos con los clientes en Mónaco: los puedes ver en el local cuando vienes a cortarte."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
+      ]
     },
     {
       "id": "pack-rizos",
@@ -991,7 +1313,17 @@
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Qué incluye?",
+          "r": "La espuma de rizos, que define el rizo y quita el encrespamiento, y el spray de sal marina, que da volumen y movimiento."
+        },
+        {
+          "p": "¿Me lo podéis enviar a casa?",
+          "r": "No. Es un aerosol y no se puede mandar por mensajería, así que solo se recoge en la barbería, gratis, en Rúa de Venezuela 71 (Vigo). Te avisamos cuando esté listo y te lo guardamos 15 días."
+        }
+      ]
     },
     {
       "id": "pack-reparacion",
@@ -1022,7 +1354,21 @@
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Qué incluye?",
+          "r": "El champú Nutri-Repair, para pelo seco o dañado, y el sérum Sideral Peptide, un tratamiento para pelo castigado por tintes, decoloraciones o calor."
+        },
+        {
+          "p": "¿En qué orden se usan?",
+          "r": "Primero lavas con el champú. Después, con el pelo húmedo, aplicas el sérum de medios a puntas."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
+      ]
     },
     {
       "id": "pack-textura",
@@ -1054,7 +1400,21 @@
       "etiqueta": null,
       "destacado": true,
       "pasos": null,
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Para qué pelo es?",
+          "r": "Para pelo liso que cae sin cuerpo. El spray le da forma y movimiento, y el polvo levanta desde la raíz con acabado mate."
+        },
+        {
+          "p": "¿Cómo se usan juntos?",
+          "r": "Pulveriza el spray de sal con el pelo húmedo y sécalo. Después, pon un poco de polvo en la raíz y peina con los dedos."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
+      ]
     },
     {
       "id": "pack-peinado",
@@ -1085,7 +1445,21 @@
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
-      "ingredientes_destacados": null
+      "ingredientes_destacados": null,
+      "faq": [
+        {
+          "p": "¿Qué incluye?",
+          "r": "La cera Matte Hold, de fijación fuerte y acabado mate, y el polvo texturizante, que da volumen desde la raíz."
+        },
+        {
+          "p": "¿Deja brillo o restos?",
+          "r": "No. Los dos tienen acabado mate y la cera se va con agua, sin restos."
+        },
+        {
+          "p": "¿Cuándo me llega?",
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+        }
+      ]
     }
   ]
 }
