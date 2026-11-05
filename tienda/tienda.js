@@ -47,6 +47,9 @@
       var p = byId(el.getAttribute('data-price-for'));
       if (!p) return;
       if (p.precio == null) { el.innerHTML = '<span class="price-soon">Precio próximamente</span>'; }
+      else if (typeof p.precio_tachado === 'number' && p.precio_tachado > p.precio) {
+        el.innerHTML = '<span class="price-now">' + eur(p.precio) + '</span> <del class="price-was"><span class="sr-only">Antes </span>' + eur(p.precio_tachado) + '</del>';
+      }
       else { el.textContent = eur(p.precio); }
     });
     $$('[data-add]').forEach(function (b) {

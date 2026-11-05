@@ -298,7 +298,8 @@
         "/assets/tienda/productos/champu-anticaspa.webp",
         "/assets/tienda/productos/champu-anticaspa-2.jpg"
       ],
-      "precio": 1634,
+      "precio": 1143,
+      "precio_tachado": 1634,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -353,7 +354,8 @@
         "/assets/tienda/productos/champu-cabello-graso.webp",
         "/assets/tienda/productos/champu-cabello-graso-2.jpg"
       ],
-      "precio": 1634,
+      "precio": 1143,
+      "precio_tachado": 1634,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -404,7 +406,8 @@
         "/assets/tienda/productos/champu-anticaida.webp",
         "/assets/tienda/productos/champu-anticaida-2.jpg"
       ],
-      "precio": 1634,
+      "precio": 1143,
+      "precio_tachado": 1634,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -463,7 +466,8 @@
         "/assets/tienda/productos/champu-nutri-repair.webp",
         "/assets/tienda/productos/champu-nutri-repair-2.jpg"
       ],
-      "precio": 1634,
+      "precio": 1143,
+      "precio_tachado": 1634,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -522,7 +526,8 @@
         "/assets/tienda/productos/champu-pro-keratin.webp",
         "/assets/tienda/productos/champu-pro-keratin-2.jpg"
       ],
-      "precio": 1706,
+      "precio": 1194,
+      "precio_tachado": 1706,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -581,7 +586,8 @@
         "/assets/tienda/productos/champu-cuero-sensible.webp",
         "/assets/tienda/productos/champu-cuero-sensible-2.jpg"
       ],
-      "precio": 1634,
+      "precio": 1143,
+      "precio_tachado": 1634,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -614,6 +620,57 @@
       ]
     },
     {
+      "id": "champu-color-care",
+      "slug": "champu-color-care",
+      "categoria": "champus",
+      "textura": "champus",
+      "marca": "Linecure",
+      "nombre": "Champú cabello teñido",
+      "nombre_largo": "Linecure Color Care",
+      "formato": "300 ml",
+      "resumen": "Para cabello teñido o con mechas. Fórmula vegana.",
+      "descripcion": "Champú de fórmula vegana para cabello teñido o con mechas. Protege y nutre el pelo frente a las agresiones externas, fija el color y evita que se apague. Acondiciona, hidrata y aporta más brillo y flexibilidad.",
+      "beneficios": [
+        "Fija y protege el color",
+        "Hidrata y acondiciona",
+        "Aporta brillo y flexibilidad",
+        "Fórmula vegana"
+      ],
+      "ingredientes": "Aceite de argán y extracto de melocotón.",
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/champu-color-care.webp"
+      ],
+      "precio": 1143,
+      "precio_tachado": 1634,
+      "etiqueta": null,
+      "destacado": false,
+      "pasos": [
+        {
+          "titulo": "Moja el pelo",
+          "texto": "Aplica el champú sobre el pelo mojado."
+        },
+        {
+          "titulo": "Masajea",
+          "texto": "Emulsiona con un masaje hasta que haga espuma."
+        },
+        {
+          "titulo": "Aclara bien",
+          "texto": "Aclara hasta retirar el champú por completo."
+        }
+      ],
+      "ingredientes_destacados": [
+        {
+          "nombre": "Aceite de argán",
+          "beneficio": "Con vitamina E y aminoácidos: combate la sequedad y el envejecimiento del cabello."
+        },
+        {
+          "nombre": "Extracto de melocotón",
+          "beneficio": "Con proteínas y minerales: repara la fibra capilar y aporta nutrición y suavidad."
+        }
+      ]
+    },
+    {
       "id": "serum-sideral-peptide",
       "slug": "serum-sideral-peptide",
       "categoria": "tratamientos",
@@ -637,6 +694,7 @@
         "/assets/tienda/productos/serum-sideral-peptide-2.jpg"
       ],
       "precio": 2194,
+      "precio_tachado": 3134,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -693,7 +751,7 @@
       "imagenes": [
         "/assets/tienda/productos/barba-balsamo.webp"
       ],
-      "precio": null,
+      "precio": 1400,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -738,7 +796,7 @@
       "imagenes": [
         "/assets/tienda/productos/barba-aceite.webp"
       ],
-      "precio": null,
+      "precio": 1400,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -783,7 +841,7 @@
       "imagenes": [
         "/assets/tienda/productos/barba-serum.webp"
       ],
-      "precio": null,
+      "precio": 1600,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
@@ -824,7 +882,7 @@
       "imagenes": [
         "/assets/tienda/productos/barba-champu.webp"
       ],
-      "precio": null,
+      "precio": 1400,
       "etiqueta": null,
       "destacado": false,
       "pasos": [
