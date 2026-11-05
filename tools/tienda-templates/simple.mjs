@@ -1,4 +1,5 @@
 import { page, hueco, huecoIn, productUrl } from './lib.mjs';
+import { DEVOLUCIONES_HTML, CONDICIONES_HTML } from './legal-textos.mjs';
 
 export function gracias(productos) {
   const main = `<section class="simple"><div class="wrap">
@@ -21,7 +22,7 @@ export function legal(slug, titulo, label, productos) {
     <li>No enviamos a Canarias, Ceuta ni Melilla.</li>
     <li>La espuma de rizos y el Pack Rizos son aerosoles: solo se pueden recoger en la barbería.</li>
   </ul>
-  ` : ''}${hueco(label, '16/9')}
+  ` : ''}${slug === 'envios-devoluciones' ? `<div class="legal">${DEVOLUCIONES_HTML}</div>` : slug === 'condiciones' ? `<div class="legal">${CONDICIONES_HTML}</div>` : hueco(label, '16/9')}
 </div></section>`;
   return page({ title: `${titulo} | Tienda Mónaco Barbershop`, description: titulo, path: `/tienda/${slug}`, productos, main });
 }

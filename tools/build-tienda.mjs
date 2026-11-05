@@ -27,5 +27,5 @@ out('tienda/productos/index.html', catalog(productos, categorias));
 for (const p of productos) out(`tienda/producto/${p.slug}/index.html`, product(p, productos));
 out('tienda/gracias/index.html', gracias(productos));
 out('tienda/envios-devoluciones/index.html', legal('envios-devoluciones', 'Envíos y devoluciones', 'texto de envíos y devoluciones', productos));
-out('tienda/condiciones/index.html', legal('condiciones', 'Condiciones', 'condiciones de compra', productos));
+out('tienda/condiciones/index.html', legal('condiciones', 'Condiciones de compra', 'condiciones de compra', productos));
 console.log(changed ? `${changed} archivo(s) actualizados` : 'sin cambios');
