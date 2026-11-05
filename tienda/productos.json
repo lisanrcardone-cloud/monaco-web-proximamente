@@ -899,61 +899,49 @@
       ]
     },
     {
-      "id": "pack-textura",
-      "slug": "pack-textura",
-      "imagen_hero": "/assets/tienda/productos/pack-textura-v3-hero.webp",
+      "id": "pack-autocuidado",
+      "slug": "pack-autocuidado",
       "categoria": "packs",
-      "textura": "combo-textura",
-      "marca": "Ossion",
-      "nombre": "Pack Textura",
-      "nombre_largo": "Pack Textura: polvo texturizante + spray de sal marina",
+      "textura": "barba",
+      "marca": "Mónaco",
+      "nombre": "Pack Auto cuidado",
+      "nombre_largo": "Pack Auto cuidado: cera + aceite de barba + champú a elección",
       "formato": null,
       "incluye": [
-        "polvo-texturizante",
-        "spray-sal-marina"
+        "barba-aceite"
       ],
-      "resumen": "Spray de sal + polvo texturizante: volumen y textura para pelo liso.",
-      "descripcion": "Pensado para el pelo liso, que cae sin cuerpo. Primero el spray de sal en el pelo húmedo para darle forma y movimiento; después, el polvo en la raíz para levantar y fijar con acabado mate.",
+      "elige": [
+        {
+          "etiqueta": "Cera",
+          "opciones": [
+            "cera-matte-hold",
+            "cera-extra-hold",
+            "cera-medium-hold"
+          ]
+        },
+        {
+          "etiqueta": "Champú",
+          "opciones": [
+            "champu-anticaspa",
+            "champu-cabello-graso",
+            "champu-anticaida",
+            "champu-nutri-repair",
+            "champu-cuero-sensible",
+            "champu-color-care"
+          ]
+        }
+      ],
+      "resumen": "Cera, aceite de barba y champú a tu elección: el cuidado completo en casa.",
+      "descripcion": "Todo lo que necesitas para cuidarte en casa como en la barbería. Eliges la cera según la fijación que te gusta y el champú según tu tipo de pelo, y el aceite de barba va incluido.",
       "beneficios": [
-        "Volumen desde la raíz",
-        "Textura y ondas naturales",
-        "Acabado mate"
-      ],
-      "ingredientes": null,
-      "modo_uso": "Spray de sal en el pelo húmedo y seca. Después, un poco de polvo en la raíz y peina con los dedos.",
-      "imagenes": [
-        "/assets/tienda/productos/pack-textura-v3.webp"
-      ],
-      "precio": null,
-      "etiqueta": null,
-      "destacado": true,
-      "pasos": null,
-      "ingredientes_destacados": null
-    },
-    {
-      "id": "pack-peinado",
-      "slug": "pack-peinado",
-      "categoria": "packs",
-      "textura": "polvo",
-      "marca": "Ossion",
-      "nombre": "Pack Peinado",
-      "nombre_largo": "Pack Peinado: cera Matte Hold + polvo texturizante",
-      "formato": null,
-      "incluye": [
-        "cera-matte-hold",
-        "polvo-texturizante"
-      ],
-      "resumen": "Cera mate + polvo texturizante: fijación fuerte con volumen.",
-      "descripcion": "Volumen con el polvo y fijación fuerte con la cera mate. Un peinado que aguanta todo el día sin brillo ni restos.",
-      "beneficios": [
-        "Fijación fuerte",
-        "Volumen",
-        "Acabado mate"
+        "Eliges cera y champú",
+        "Pelo y barba en un solo pack",
+        "Productos que usamos en la barbería"
       ],
       "ingredientes": null,
       "modo_uso": null,
       "imagenes": [
-        "/assets/tienda/productos/pack-peinado-v3.webp"
+        "/assets/tienda/productos/pack-autocuidado.webp"
       ],
       "precio": null,
       "etiqueta": null,
@@ -1025,49 +1013,61 @@
       "ingredientes_destacados": null
     },
     {
-      "id": "pack-autocuidado",
-      "slug": "pack-autocuidado",
+      "id": "pack-textura",
+      "slug": "pack-textura",
+      "imagen_hero": "/assets/tienda/productos/pack-textura-v3-hero.webp",
       "categoria": "packs",
-      "textura": "barba",
-      "marca": "Mónaco",
-      "nombre": "Pack Auto cuidado",
-      "nombre_largo": "Pack Auto cuidado: cera + aceite de barba + champú a elección",
+      "textura": "combo-textura",
+      "marca": "Ossion",
+      "nombre": "Pack Textura",
+      "nombre_largo": "Pack Textura: polvo texturizante + spray de sal marina",
       "formato": null,
       "incluye": [
-        "barba-aceite"
+        "polvo-texturizante",
+        "spray-sal-marina"
       ],
-      "elige": [
-        {
-          "etiqueta": "Cera",
-          "opciones": [
-            "cera-matte-hold",
-            "cera-extra-hold",
-            "cera-medium-hold"
-          ]
-        },
-        {
-          "etiqueta": "Champú",
-          "opciones": [
-            "champu-anticaspa",
-            "champu-cabello-graso",
-            "champu-anticaida",
-            "champu-nutri-repair",
-            "champu-cuero-sensible",
-            "champu-color-care"
-          ]
-        }
-      ],
-      "resumen": "Cera, aceite de barba y champú a tu elección: el cuidado completo en casa.",
-      "descripcion": "Todo lo que necesitas para cuidarte en casa como en la barbería. Eliges la cera según la fijación que te gusta y el champú según tu tipo de pelo, y el aceite de barba va incluido.",
+      "resumen": "Spray de sal + polvo texturizante: volumen y textura para pelo liso.",
+      "descripcion": "Pensado para el pelo liso, que cae sin cuerpo. Primero el spray de sal en el pelo húmedo para darle forma y movimiento; después, el polvo en la raíz para levantar y fijar con acabado mate.",
       "beneficios": [
-        "Eliges cera y champú",
-        "Pelo y barba en un solo pack",
-        "Productos que usamos en la barbería"
+        "Volumen desde la raíz",
+        "Textura y ondas naturales",
+        "Acabado mate"
+      ],
+      "ingredientes": null,
+      "modo_uso": "Spray de sal en el pelo húmedo y seca. Después, un poco de polvo en la raíz y peina con los dedos.",
+      "imagenes": [
+        "/assets/tienda/productos/pack-textura-v3.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": true,
+      "pasos": null,
+      "ingredientes_destacados": null
+    },
+    {
+      "id": "pack-peinado",
+      "slug": "pack-peinado",
+      "categoria": "packs",
+      "textura": "polvo",
+      "marca": "Ossion",
+      "nombre": "Pack Peinado",
+      "nombre_largo": "Pack Peinado: cera Matte Hold + polvo texturizante",
+      "formato": null,
+      "incluye": [
+        "cera-matte-hold",
+        "polvo-texturizante"
+      ],
+      "resumen": "Cera mate + polvo texturizante: fijación fuerte con volumen.",
+      "descripcion": "Volumen con el polvo y fijación fuerte con la cera mate. Un peinado que aguanta todo el día sin brillo ni restos.",
+      "beneficios": [
+        "Fijación fuerte",
+        "Volumen",
+        "Acabado mate"
       ],
       "ingredientes": null,
       "modo_uso": null,
       "imagenes": [
-        "/assets/tienda/productos/pack-autocuidado.webp"
+        "/assets/tienda/productos/pack-peinado-v3.webp"
       ],
       "precio": null,
       "etiqueta": null,
