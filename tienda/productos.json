@@ -912,8 +912,8 @@
         "polvo-texturizante",
         "spray-sal-marina"
       ],
-      "resumen": "Polvo texturizante + spray de sal: volumen y textura de barbería en casa.",
-      "descripcion": "Los dos básicos para un peinado con volumen y textura. Primero el spray de sal en el pelo húmedo para dar forma y ondas; después, el polvo en la raíz para levantar y fijar con acabado mate.",
+      "resumen": "Spray de sal + polvo texturizante: volumen y textura para pelo liso.",
+      "descripcion": "Pensado para el pelo liso, que cae sin cuerpo. Primero el spray de sal en el pelo húmedo para darle forma y movimiento; después, el polvo en la raíz para levantar y fijar con acabado mate.",
       "beneficios": [
         "Volumen desde la raíz",
         "Textura y ondas naturales",
@@ -986,6 +986,88 @@
       "modo_uso": null,
       "imagenes": [
         "/assets/tienda/productos/pack-rizos-v3.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false,
+      "pasos": null,
+      "ingredientes_destacados": null
+    },
+    {
+      "id": "pack-reparacion",
+      "slug": "pack-reparacion",
+      "categoria": "packs",
+      "textura": "tratamientos",
+      "marca": "Linecure",
+      "nombre": "Pack Reparación",
+      "nombre_largo": "Pack Reparación: champú Nutri-Repair + sérum Sideral Peptide",
+      "formato": null,
+      "incluye": [
+        "champu-nutri-repair",
+        "serum-sideral-peptide"
+      ],
+      "resumen": "Champú Nutri-Repair + sérum Sideral: para pelo seco, dañado o castigado.",
+      "descripcion": "Para el pelo seco o dañado por tintes, decoloraciones o calor. El champú Nutri-Repair limpia, nutre e hidrata; después, el sérum Sideral Peptide repara la fibra capilar y devuelve brillo y suavidad.",
+      "beneficios": [
+        "Nutre e hidrata",
+        "Repara la fibra capilar",
+        "Más brillo y suavidad"
+      ],
+      "ingredientes": null,
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/pack-reparacion.webp"
+      ],
+      "precio": null,
+      "etiqueta": null,
+      "destacado": false,
+      "pasos": null,
+      "ingredientes_destacados": null
+    },
+    {
+      "id": "pack-autocuidado",
+      "slug": "pack-autocuidado",
+      "categoria": "packs",
+      "textura": "barba",
+      "marca": "Mónaco",
+      "nombre": "Pack Auto cuidado",
+      "nombre_largo": "Pack Auto cuidado: cera + aceite de barba + champú a elección",
+      "formato": null,
+      "incluye": [
+        "barba-aceite"
+      ],
+      "elige": [
+        {
+          "etiqueta": "Cera",
+          "opciones": [
+            "cera-matte-hold",
+            "cera-extra-hold",
+            "cera-medium-hold"
+          ]
+        },
+        {
+          "etiqueta": "Champú",
+          "opciones": [
+            "champu-anticaspa",
+            "champu-cabello-graso",
+            "champu-anticaida",
+            "champu-nutri-repair",
+            "champu-cuero-sensible",
+            "champu-color-care"
+          ]
+        }
+      ],
+      "resumen": "Cera, aceite de barba y champú a tu elección: el cuidado completo en casa.",
+      "descripcion": "Todo lo que necesitas para cuidarte en casa como en la barbería. Eliges la cera según la fijación que te gusta y el champú según tu tipo de pelo, y el aceite de barba va incluido.",
+      "beneficios": [
+        "Eliges cera y champú",
+        "Pelo y barba en un solo pack",
+        "Productos que usamos en la barbería"
+      ],
+      "ingredientes": null,
+      "modo_uso": null,
+      "imagenes": [
+        "/assets/tienda/productos/pack-autocuidado.webp"
       ],
       "precio": null,
       "etiqueta": null,

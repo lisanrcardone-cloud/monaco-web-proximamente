@@ -50,15 +50,35 @@ export async function POST(request) {
   let soloRecogida = false;
   for (const l of lines) {
     if (!l || typeof l.id !== 'string' || !Number.isInteger(l.qty) || l.qty < 1 || l.qty > 10) return json(400, { error: 'Línea no válida' });
-    if (seen.has(l.id)) return json(400, { error: 'Producto repetido' });
-    seen.add(l.id);
     const p = productos.find((x) => x.id === l.id);
     if (!p) return json(400, { error: 'Producto desconocido' });
+    let variante = '';
+    let lineKey = l.id;
+    if (Array.isArray(p.elige) && p.elige.length) {
+      const o = l.opts;
+      if (!o || typeof o !== 'object' || Array.isArray(o)) return json(400, { error: 'Elección no válida' });
+      const keys = Object.keys(o);
+      if (keys.length !== p.elige.length) return json(400, { error: 'Elección no válida' });
+      const nombres = [];
+      for (const g of p.elige) {
+        const v = o[g.etiqueta];
+        if (typeof v !== 'string' || !g.opciones.includes(v)) return json(400, { error: 'Elección no válida' });
+        const q = productos.find((x) => x.id === v);
+        if (!q) return json(400, { error: 'Elección no válida' });
+        nombres.push(q.nombre);
+      }
+      variante = ` (${nombres.join(', ')})`;
+      lineKey = l.id + '|' + p.elige.map((g) => o[g.etiqueta]).join(',');
+    } else if (l.opts !== undefined && l.opts !== null) {
+      return json(400, { error: 'Elección no válida' });
+    }
+    if (seen.has(lineKey)) return json(400, { error: 'Producto repetido' });
+    seen.add(lineKey);
     if (!Number.isInteger(p.precio) || p.precio <= 0) return json(400, { error: 'Producto sin precio' });
     if (/^\[Pendiente/.test(p.nombre)) return json(400, { error: 'Producto sin nombre definitivo' });
     if (p.solo_recogida) soloRecogida = true;
     subtotal += p.precio * l.qty;
-    items.push({ name: p.nombre, amount: p.precio, qty: l.qty });
+    items.push({ name: p.nombre + variante, amount: p.precio, qty: l.qty });
   }
   if (soloRecogida && entrega !== 'recogida') return json(400, { error: 'Este pedido solo puede recogerse en la barbería' });
 

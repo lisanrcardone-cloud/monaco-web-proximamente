@@ -13,6 +13,9 @@ export function product(p, productos) {
 
   const catName = (CATS.find(([id]) => id === p.categoria) || [, p.categoria])[1];
   const incluye = (p.incluye || []).map((id) => productos.find((x) => x.id === id)).filter(Boolean);
+  const elige = p.elige || [];
+  const eligeOpts = (g) => g.opciones.map((id) => productos.find((x) => x.id === id)).filter(Boolean);
+  const eligeHtml = elige.map((g, i) => `<fieldset class="pack-elige"><legend>${esc(g.etiqueta)}</legend><label for="elige-${i}" class="elige-label">Elige tu ${esc(g.etiqueta.toLowerCase())}</label><select id="elige-${i}" name="${esc(g.etiqueta)}" data-elige="${esc(g.etiqueta)}">${eligeOpts(g).map((x) => `<option value="${esc(x.id)}">${esc(x.nombre)}</option>`).join('')}</select></fieldset>`).join('');
   const crumbName = isPending(p.nombre) ? `Producto ${n}` : p.nombre;
   const ld = [{
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -46,8 +49,9 @@ export function product(p, productos) {
     <p class="card-sub">${cardSub(p)}</p>
     <p>${esc(p.descripcion)}</p>
     <ul class="benefits">${p.beneficios.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
-    ${incluye.length ? `<div class="incluye"><h2>Incluye</h2><ul>${incluye.map((x) => `<li><a href="${productUrl(x)}">${esc(x.nombre)}</a></li>`).join('')}</ul></div>` : ''}
+    ${incluye.length || elige.length ? `<div class="incluye"><h2>Incluye</h2><ul>${incluye.map((x) => `<li><a href="${productUrl(x)}">${esc(x.nombre)}</a></li>`).join('')}${elige.map((g) => `<li class="incluye-elige">${esc(g.etiqueta)} a elegir</li>`).join('')}</ul></div>` : ''}
     <div class="pdp-price" data-price-for="${p.id}"><span class="price-soon">Precio próximamente</span></div>
+    ${eligeHtml}
     <div class="buy">
       <div class="qty" role="group" aria-label="Cantidad"><button type="button" data-pdp-q="-1" aria-label="Menos">&minus;</button><output id="pdp-qty" aria-live="polite">1</output><button type="button" data-pdp-q="1" aria-label="Más">+</button></div>
       <button type="button" class="btn" id="add-main" data-add="${p.id}" data-add-label="1" disabled>Precio próximamente</button>

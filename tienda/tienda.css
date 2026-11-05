@@ -339,3 +339,11 @@ ul.benefits li::before{content:"";position:absolute;left:.2rem;top:.55em;width:.
 .cart-row.total{font-weight:700;font-size:1.1rem}
 .foot-ig{display:inline-flex;align-items:center;gap:.45rem}
 .foot-ig svg{width:1.15em;height:1.15em;flex:none}
+
+/* Packs con elección (cera / champú) */
+.pack-elige{border:0;margin:0 0 .75rem;padding:0;min-width:0}
+.pack-elige legend{font-family:var(--caps);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-size:.95rem;color:var(--green);padding:0;margin-bottom:.3rem}
+.pack-elige select{display:block;width:100%;min-height:48px;padding:.35rem .6rem;border:1px solid var(--line);border-radius:10px;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--paper)}
+.incluye-elige{display:flex;align-items:center;min-height:44px}
+.elige-label{display:block;font-size:.9rem;color:var(--ink-soft);margin-bottom:.25rem}
+.cart-variant{font-size:.8rem;color:var(--ink-soft);line-height:1.3}
