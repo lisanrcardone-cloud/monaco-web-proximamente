@@ -61,6 +61,8 @@ export function product(p, productos) {
     <div>
       ${p.ingredientes ? `<details class="acc"><summary>Ingredientes</summary><div class="acc-body"><p>${esc(p.ingredientes)}</p></div></details>` : ''}
       ${p.modo_uso ? `<details class="acc"><summary>Modo de uso</summary><div class="acc-body"><p>${esc(p.modo_uso)}</p></div></details>` : ''}
+      ${p.advertencias ? `<details class="acc"><summary>Advertencias</summary><div class="acc-body"><p>${esc(p.advertencias)}</p></div></details>` : ''}
+      ${p.fabricante ? `<details class="acc"><summary>Fabricante y responsable en la UE</summary><div class="acc-body"><p>${esc(p.fabricante)}</p></div></details>` : ''}
     </div>
     <!-- Oculto hasta tener reseñas de clientes: quitar "hidden" para mostrarlo -->
     <div hidden>

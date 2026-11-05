@@ -34,7 +34,7 @@ ${CINTA_DEFS}
 <section class="sec bg-white" id="mas-vendidos">
   <div class="wrap">
     ${sectionTitle('¿Primera vez?', 'Los más vendidos')}
-    ${carousel(cat('peinado').map((p, i) => card(p, 'mas_vendidos', i)), 'c4', 'Los más vendidos')}
+    ${carousel(['serum-sideral-peptide', 'champu-pro-keratin', 'polvo-texturizante', 'espuma-rizos'].map((id) => productos.find((p) => p.id === id)).map((p, i) => card(p, 'mas_vendidos', i)), 'c4', 'Los más vendidos')}
   </div>
 </section>
 
