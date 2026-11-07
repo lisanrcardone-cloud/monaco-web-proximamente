@@ -58,7 +58,7 @@ export function product(p, productos) {
       <button type="button" class="btn" id="add-main" data-add="${p.id}" data-add-label="1" disabled>Precio próximamente</button>
     </div>
     ${p.solo_recogida ? '<p class="pdp-pickup"><strong>Solo recogida en la barbería:</strong> es un aerosol y no se puede enviar por mensajería.</p>' : ''}
-    <p>Preparamos tu pedido en 24-48 h. Envío gratis en pedidos de 35 € o más. Recogida gratis en la barbería.</p>
+    <p>Preparamos tu pedido en 24-48 h. Envío gratis en pedidos de 45 € o más. Recogida gratis en la barbería.</p>
     <div>
       ${p.ingredientes ? `<details class="acc"><summary>Ingredientes</summary><div class="acc-body"><p>${esc(p.ingredientes)}</p></div></details>` : ''}
       ${p.modo_uso ? `<details class="acc"><summary>Modo de uso</summary><div class="acc-body"><p>${esc(p.modo_uso)}</p></div></details>` : ''}

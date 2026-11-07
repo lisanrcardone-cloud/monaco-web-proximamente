@@ -1,7 +1,7 @@
 {
   "_nota": "Contenido real de la tienda (28-oct-2026). Fuente: fichas oficiales de Kppel (proveedor) e hipertin.com. Precios null a propósito: el usuario los pondrá después. id = clave estable para carrito/Stripe/GA4.",
   "envio": {
-    "umbral_gratis": 3500,
+    "umbral_gratis": 4500,
     "peninsula": 495,
     "baleares": 695
   },
@@ -85,7 +85,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -142,7 +142,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -265,7 +265,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -326,7 +326,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -387,7 +387,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -460,7 +460,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -529,7 +529,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -606,7 +606,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -683,7 +683,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -760,7 +760,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -833,7 +833,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -901,7 +901,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -982,7 +982,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -1041,7 +1041,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -1100,7 +1100,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -1155,7 +1155,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -1214,7 +1214,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -1279,7 +1279,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -1366,7 +1366,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -1412,7 +1412,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     },
@@ -1457,7 +1457,7 @@
         },
         {
           "p": "¿Cuándo me llega?",
-          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 35 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
+          "r": "Preparamos el pedido en 24-48 h laborables. A la península llega con Correos en 2-4 días laborables, y el envío es gratis a partir de 45 €. También puedes recogerlo gratis en la barbería, en Rúa de Venezuela 71 (Vigo)."
         }
       ]
     }

@@ -3,7 +3,7 @@
   'use strict';
   var KEY = 'monaco_tienda_cart_v1';
   var EKEY = 'monaco_tienda_entrega_v1';
-  var envio = { umbral_gratis: 3500, peninsula: 495, baleares: 695 };
+  var envio = { umbral_gratis: 4500, peninsula: 495, baleares: 695 };
   var entrega = loadEntrega();
   var catalog = [];
   var cart = load();
