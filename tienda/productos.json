@@ -1309,7 +1309,7 @@
       "imagenes": [
         "/assets/tienda/productos/pack-rizos-v3.webp"
       ],
-      "precio": null,
+      "precio": 2300,
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
@@ -1396,7 +1396,7 @@
       "imagenes": [
         "/assets/tienda/productos/pack-textura-v3.webp"
       ],
-      "precio": null,
+      "precio": 2300,
       "etiqueta": null,
       "destacado": true,
       "pasos": null,
@@ -1441,7 +1441,7 @@
       "imagenes": [
         "/assets/tienda/productos/pack-peinado-v3.webp"
       ],
-      "precio": null,
+      "precio": 2100,
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
