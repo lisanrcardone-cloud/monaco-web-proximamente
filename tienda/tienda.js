@@ -1,0 +1,375 @@
+/* Tienda Mónaco: carrito (localStorage), panel, carruseles, desplegables, eventos GA4. Vanilla, sin dependencias. */
+(function () {
+  'use strict';
+  var KEY = 'monaco_tienda_cart_v1';
+  var EKEY = 'monaco_tienda_entrega_v1';
+  var envio = { umbral_gratis: 4500, peninsula: 495, baleares: 695 };
+  var entrega = loadEntrega();
+  var catalog = [];
+  var cart = load();
+  var lastFocus = null;
+
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function byId(id) { for (var i = 0; i < catalog.length; i++) if (catalog[i].id === id) return catalog[i]; return null; }
+  function pending(t) { return /^\[Pendiente/.test(t || ''); }
+  function eur(c) { return (c / 100).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' }); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+  function load() {
+    try {
+      var v = JSON.parse(localStorage.getItem(KEY) || '[]');
+      if (!Array.isArray(v)) return [];
+      return v.filter(function (l) { return l && typeof l.id === 'string' && l.qty >= 1; }).map(function (l) {
+        var o = { id: l.id, qty: Math.min(10, Math.floor(l.qty)) };
+        if (l.opts && typeof l.opts === 'object' && !Array.isArray(l.opts)) o.opts = l.opts;
+        return o;
+      });
+    } catch (e) { return []; }
+  }
+  function loadEntrega() { try { var v = localStorage.getItem(EKEY); return v === 'baleares' || v === 'recogida' ? v : 'peninsula'; } catch (e) { return 'peninsula'; } }
+  function saveEntrega() { try { localStorage.setItem(EKEY, entrega); } catch (e) {} }
+  /* Packs con elección: clave de línea = id + opts en el orden de elige */
+  function optsValid(p, opts) {
+    if (!p || !p.elige) return !opts;
+    if (!opts || typeof opts !== 'object') return false;
+    if (Object.keys(opts).length !== p.elige.length) return false;
+    return p.elige.every(function (g) { return typeof opts[g.etiqueta] === 'string' && g.opciones.indexOf(opts[g.etiqueta]) !== -1; });
+  }
+  function keyOf(id, opts) {
+    var p = byId(id);
+    if (!opts || !p || !p.elige) return id;
+    return id + '|' + p.elige.map(function (g) { return opts[g.etiqueta]; }).join(',');
+  }
+  function variantOf(p, opts) {
+    if (!opts || !p || !p.elige) return '';
+    return p.elige.map(function (g) { var q = byId(opts[g.etiqueta]); return q ? q.nombre : ''; }).join(' · ');
+  }
+  function lineByKey(k) { return cart.filter(function (x) { return keyOf(x.id, x.opts) === k; })[0]; }
+  function onlyPickup() { return cart.some(function (l) { var p = byId(l.id); return p && p.solo_recogida; }); }
+  function shipCost(sub, e) { return e === 'peninsula' ? (sub >= envio.umbral_gratis ? 0 : envio.peninsula) : e === 'baleares' ? envio.baleares : 0; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} }
+
+  /* GA4 */
+  function ev(name, params) { try { if (window.gtag) window.gtag('event', name, params || {}); } catch (e) {} }
+  function item(p, qty, list, index, opts) {
+    var o = { item_id: p.id, item_name: p.nombre };
+    var vr = variantOf(p, opts); if (vr) o.item_variant = vr;
+    if (p.precio != null) o.price = p.precio / 100;
+    if (qty) o.quantity = qty;
+    if (list) o.item_list_name = list;
+    if (index != null) o.index = index;
+    return o;
+  }
+  function value(items) { var v = 0; items.forEach(function (i) { v += (i.price || 0) * (i.quantity || 1); }); return Math.round(v * 100) / 100; }
+
+  /* Precios y botones desde productos.json */
+  function hydrate() {
+    $$('[data-price-for]').forEach(function (el) {
+      var p = byId(el.getAttribute('data-price-for'));
+      if (!p) return;
+      if (p.precio == null) { el.innerHTML = '<span class="price-soon">Precio próximamente</span>'; }
+      else if (typeof p.precio_tachado === 'number' && p.precio_tachado > p.precio) {
+        el.innerHTML = '<span class="price-now">' + eur(p.precio) + '</span> <del class="price-was"><span class="sr-only">Antes </span>' + eur(p.precio_tachado) + '</del>';
+      }
+      else { el.textContent = eur(p.precio); }
+    });
+    $$('[data-add]').forEach(function (b) {
+      var p = byId(b.getAttribute('data-add'));
+      if (!p) return;
+      var ok = p.precio != null;
+      b.disabled = !ok;
+      if (b.hasAttribute('data-add-label')) b.textContent = ok ? 'Añadir al carrito' : 'Precio próximamente';
+    });
+    renderCart();
+  }
+
+  /* Contador */
+  function count() { return cart.reduce(function (n, l) { return n + l.qty; }, 0); }
+  function updateCount() {
+    $$('.cart-count').forEach(function (el) { el.textContent = count(); el.setAttribute('data-n', count()); });
+  }
+
+  function add(id, qty, opts) {
+    var p = byId(id); if (!p || p.precio == null) return;
+    if (!optsValid(p, opts)) return;
+    var k = keyOf(id, opts);
+    var l = lineByKey(k);
+    if (l) l.qty = Math.min(10, l.qty + qty); else { var nl = { id: id, qty: Math.min(10, qty) }; if (opts) nl.opts = opts; cart.push(nl); }
+    save(); renderCart();
+    ev('add_to_cart', { currency: 'EUR', value: value([item(p, qty, null, null, opts)]), items: [item(p, qty, listOf(id), null, opts)] });
+    openCart(true);
+  }
+  function listOf(id) { return (window.__LIST && window.__LIST[id]) || undefined; }
+  function setQty(k, qty) {
+    var l = lineByKey(k); if (!l) return;
+    var p = byId(l.id);
+    if (qty < 1) return removeLine(k);
+    var delta = qty - l.qty; l.qty = Math.min(10, qty);
+    save(); renderCart();
+    if (p && delta < 0) ev('remove_from_cart', { currency: 'EUR', value: value([item(p, -delta, null, null, l.opts)]), items: [item(p, -delta, null, null, l.opts)] });
+    if (p && delta > 0) ev('add_to_cart', { currency: 'EUR', value: value([item(p, delta, null, null, l.opts)]), items: [item(p, delta, null, null, l.opts)] });
+  }
+  function removeLine(k) {
+    var l = lineByKey(k); if (!l) return;
+    var p = byId(l.id);
+    cart = cart.filter(function (x) { return x !== l; });
+    save(); renderCart();
+    if (p) ev('remove_from_cart', { currency: 'EUR', value: value([item(p, l.qty, null, null, l.opts)]), items: [item(p, l.qty, null, null, l.opts)] });
+  }
+
+  /* Panel */
+  var panel, overlay, body, foot, msg, payBtn;
+  function renderCart() {
+    updateCount();
+    if (!body) return;
+    // Descarta líneas de productos que ya no existen o sin precio
+    if (catalog.length) {
+      var clean = cart.filter(function (l) { var p = byId(l.id); return p && p.precio != null && optsValid(p, l.opts); });
+      if (clean.length !== cart.length) { cart = clean; save(); updateCount(); }
+    }
+    if (!cart.length) {
+      body.innerHTML = '<div class="cart-empty"><p>Tu carrito está vacío</p><a href="/tienda/#mas-vendidos">Ver los productos</a></div>';
+      foot.hidden = true; return;
+    }
+    foot.hidden = false;
+    var total = 0, html = '';
+    cart.forEach(function (l) {
+      var p = byId(l.id); if (!p) return;
+      var sub = p.precio * l.qty; total += sub;
+      var media = p.imagenes && p.imagenes[0] ? '<img src="' + esc(p.imagenes[0]) + '" alt="" width="72" height="72">' : '<div class="hueco" style="--ar:1/1;font-size:.6rem;padding:.2rem">[Pendiente: foto]</div>';
+      var vr = variantOf(p, l.opts);
+      html += '<div class="cart-line" data-key="' + esc(keyOf(l.id, l.opts)) + '">' + media + '<div><div class="name">' + esc(p.nombre) + '</div>' + (vr ? '<div class="cart-variant">' + esc(vr) + '</div>' : '') + '<div class="row"><div class="qty" role="group" aria-label="Cantidad de ' + esc(p.nombre) + '"><button type="button" data-q="-1" aria-label="Menos">&minus;</button><output>' + l.qty + '</output><button type="button" data-q="1" aria-label="Más">+</button></div><span class="line-price">' + eur(sub) + '</span></div><button type="button" class="cart-remove" data-rm="1">Eliminar</button></div></div>';
+    });
+    body.innerHTML = html;
+    $('.cart-subtotal', foot).textContent = eur(total);
+    var must = onlyPickup();
+    if (must) entrega = 'recogida';
+    $$('input[name="entrega"]', foot).forEach(function (r) {
+      r.disabled = must && r.value !== 'recogida';
+      r.checked = r.value === entrega;
+    });
+    var cost = shipCost(total, entrega);
+    $('.ship-p-pen', foot).textContent = total >= envio.umbral_gratis ? 'Gratis' : eur(envio.peninsula);
+    $('.ship-p-bal', foot).textContent = eur(envio.baleares);
+    $('.cart-shipcost', foot).textContent = cost ? eur(cost) : 'Gratis';
+    $('.cart-total', foot).textContent = eur(total + cost);
+    var miss = $('.cart-miss', foot);
+    if (entrega === 'peninsula' && total < envio.umbral_gratis) { miss.textContent = 'Te faltan ' + eur(envio.umbral_gratis - total) + ' para el envío gratis'; miss.hidden = false; } else miss.hidden = true;
+    $('.cart-only', foot).hidden = !must;
+  }
+  function focusables() { return $$('a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])', panel).filter(function (e) { return e.offsetParent !== null || e === document.activeElement; }); }
+  function openCart(silent) {
+    if (!panel) return;
+    lastFocus = document.activeElement;
+    panel.classList.add('open'); overlay.classList.add('open');
+    panel.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lock');
+    msg.hidden = true;
+    var f = focusables(); (f[0] || panel).focus();
+    var items = cart.map(function (l) { var p = byId(l.id); return p ? item(p, l.qty, null, null, l.opts) : null; }).filter(Boolean);
+    ev('view_cart', { currency: 'EUR', value: value(items), items: items });
+  }
+  function closeCart() {
+    if (!panel || !panel.classList.contains('open')) return;
+    panel.classList.remove('open'); overlay.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lock');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function buildPanel() {
+    overlay = document.createElement('div'); overlay.className = 'cart-overlay'; overlay.setAttribute('data-cart-overlay', '');
+    panel = document.createElement('aside'); panel.className = 'cart-panel'; panel.id = 'cart-panel';
+    panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'true'); panel.setAttribute('aria-label', 'Carrito'); panel.setAttribute('aria-hidden', 'true');
+    panel.innerHTML = '<div class="cart-head"><h2>Tu carrito</h2><button type="button" class="cart-close" aria-label="Cerrar carrito">&times;</button></div><div class="cart-body" aria-live="polite"></div><div class="cart-foot" hidden><fieldset class="cart-ship"><legend>Entrega</legend><label class="ship-opt"><input type="radio" name="entrega" value="peninsula"><span class="ship-t">Envío a península<small>Correos, 2-4 días laborables</small></span><span class="ship-p ship-p-pen"></span></label><label class="ship-opt"><input type="radio" name="entrega" value="baleares"><span class="ship-t">Envío a Baleares<small>3-5 días laborables</small></span><span class="ship-p ship-p-bal"></span></label><label class="ship-opt"><input type="radio" name="entrega" value="recogida"><span class="ship-t">Recogida en la barbería<small>Rúa de Venezuela 71, Vigo. Lunes a sábado, 9:00-20:00</small></span><span class="ship-p">Gratis</span></label></fieldset><p class="cart-note">No enviamos a Canarias, Ceuta ni Melilla.</p><p class="cart-note cart-miss" hidden></p><p class="cart-note cart-only" hidden>La espuma de rizos es un aerosol y no se puede enviar por mensajería: solo recogida en la barbería.</p><div class="cart-row"><span>Subtotal</span><span class="cart-subtotal"></span></div><div class="cart-row"><span>Envío</span><span class="cart-shipcost"></span></div><div class="cart-row total"><span>Total</span><span class="cart-total"></span></div><label class="cart-accept"><input type="checkbox" name="acepto"><span>He leído y acepto las <a href="/tienda/condiciones" target="_blank" rel="noopener">condiciones de compra</a>.</span></label><p class="cart-note">Usamos tus datos solo para gestionar el pedido. Más información en <a href="/privacy" target="_blank" rel="noopener">Privacidad</a>.</p><p class="cart-msg" role="status" hidden></p><button type="button" class="btn btn-block cart-pay">Pagar</button></div>';
+    document.body.appendChild(overlay); document.body.appendChild(panel);
+    body = $('.cart-body', panel); foot = $('.cart-foot', panel); msg = $('.cart-msg', panel); payBtn = $('.cart-pay', panel);
+    overlay.addEventListener('click', closeCart);
+    $('.cart-close', panel).addEventListener('click', closeCart);
+    panel.addEventListener('click', function (e) {
+      var line = e.target.closest('.cart-line'); if (!line) return;
+      var k = line.getAttribute('data-key'), l = lineByKey(k);
+      if (e.target.closest('[data-rm]')) { removeLine(k); return; }
+      var q = e.target.closest('[data-q]'); if (q && l) setQty(k, l.qty + parseInt(q.getAttribute('data-q'), 10));
+    });
+    foot.addEventListener('change', function (e) { if (e.target && e.target.name === 'entrega') { entrega = e.target.value; saveEntrega(); renderCart(); } });
+    payBtn.addEventListener('click', pay);
+    document.addEventListener('keydown', function (e) {
+      if (!panel.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeCart(); return; }
+      if (e.key === 'Tab') {
+        var f = focusables(); if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && (document.activeElement === first || !panel.contains(document.activeElement))) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && (document.activeElement === last || !panel.contains(document.activeElement))) { e.preventDefault(); first.focus(); }
+      }
+    });
+  }
+  function showMsg(t) { msg.textContent = t; msg.hidden = false; }
+  function pay() {
+    if (!cart.length) return;
+    var chk = $('input[name="acepto"]', panel);
+    if (!chk.checked) { showMsg('Para continuar, marca la casilla de las condiciones de compra.'); chk.focus(); return; }
+    var items = cart.map(function (l) { var p = byId(l.id); return p ? item(p, l.qty, null, null, l.opts) : null; }).filter(Boolean);
+    ev('begin_checkout', { currency: 'EUR', value: value(items), shipping_tier: entrega, items: items });
+    payBtn.disabled = true; msg.hidden = true;
+    var ctl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var to = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
+    fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ lineas: cart.map(function (l) { var o = { id: l.id, qty: l.qty }; if (l.opts) o.opts = l.opts; return o; }), entrega: entrega, acepta: true }), signal: ctl ? ctl.signal : undefined })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { s: r.status, d: d }; }); })
+      .then(function (o) {
+        clearTimeout(to);
+        if (o.s === 200 && o.d && o.d.url) { window.location.href = o.d.url; return; }
+        payBtn.disabled = false;
+        if (o.s === 503) showMsg('El pago online estará disponible muy pronto');
+        else showMsg('No se ha podido iniciar el pago (' + (o.d && o.d.error ? o.d.error : 'error ' + o.s) + '). Puedes volver a intentarlo.');
+      })
+      .catch(function () { clearTimeout(to); payBtn.disabled = false; showMsg('No se ha podido conectar para iniciar el pago. Puedes volver a intentarlo.'); });
+  }
+
+  /* Menú y desplegable */
+  function initNav() {
+    var mb = $('.menu-btn'), nav = $('#nav');
+    if (mb && nav) mb.addEventListener('click', function () { var o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', o); });
+    $$('.has-sub').forEach(function (h) {
+      var b = $('.nav-btn', h);
+      b.addEventListener('click', function () { var o = h.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+      h.addEventListener('keydown', function (e) { if (e.key === 'Escape' && h.classList.contains('open')) { h.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); b.focus(); } });
+      h.addEventListener('focusout', function (e) { if (!h.contains(e.relatedTarget)) { h.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); } });
+    });
+    document.addEventListener('click', function (e) { $$('.has-sub.open').forEach(function (h) { if (!h.contains(e.target)) { h.classList.remove('open'); $('.nav-btn', h).setAttribute('aria-expanded', 'false'); } }); });
+    $$('[data-open-cart]').forEach(function (b) { b.addEventListener('click', function () { openCart(); }); });
+  }
+
+  /* Carruseles */
+  function initCarousels() {
+    $$('.carousel').forEach(function (c) {
+      var t = $('.car-track', c), bar = $('.car-bar span', c), prev = $('.car-arrow.prev', c), next = $('.car-arrow.next', c);
+      function upd() {
+        var max = t.scrollWidth - t.clientWidth;
+        var frac = t.scrollWidth ? t.clientWidth / t.scrollWidth : 1;
+        if (bar) { bar.style.width = Math.min(100, frac * 100) + '%'; bar.style.marginLeft = (max > 0 ? (t.scrollLeft / max) * (100 - frac * 100) : 0) + '%'; }
+        if (prev) prev.disabled = t.scrollLeft <= 2;
+        if (next) next.disabled = t.scrollLeft >= max - 2;
+      }
+      function step(d) { var k = t.firstElementChild; t.scrollBy({ left: d * (k ? k.getBoundingClientRect().width + 16 : 300), behavior: 'smooth' }); }
+      if (prev) prev.addEventListener('click', function () { step(-1); });
+      if (next) next.addEventListener('click', function () { step(1); });
+      t.addEventListener('scroll', upd, { passive: true });
+      window.addEventListener('resize', upd);
+      upd();
+    });
+  }
+
+  /* Galería de ficha */
+  function initGallery() {
+    var main = $('#g-main-img');
+    $$('.g-thumb[data-src]').forEach(function (b) {
+      b.addEventListener('click', function () { if (main) main.src = b.getAttribute('data-src'); });
+    });
+  }
+
+  /* Ficha: cantidad, añadir, barra fija */
+  function initPdp() {
+    var out = $('#pdp-qty'); if (!out) return;
+    var q = 1;
+    $$('[data-pdp-q]').forEach(function (b) { b.addEventListener('click', function () { q = Math.max(1, Math.min(10, q + parseInt(b.getAttribute('data-pdp-q'), 10))); out.textContent = q; }); });
+    var id = document.body.getAttribute('data-product-id');
+    $$('[data-add]').forEach(function (b) { b.addEventListener('click', function () {
+      var opts = null, sels = $$('select[data-elige]');
+      if (sels.length) { opts = {}; sels.forEach(function (s) { opts[s.getAttribute('data-elige')] = s.value; }); }
+      add(b.getAttribute('data-add'), q, opts);
+    }); });
+    var main = $('#add-main'), bar = $('.sticky-add');
+    if (main && bar) {
+      var upd = function () { bar.classList.toggle('show', main.getBoundingClientRect().bottom < 0); };
+      window.addEventListener('scroll', upd, { passive: true });
+      window.addEventListener('resize', upd);
+      upd();
+    }
+  }
+
+  /* Eventos de listados */
+  function initListEvents() {
+    var map = {};
+    $$('[data-list]').forEach(function (a) { map[a.getAttribute('data-item')] = a.getAttribute('data-list'); });
+    window.__LIST = map;
+    var lists = {};
+    $$('[data-list]').forEach(function (a, i) {
+      var l = a.getAttribute('data-list'); (lists[l] = lists[l] || []).push(a);
+      a.addEventListener('click', function () {
+        var p = byId(a.getAttribute('data-item')); if (!p) return;
+        ev('select_item', { item_list_name: l, items: [item(p, null, l, parseInt(a.getAttribute('data-index') || '0', 10))] });
+      });
+    });
+    Object.keys(lists).forEach(function (l) {
+      var items = lists[l].map(function (a, i) { var p = byId(a.getAttribute('data-item')); return p ? item(p, null, l, i) : null; }).filter(Boolean);
+      ev('view_item_list', { item_list_name: l, items: items });
+    });
+  }
+
+  /* Síguenos: clic en las fotos de Instagram */
+  function initIg() {
+    $$('[data-ig]').forEach(function (a) {
+      a.addEventListener('click', function () { ev('click_instagram', { link_url: a.getAttribute('href') }); });
+    });
+  }
+
+  /* Catálogo: filtro por categoría (sin JS se ve todo) */
+  function initFilter() {
+    var chips = $$('.chip[data-filter]'); if (!chips.length) return;
+    var secs = $$('[data-cat-sec]');
+    function apply(id, setHash) {
+      if (!chips.some(function (c) { return c.getAttribute('data-filter') === id; })) id = 'todo';
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-filter') === id ? 'true' : 'false'); });
+      secs.forEach(function (s) { s.hidden = id !== 'todo' && s.getAttribute('data-cat-sec') !== id; });
+      if (setHash && window.history && history.replaceState) history.replaceState(null, '', id === 'todo' ? location.pathname : '#' + id);
+    }
+    chips.forEach(function (c) { c.addEventListener('click', function () { apply(c.getAttribute('data-filter'), true); }); });
+    window.addEventListener('hashchange', function () { apply(location.hash.slice(1)); });
+    if (location.hash) apply(location.hash.slice(1));
+  }
+
+  /* Desistimiento online (página /tienda/desistir) */
+  function initDesist() {
+    var form = $('form[data-desist]'); if (!form) return;
+    var dmsg = $('.desist-msg', form), btn = $('button[type=submit]', form), sending = false;
+    var FAIL = 'No hemos podido enviarlo. Escríbenos a contacto@monacobarberia.com con estos datos y cuenta como presentado.';
+    function say(t) { dmsg.textContent = t; dmsg.hidden = false; }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (sending) return;
+      var v = {}; ['nombre', 'email', 'pedido', 'fecha', 'productos', 'web'].forEach(function (n) { var f = form.elements[n]; v[n] = f ? f.value.trim() : ''; });
+      if (!v.nombre || !v.email || v.email.indexOf('@') < 1 || !v.pedido || !v.fecha) { say('Rellena tu nombre, un email válido, el número de pedido y la fecha.'); return; }
+      sending = true; btn.disabled = true; dmsg.hidden = true;
+      var ctl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      var to = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
+      fetch('/api/desistimiento', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(v), signal: ctl ? ctl.signal : undefined })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { s: r.status, d: d }; }); })
+        .then(function (o) {
+          clearTimeout(to);
+          if (o.s === 200 && o.d && o.d.ok) {
+            var p = document.createElement('p'); p.className = 'desist-msg'; p.setAttribute('role', 'status');
+            p.textContent = 'Desistimiento recibido el ' + (o.d.fechaHora || '') + '. Te hemos enviado el acuse de recibo a ' + v.email + '.';
+            form.replaceWith(p); return;
+          }
+          sending = false; btn.disabled = false; say(FAIL);
+        })
+        .catch(function () { clearTimeout(to); sending = false; btn.disabled = false; say(FAIL); });
+    });
+  }
+
+  function init() {
+    initFilter();
+    initIg();
+    buildPanel(); initDesist(); initNav(); initCarousels(); initGallery(); updateCount();
+    var pid = document.body.getAttribute('data-product-id');
+    var gone = document.body.getAttribute('data-clear-cart') === '1' && /session_id=/.test(location.search);
+    if (gone) { cart = []; save(); }
+    fetch('/tienda/productos.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
+      catalog = d.productos || d; if (d.envio) envio = d.envio; hydrate(); initPdp(); initListEvents();
+      if (pid) { var p = byId(pid); if (p) ev('view_item', { currency: 'EUR', value: value([item(p)]), items: [item(p)] }); }
+    }).catch(function () { renderCart(); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
