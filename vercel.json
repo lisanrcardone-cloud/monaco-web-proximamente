@@ -9,10 +9,12 @@
     { "source": "/tienda/producto/:slug/index.html", "destination": "/tienda/producto/:slug", "permanent": true },
     { "source": "/tienda/gracias/index.html", "destination": "/tienda/gracias", "permanent": true },
     { "source": "/tienda/envios-devoluciones/index.html", "destination": "/tienda/envios-devoluciones", "permanent": true },
-    { "source": "/tienda/condiciones/index.html", "destination": "/tienda/condiciones", "permanent": true }
+    { "source": "/tienda/condiciones/index.html", "destination": "/tienda/condiciones", "permanent": true },
+    { "source": "/tienda/desistir/index.html", "destination": "/tienda/desistir", "permanent": true }
   ],
   "functions": {
-    "api/checkout.mjs": { "includeFiles": "tienda/productos.json" }
+    "api/checkout.mjs": { "includeFiles": "tienda/productos.json" },
+    "api/desistimiento.mjs": { "includeFiles": "tools/tienda-templates/legal-textos.mjs" }
   },
   "headers": [
     {

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { home } from './tienda-templates/home.mjs';
 import { catalog } from './tienda-templates/catalog.mjs';
 import { product } from './tienda-templates/product.mjs';
-import { gracias, legal } from './tienda-templates/simple.mjs';
+import { gracias, legal, desistir } from './tienda-templates/simple.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const { productos, categorias } = JSON.parse(readFileSync(join(root, 'tienda/productos.json'), 'utf8'));
@@ -28,5 +28,6 @@ for (const p of productos) out(`tienda/producto/${p.slug}/index.html`, product(p
 out('tienda/gracias/index.html', gracias(productos));
 out('tienda/envios-devoluciones/index.html', legal('envios-devoluciones', 'Envíos y devoluciones', 'texto de envíos y devoluciones', productos));
 out('tienda/condiciones/index.html', legal('condiciones', 'Condiciones de compra', 'condiciones de compra', productos));
+out('tienda/desistir/index.html', desistir(productos));
 out('aviso-legal/index.html', legal('aviso-legal', 'Aviso legal', 'aviso legal', productos, '/aviso-legal'));
 console.log(changed ? `${changed} archivo(s) actualizados` : 'sin cambios');

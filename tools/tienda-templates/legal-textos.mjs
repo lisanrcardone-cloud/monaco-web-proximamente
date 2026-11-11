@@ -43,7 +43,7 @@ export const DEVOLUCIONES_HTML = `
   <h3>Si cambias de opinión</h3>
   <p>Tienes <strong>14 días naturales</strong> desde que recibes o recoges el pedido para devolverlo sin dar ningún motivo.</p>
   <ul>
-    <li>Escríbenos a <a href="mailto:${T.email}">${T.email}</a> con tu nombre, el número de pedido y qué productos quieres devolver. También puedes usar el formulario de desistimiento de las <a href="/tienda/condiciones#desistimiento">condiciones de compra</a>.</li>
+    <li>Escríbenos a <a href="mailto:${T.email}">${T.email}</a> con tu nombre, el número de pedido y qué productos quieres devolver. También puedes hacerlo online: <a href="/tienda/desistir">Desistir del contrato aquí</a>. Además tienes el formulario de desistimiento en las <a href="/tienda/condiciones#desistimiento">condiciones de compra</a>.</li>
     <li>Después tienes otros 14 días para hacernos llegar el producto: por correo, o en la barbería, en ${T.local}, de lunes a sábado de 9:00 a 20:00.</li>
     <li>Si lo envías por correo, el coste de la devolución lo pagas tú.</li>
     <li>Te devolvemos todo lo que pagaste, incluido el envío inicial, en un máximo de 14 días desde que nos avisas, con el mismo medio de pago. Podemos esperar a recibir el producto, o la prueba de que lo has enviado, antes de hacer el reembolso.</li>
@@ -95,7 +95,7 @@ export const CONDICIONES_HTML = `
   <h2 id="desistimiento">5. Derecho de desistimiento (devoluciones)</h2>
   <p>Tienes <strong>14 días naturales</strong> para desistir de la compra sin dar ningún motivo. El plazo empieza el día en que tú, o la persona que indiques, recibe el pedido, o el día en que lo recoges en la barbería. Si el pedido llega en varias partes, cuenta desde la última.</p>
   <ul>
-    <li><strong>Cómo:</strong> escríbenos a <a href="mailto:${T.email}">${T.email}</a> antes de que acabe el plazo, o usa el formulario de abajo. Basta con enviarlo dentro de plazo.</li>
+    <li><strong>Cómo:</strong> escríbenos a <a href="mailto:${T.email}">${T.email}</a> antes de que acabe el plazo, usa la función online <a href="/tienda/desistir">Desistir del contrato aquí</a> o el formulario de abajo. Basta con enviarlo dentro de plazo.</li>
     <li><strong>Devolución del producto:</strong> tienes 14 días naturales desde que nos avisas para enviarlo o traerlo a la barbería. Si lo envías, el coste de la devolución lo pagas tú.</li>
     <li><strong>Reembolso:</strong> te devolvemos todo lo pagado, incluido el envío inicial (el de la opción más barata), en un máximo de 14 días naturales desde que nos avisas y con el mismo medio de pago. Podemos esperar a recibir el producto, o la prueba de que lo has enviado.</li>
     <li><strong>Excepción por higiene:</strong> no hay derecho de desistimiento en los productos precintados que no se pueden devolver por razones de salud o higiene y que se han desprecintado después de la entrega. Los cosméticos precintados que sigan cerrados sí se pueden devolver.</li>

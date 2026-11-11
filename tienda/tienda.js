@@ -330,10 +330,39 @@
     if (location.hash) apply(location.hash.slice(1));
   }
 
+  /* Desistimiento online (página /tienda/desistir) */
+  function initDesist() {
+    var form = $('form[data-desist]'); if (!form) return;
+    var dmsg = $('.desist-msg', form), btn = $('button[type=submit]', form), sending = false;
+    var FAIL = 'No hemos podido enviarlo. Escríbenos a contacto@monacobarberia.com con estos datos y cuenta como presentado.';
+    function say(t) { dmsg.textContent = t; dmsg.hidden = false; }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (sending) return;
+      var v = {}; ['nombre', 'email', 'pedido', 'fecha', 'productos', 'web'].forEach(function (n) { var f = form.elements[n]; v[n] = f ? f.value.trim() : ''; });
+      if (!v.nombre || !v.email || v.email.indexOf('@') < 1 || !v.pedido || !v.fecha) { say('Rellena tu nombre, un email válido, el número de pedido y la fecha.'); return; }
+      sending = true; btn.disabled = true; dmsg.hidden = true;
+      var ctl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      var to = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
+      fetch('/api/desistimiento', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(v), signal: ctl ? ctl.signal : undefined })
+        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { s: r.status, d: d }; }); })
+        .then(function (o) {
+          clearTimeout(to);
+          if (o.s === 200 && o.d && o.d.ok) {
+            var p = document.createElement('p'); p.className = 'desist-msg'; p.setAttribute('role', 'status');
+            p.textContent = 'Desistimiento recibido el ' + (o.d.fechaHora || '') + '. Te hemos enviado el acuse de recibo a ' + v.email + '.';
+            form.replaceWith(p); return;
+          }
+          sending = false; btn.disabled = false; say(FAIL);
+        })
+        .catch(function () { clearTimeout(to); sending = false; btn.disabled = false; say(FAIL); });
+    });
+  }
+
   function init() {
     initFilter();
     initIg();
-    buildPanel(); initNav(); initCarousels(); initGallery(); updateCount();
+    buildPanel(); initDesist(); initNav(); initCarousels(); initGallery(); updateCount();
     var pid = document.body.getAttribute('data-product-id');
     var gone = document.body.getAttribute('data-clear-cart') === '1' && /session_id=/.test(location.search);
     if (gone) { cart = []; save(); }
