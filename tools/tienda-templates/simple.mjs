@@ -1,11 +1,17 @@
 import { page, hueco, huecoIn, productUrl } from './lib.mjs';
-import { DEVOLUCIONES_HTML, CONDICIONES_HTML } from './legal-textos.mjs';
+import { DEVOLUCIONES_HTML, CONDICIONES_HTML, TITULAR } from './legal-textos.mjs';
 
 export function gracias(productos) {
   const main = `<section class="simple"><div class="wrap">
   <h1 class="it">Gracias</h1>
   <p style="margin-bottom:1.5rem">Hemos recibido tu pago.</p>
-  ${hueco('mensaje de confirmación y plazos de envío', '16/4')}
+  <p>Te llega un email con el resumen del pedido. Lo preparamos en 24-48 h laborables.</p>
+  <ul style="margin:1rem 0 1.5rem;padding-left:1.2rem;line-height:1.6">
+    <li><strong>Envío a península:</strong> Correos lo entrega en 2-4 días laborables.</li>
+    <li><strong>Envío a Baleares:</strong> 3-5 días laborables.</li>
+    <li><strong>Recogida en la barbería:</strong> te avisamos cuando esté listo y te lo guardamos 15 días en ${TITULAR.local}, de lunes a sábado de 9:00 a 20:00.</li>
+  </ul>
+  <p style="margin-bottom:1.5rem">¿Alguna duda con el pedido? Escríbenos a <a href="mailto:${TITULAR.email}">${TITULAR.email}</a> o llama al <a href="tel:${TITULAR.tel.replace(/\s/g, '')}">${TITULAR.tel}</a>.</p>
   <a class="btn" href="/tienda">Volver a la tienda</a>
 </div></section>`;
   return page({ title: 'Gracias | Tienda Mónaco Barbershop', description: 'Pago recibido.', path: '/tienda/gracias', bodyAttrs: 'data-clear-cart="1"', productos, main });
