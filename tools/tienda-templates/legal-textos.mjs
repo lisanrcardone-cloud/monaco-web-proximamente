@@ -18,8 +18,7 @@ export const AVISO_LEGAL_HTML = `
   <ul>
     <li><strong>Titular:</strong> ${T.nombre} (nombre comercial: ${T.comercial}).</li>
     <li><strong>NIF/NIE:</strong> ${T.nie}.</li>
-    <li><strong>Domicilio:</strong> ${T.fiscal}.</li>
-    <li><strong>Establecimiento:</strong> ${T.local}.</li>
+    <li><strong>Dirección (establecimiento):</strong> ${T.local}.</li>
     <li><strong>Email:</strong> <a href="mailto:${T.email}">${T.email}</a>.</li>
     <li><strong>Teléfono:</strong> <a href="tel:${T.tel.replace(/\s/g, '')}">${T.tel}</a>.</li>
   </ul>
@@ -59,7 +58,7 @@ export const CONDICIONES_HTML = `
   <p class="legal-note">Última actualización: 5 de noviembre de 2026.</p>
 
   <h2>1. Quién vende</h2>
-  <p>La tienda online de ${T.comercial} es de <strong>${T.nombre}</strong>, autónomo, con NIE ${T.nie} y domicilio fiscal en ${T.fiscal}.</p>
+  <p>La tienda online de ${T.comercial} es de <strong>${T.nombre}</strong>, autónomo, con NIE ${T.nie} y establecimiento en ${T.local}.</p>
   <ul>
     <li>Barbería y punto de recogida: ${T.local}.</li>
     <li>Email: <a href="mailto:${T.email}">${T.email}</a></li>
