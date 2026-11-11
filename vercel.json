@@ -12,6 +12,7 @@
     { "source": "/tienda/condiciones/index.html", "destination": "/tienda/condiciones", "permanent": true },
     { "source": "/tienda/desistir/index.html", "destination": "/tienda/desistir", "permanent": true }
   ],
+  "crons": [{ "path": "/api/brevo-keepalive", "schedule": "0 8 1 * *" }],
   "functions": {
     "api/checkout.mjs": { "includeFiles": "tienda/productos.json" },
     "api/desistimiento.mjs": { "includeFiles": "tools/tienda-templates/legal-textos.mjs" }
