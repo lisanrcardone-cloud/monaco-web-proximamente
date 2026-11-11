@@ -1263,7 +1263,7 @@
       "imagenes": [
         "/assets/tienda/productos/pack-autocuidado.webp"
       ],
-      "precio": null,
+      "precio": 3800,
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
@@ -1350,7 +1350,7 @@
       "imagenes": [
         "/assets/tienda/productos/pack-reparacion.webp"
       ],
-      "precio": null,
+      "precio": 4400,
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
