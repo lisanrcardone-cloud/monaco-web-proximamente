@@ -13,6 +13,31 @@ export const TITULAR = {
 
 const T = TITULAR;
 
+export const AVISO_LEGAL_HTML = `
+  <h2>Titular de la web</h2>
+  <ul>
+    <li><strong>Titular:</strong> ${T.nombre} (nombre comercial: ${T.comercial}).</li>
+    <li><strong>NIF/NIE:</strong> ${T.nie}.</li>
+    <li><strong>Domicilio:</strong> ${T.fiscal}.</li>
+    <li><strong>Establecimiento:</strong> ${T.local}.</li>
+    <li><strong>Email:</strong> <a href="mailto:${T.email}">${T.email}</a>.</li>
+    <li><strong>Teléfono:</strong> <a href="tel:${T.tel.replace(/\s/g, '')}">${T.tel}</a>.</li>
+  </ul>
+  <p>Profesional autónomo; no inscrito en el Registro Mercantil.</p>
+
+  <h2>Actividad</h2>
+  <p>Barbería y venta online de productos de peluquería y cuidado de la barba. Los precios incluyen el IVA. Los gastos de envío los tienes en <a href="/tienda/envios-devoluciones">Envíos y devoluciones</a>.</p>
+
+  <h2>Uso de la web</h2>
+  <p>Los textos, las fotos, los logotipos y el diseño de esta web son de Mónaco Barbershop o se usan con permiso. No se pueden copiar con fines comerciales sin nuestra autorización. No respondemos del contenido de las webs externas a las que enlazamos.</p>
+
+  <h2>Ley aplicable</h2>
+  <p>Esta web se rige por la ley española. En las compras, los consumidores pueden reclamar ante los juzgados de su domicilio.</p>
+
+  <h2>Más información</h2>
+  <p>Consulta las <a href="/tienda/condiciones">condiciones de compra</a> y la <a href="/privacy">política de privacidad</a>.</p>
+`;
+
 export const DEVOLUCIONES_HTML = `
   <h2>Devoluciones</h2>
   <h3>Si cambias de opinión</h3>

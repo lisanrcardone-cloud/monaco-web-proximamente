@@ -4,6 +4,7 @@
     { "source": "/about/index.html", "destination": "/about", "permanent": true },
     { "source": "/contact/index.html", "destination": "/contact", "permanent": true },
     { "source": "/privacy/index.html", "destination": "/privacy", "permanent": true },
+    { "source": "/aviso-legal/index.html", "destination": "/aviso-legal", "permanent": true },
     { "source": "/tienda/index.html", "destination": "/tienda", "permanent": true },
     { "source": "/tienda/producto/:slug/index.html", "destination": "/tienda/producto/:slug", "permanent": true },
     { "source": "/tienda/gracias/index.html", "destination": "/tienda/gracias", "permanent": true },

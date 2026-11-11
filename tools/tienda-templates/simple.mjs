@@ -1,5 +1,5 @@
 import { page, hueco, huecoIn, productUrl } from './lib.mjs';
-import { DEVOLUCIONES_HTML, CONDICIONES_HTML, TITULAR } from './legal-textos.mjs';
+import { DEVOLUCIONES_HTML, CONDICIONES_HTML, AVISO_LEGAL_HTML, TITULAR } from './legal-textos.mjs';
 
 export function gracias(productos) {
   const main = `<section class="simple"><div class="wrap">
@@ -17,7 +17,7 @@ export function gracias(productos) {
   return page({ title: 'Gracias | Tienda Mónaco Barbershop', description: 'Pago recibido.', path: '/tienda/gracias', bodyAttrs: 'data-clear-cart="1"', productos, main });
 }
 
-export function legal(slug, titulo, label, productos) {
+export function legal(slug, titulo, label, productos, path = `/tienda/${slug}`) {
   const main = `<section class="simple simple-left"><div class="wrap">
   <h1 class="it" style="text-align:center">${titulo}</h1>
   ${slug === 'envios-devoluciones' ? `<ul class="envios">
@@ -28,7 +28,7 @@ export function legal(slug, titulo, label, productos) {
     <li>No enviamos a Canarias, Ceuta ni Melilla.</li>
     <li>La espuma de rizos y el Pack Rizos son aerosoles: solo se pueden recoger en la barbería.</li>
   </ul>
-  ` : ''}${slug === 'envios-devoluciones' ? `<div class="legal">${DEVOLUCIONES_HTML}</div>` : slug === 'condiciones' ? `<div class="legal">${CONDICIONES_HTML}</div>` : hueco(label, '16/9')}
+  ` : ''}${slug === 'envios-devoluciones' ? `<div class="legal">${DEVOLUCIONES_HTML}</div>` : slug === 'condiciones' ? `<div class="legal">${CONDICIONES_HTML}</div>` : slug === 'aviso-legal' ? `<div class="legal">${AVISO_LEGAL_HTML}</div>` : hueco(label, '16/9')}
 </div></section>`;
-  return page({ title: `${titulo} | Tienda Mónaco Barbershop`, description: titulo, path: `/tienda/${slug}`, productos, main });
+  return page({ title: `${titulo} | Tienda Mónaco Barbershop`, description: titulo, path, productos, main });
 }
