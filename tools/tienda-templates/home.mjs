@@ -98,7 +98,7 @@ ${CINTA_DEFS}
 
 <section class="follow-sec" id="siguenos">
   <div class="follow-band"><div class="wrap"><div class="follow"><span class="it">Síguenos</span><a href="https://www.instagram.com/monacobarbershop.oficial/" rel="noopener" target="_blank">@monacobarbershop.oficial</a></div></div></div>
-  <div class="grid6">${IG.length ? IG.slice(0, 6).map((x) => `<a href="${esc(x.permalink)}" target="_blank" rel="noopener" data-ig="1"><img src="${esc(x.img)}" alt="${esc(x.alt)}" width="600" height="600" loading="lazy" decoding="async"></a>`).join('') : [1, 2, 3, 4, 5, 6].map((n) => hueco('foto ' + n, '1/1', ' data-small="1"')).join('')}</div>
+  ${IG.length ? `<div class="grid6">${IG.slice(0, 6).map((x) => `<a href="${esc(x.permalink)}" target="_blank" rel="noopener" data-ig="1"><img src="${esc(x.img)}" alt="${esc(x.alt)}" width="600" height="600" loading="lazy" decoding="async"></a>`).join('')}</div>` : '<!-- Sin fotos en tienda/instagram.json: la cuadrícula no se muestra (pendiente en MONACO.md) -->'}
 </section>`;
 
   return page({
