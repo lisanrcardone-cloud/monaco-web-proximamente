@@ -45,6 +45,18 @@ export function page({ title, description, path, bodyAttrs = '', bodyClass = '',
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 ${noindex ? '<meta name="robots" content="noindex, nofollow">\n' : ''}<link rel="canonical" href="${SITE}${path}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mónaco Barbershop">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${SITE}${path}">
+<meta property="og:image" content="${SITE}/assets/tienda/og-tienda.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pack Textura de Mónaco Barbershop: spray de sal y polvo texturizante">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${SITE}/assets/tienda/og-tienda.jpg">
 ${GA}
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=20260826">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260826">
