@@ -35,7 +35,7 @@ const GA = `<!-- Google tag (gtag.js) -->
     })(window, document, "clarity", "script", "y8hbbvzzyc");
 </script>`;
 
-export function page({ title, description, path, bodyAttrs = '', bodyClass = '', main, productos, jsonld = [] }) {
+export function page({ title, description, path, bodyAttrs = '', bodyClass = '', main, productos, jsonld = [], noindex = false }) {
   const ld = jsonld.map((o) => `<script type="application/ld+json">\n${JSON.stringify(o, null, 2)}\n</script>`).join('\n');
   return `<!doctype html>
 <html lang="es">
@@ -44,8 +44,7 @@ export function page({ title, description, path, bodyAttrs = '', bodyClass = '',
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<meta name="robots" content="noindex, nofollow">
-<link rel="canonical" href="${SITE}${path}">
+${noindex ? '<meta name="robots" content="noindex, nofollow">\n' : ''}<link rel="canonical" href="${SITE}${path}">
 ${GA}
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=20260826">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260826">

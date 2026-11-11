@@ -15,7 +15,7 @@ export function gracias(productos) {
   <p style="margin-bottom:1.5rem">¿Alguna duda con el pedido? Escríbenos a <a href="mailto:${TITULAR.email}">${TITULAR.email}</a> o llama al <a href="tel:${TITULAR.tel.replace(/\s/g, '')}">${TITULAR.tel}</a>.</p>
   <a class="btn" href="/tienda">Volver a la tienda</a>
 </div></section>`;
-  return page({ title: 'Gracias | Tienda Mónaco Barbershop', description: 'Pago recibido.', path: '/tienda/gracias', bodyAttrs: 'data-clear-cart="1"', productos, main });
+  return page({ title: 'Gracias | Tienda Mónaco Barbershop', description: 'Pago recibido.', path: '/tienda/gracias', bodyAttrs: 'data-clear-cart="1"', productos, main, noindex: true });
 }
 
 export function legal(slug, titulo, label, productos, path = `/tienda/${slug}`) {
