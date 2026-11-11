@@ -31,6 +31,7 @@ export async function POST(request) {
   if (!Array.isArray(lines) || lines.length < 1 || lines.length > 10) return json(400, { error: 'Carrito no válido' });
 
   if (entrega !== 'peninsula' && entrega !== 'baleares' && entrega !== 'recogida') return json(400, { error: 'Entrega no válida' });
+  if (parsed.acepta !== true) return json(400, { error: 'Debes aceptar las condiciones de compra' });
 
   let productos;
   let envio;
@@ -91,6 +92,7 @@ export async function POST(request) {
   form.set('locale', 'es');
   form.set('phone_number_collection[enabled]', 'true');
   form.set('metadata[entrega]', entrega);
+  form.set('metadata[condiciones]', 'aceptadas ' + new Date().toISOString());
   if (entrega === 'recogida') {
     form.set('custom_text[submit][message]', 'Recogida gratis en Mónaco Barbershop, Rúa de Venezuela 71, Vigo. Lunes a sábado, 9:00-20:00. Te avisamos cuando esté listo y lo guardamos 15 días.');
   } else {

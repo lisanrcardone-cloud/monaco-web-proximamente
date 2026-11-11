@@ -293,6 +293,8 @@ details.acc .acc-body{padding:.25rem 0 1rem}
 /* Móvil y pantallas bajas: el pie (entrega + total + Pagar) mide ~480px y dejaba poco sitio a los productos. Todo el panel hace scroll. */
 @media(max-width:600px),(max-height:780px){.cart-panel{overflow-y:auto;overscroll-behavior:contain}.cart-body{flex:none;overflow:visible}}
 .cart-sub{display:flex;justify-content:space-between;font-weight:600;font-size:1.1rem}
+.cart-accept{display:flex;gap:.6rem;align-items:flex-start;min-height:44px;font-size:.88rem;line-height:1.4;cursor:pointer}
+.cart-accept input{width:20px;height:20px;flex:none;margin-top:.1rem;accent-color:var(--green)}
 .cart-msg{font-size:.9rem;color:var(--ink);background:var(--bg-2);border-radius:10px;padding:.7rem .9rem}
 .cart-msg[hidden]{display:none}
 body.lock{overflow:hidden}
