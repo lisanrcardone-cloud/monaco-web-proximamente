@@ -56,7 +56,7 @@ export function emailConfirmacion(session, productos) {
     'Tienes 14 días naturales desde que recibes o recoges el pedido para desistir, sin dar ningún motivo.',
     `Desistir del contrato aquí: ${url}`,
     'También puedes enviarnos por email el formulario de abajo.',
-    'Por higiene, no se devuelven los productos con precinto si lo has abierto.',
+    'Por higiene, los cosméticos precintados no se pueden devolver si has abierto el precinto.',
     '',
     'Formulario de desistimiento',
     FORMULARIO_DESISTIMIENTO_TXT,
