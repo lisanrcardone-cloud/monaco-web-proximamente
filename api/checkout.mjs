@@ -93,6 +93,11 @@ export async function POST(request) {
   form.set('phone_number_collection[enabled]', 'true');
   form.set('metadata[entrega]', entrega);
   form.set('metadata[condiciones]', 'aceptadas ' + new Date().toISOString());
+  form.set('metadata[items]', lines.map((l) => l.id + ':' + l.qty).join(','));
+  // Datos de GA4 (opcionales): solo se guardan si tienen el formato esperado.
+  const ga = parsed.ga && typeof parsed.ga === 'object' && !Array.isArray(parsed.ga) ? parsed.ga : null;
+  if (ga && typeof ga.cid === 'string' && /^\d{1,20}\.\d{1,20}$/.test(ga.cid)) form.set('metadata[ga_cid]', ga.cid);
+  if (ga && typeof ga.sid === 'string' && /^\d{1,20}$/.test(ga.sid)) form.set('metadata[ga_sid]', ga.sid);
   if (entrega === 'recogida') {
     form.set('custom_text[submit][message]', 'Recogida gratis en Mónaco Barbershop, Rúa de Venezuela 71, Vigo. Lunes a sábado, 9:00-20:00. Te avisamos cuando esté listo y lo guardamos 15 días.');
   } else {
