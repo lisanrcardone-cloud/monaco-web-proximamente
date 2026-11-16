@@ -33,7 +33,7 @@ ${CINTA_DEFS}
 
 <section class="sec bg-white" id="mas-vendidos">
   <div class="wrap">
-    ${sectionTitle('¿Primera vez?', 'Los más vendidos')}
+    ${sectionTitle('¿Primera vez?', 'Los más vendidos', '/tienda/productos/')}
     ${carousel(['serum-sideral-peptide', 'champu-pro-keratin', 'polvo-texturizante', 'espuma-rizos'].map((id) => productos.find((p) => p.id === id)).map((p, i) => card(p, 'mas_vendidos', i)), 'c4', 'Los más vendidos')}
   </div>
 </section>
@@ -48,21 +48,21 @@ ${CINTA_DEFS}
 
 <section class="sec bg-white" id="packs">
   <div class="wrap">
-    ${sectionTitle('', 'Packs')}
+    ${sectionTitle('', 'Packs', '/tienda/productos/#packs')}
     ${carousel(cat('packs').map((p, i) => card(p, 'packs', i)), 'c3', 'Packs')}
   </div>
 </section>
 
 <section class="sec bg-white" id="cuidado-cabello">
   <div class="wrap">
-    ${sectionTitle('Para cada tipo de pelo', 'Cuidado del cabello')}
+    ${sectionTitle('Para cada tipo de pelo', 'Cuidado del cabello', '/tienda/productos/#champus')}
     ${carousel(cat('champus', 'tratamientos').map((p, i) => card(p, 'cuidado_cabello', i)), 'c4', 'Cuidado del cabello')}
   </div>
 </section>
 
 <section class="sec bg-white" id="barba">
   <div class="wrap">
-    ${sectionTitle('', 'Barba')}
+    ${sectionTitle('', 'Barba', '/tienda/productos/#barba')}
     ${carousel(cat('barba').map((p, i) => card(p, 'barba', i)), 'c4', 'Barba')}
   </div>
 </section>

@@ -47,7 +47,7 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--head-h) + 12px)}
 /* Tipografía de titulares */
 .it{font-family:var(--serif);font-style:italic;font-weight:500}
 .caps{font-family:var(--caps);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
-.sec-title{text-align:center;margin-bottom:clamp(1.5rem,4vw,2.5rem)}
+.sec-title a{text-decoration:none}.sec-title a:hover .caps,.sec-title a:focus-visible .caps{text-decoration:underline;text-underline-offset:.15em;text-decoration-thickness:2px}.sec-title{text-align:center;margin-bottom:clamp(1.5rem,4vw,2.5rem)}
 .sec-title .it{display:block;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.1;color:var(--gold-text)}
 .sec-title .caps{display:block;font-size:clamp(1.7rem,4.6vw,3rem);line-height:1.05;color:var(--green)}
 .on-green .sec-title .it{color:var(--gold-on-green)}

@@ -154,4 +154,7 @@ ${cards.join('\n')}
 </div>`;
 }
 
-export const sectionTitle = (it, caps) => `<h2 class="sec-title">${it ? `<span class="it">${esc(it)}</span>` : ''}<span class="caps">${esc(caps)}</span></h2>`;
+export const sectionTitle = (it, caps, href) => {
+  const inner = `${it ? `<span class="it">${esc(it)}</span>` : ''}<span class="caps">${esc(caps)}</span>`;
+  return `<h2 class="sec-title">${href ? `<a href="${href}">${inner}</a>` : inner}</h2>`;
+};
