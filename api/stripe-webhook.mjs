@@ -1,8 +1,10 @@
 // Función de Vercel (ESM, firma Web). Webhook de Stripe: verifica la firma a mano (HMAC-SHA256, sin SDK)
-// y, para checkout.session.completed pagado, manda `purchase` a GA4 (Measurement Protocol).
+// y, para checkout.session.completed pagado, manda `purchase` a GA4 (Measurement Protocol) y avisa por
+// Brevo si el código postal no cuadra con el envío pagado.
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { createHmac, timingSafeEqual } from 'node:crypto';
+import { TITULAR } from '../tools/tienda-templates/legal-textos.mjs';
 
 const MAX_BODY = 65536;
 const MEASUREMENT_ID = 'G-EHWP4106KW';
@@ -86,6 +88,56 @@ export function ga4Purchase(session, productos) {
   return { client_id: m.ga_cid, events: [{ name: 'purchase', params }] };
 }
 
+// Zonas por los 2 primeros dígitos del código postal (provincia).
+export function zonaCP(cp) {
+  const v = typeof cp === 'string' ? cp.trim() : '';
+  if (!/^\d{5}$/.test(v)) return 'invalido';
+  const prov = Number(v.slice(0, 2));
+  if (prov === 7) return 'baleares';
+  if (prov === 35 || prov === 38 || prov === 51 || prov === 52) return 'excluida';
+  if (prov >= 1 && prov <= 50) return 'peninsula';
+  return 'invalido';
+}
+
+export function cuadra(entrega, cp) {
+  if (entrega === 'recogida') return true;
+  if (entrega === 'peninsula') return zonaCP(cp) === 'peninsula';
+  if (entrega === 'baleares') return zonaCP(cp) === 'baleares';
+  return false;
+}
+
+const eurosTxt = (cents) => ((Number(cents) || 0) / 100).toFixed(2).replace('.', ',');
+const stripeLink = (session) => `https://dashboard.stripe.com/payments/${typeof session.payment_intent === 'string' ? session.payment_intent : ''}`;
+
+async function brevo(payload) {
+  const r = await post('https://api.brevo.com/v3/smtp/email', { 'api-key': process.env.BREVO_API_KEY, 'Content-Type': 'application/json', Accept: 'application/json' }, payload);
+  if (!r.ok) throw new Error('status ' + r.status);
+}
+
+async function sendCpAlert(session) {
+  const entrega = (session.metadata && session.metadata.entrega) || '';
+  const cp = postalCode(session);
+  if (cuadra(entrega, cp)) return;
+  if (!process.env.BREVO_API_KEY) { console.error('cp_alert_skip_no_key'); return; }
+  const texto = [
+    `Pedido pagado con envío "${entrega}" y código postal ${cp || '(sin código postal)'} (${zonaCP(cp)}).`,
+    `Importe: ${eurosTxt(session.amount_total)} €`,
+    `Sesión: ${session.id}`,
+    `Ver en Stripe: ${stripeLink(session)}`,
+    'Qué hacer: si es Baleares y pagó península, pide la diferencia (2 €) o reembolsa; si es Canarias, Ceuta o Melilla, reembolsa: no enviamos allí.',
+  ].join('\n');
+  try {
+    await brevo({
+      sender: { name: TITULAR.comercial, email: TITULAR.email },
+      to: [{ email: TITULAR.email }],
+      subject: 'Revisar pedido: el código postal no cuadra con el envío pagado',
+      textContent: texto,
+    });
+  } catch (e) {
+    console.error('cp_alert_failed ' + (e && e.name));
+  }
+}
+
 async function post(url, headers, payload) {
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), 10000);
@@ -139,6 +191,6 @@ export async function POST(request) {
   if (!session || typeof session !== 'object' || session.payment_status !== 'paid') return json(200, { ok: true });
 
   const productos = await loadProductos();
-  await Promise.allSettled([sendGa4(session, productos)]);
+  await Promise.allSettled([sendGa4(session, productos), sendCpAlert(session)]);
   return json(200, { ok: true });
 }
