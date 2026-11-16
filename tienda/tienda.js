@@ -206,6 +206,17 @@
     });
   }
   function showMsg(t) { msg.textContent = t; msg.hidden = false; }
+  /* client_id y session_id de GA4 (de las cookies _ga y _ga_EHWP4106KW); null si falta algo */
+  function gaIds() {
+    try {
+      var ck = {};
+      document.cookie.split(';').forEach(function (c) { var i = c.indexOf('='); if (i > 0) ck[c.slice(0, i).trim()] = c.slice(i + 1).trim(); });
+      var a = (ck._ga || '').split('.'), cid = a.length >= 4 ? a[a.length - 2] + '.' + a[a.length - 1] : '';
+      var g = ck._ga_EHWP4106KW || '', m = /^GS2\.\d+\.s(\d+)/.exec(g) || /^GS1\.\d+\.(\d+)\./.exec(g);
+      if (!/^\d+\.\d+$/.test(cid) || !m) return null;
+      return { cid: cid, sid: m[1] };
+    } catch (e) { return null; }
+  }
   function pay() {
     if (!cart.length) return;
     var chk = $('input[name="acepto"]', panel);
@@ -215,7 +226,9 @@
     payBtn.disabled = true; msg.hidden = true;
     var ctl = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var to = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
-    fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ lineas: cart.map(function (l) { var o = { id: l.id, qty: l.qty }; if (l.opts) o.opts = l.opts; return o; }), entrega: entrega, acepta: true }), signal: ctl ? ctl.signal : undefined })
+    var payload = { lineas: cart.map(function (l) { var o = { id: l.id, qty: l.qty }; if (l.opts) o.opts = l.opts; return o; }), entrega: entrega, acepta: true };
+    var gids = gaIds(); if (gids) payload.ga = gids;
+    fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: ctl ? ctl.signal : undefined })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { s: r.status, d: d }; }); })
       .then(function (o) {
         clearTimeout(to);
