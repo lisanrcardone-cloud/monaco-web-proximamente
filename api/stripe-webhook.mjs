@@ -1,6 +1,6 @@
 // Función de Vercel (ESM, firma Web). Webhook de Stripe: verifica la firma a mano (HMAC-SHA256, sin SDK)
 // y, para checkout.session.completed pagado, manda `purchase` a GA4 (Measurement Protocol) y avisa por
-// Brevo si el código postal no cuadra con el envío pagado.
+// Brevo si el código postal no cuadra con el envío pagado y de cada venta pagada al usuario (AVISO_VENTA_EMAIL).
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { createHmac, timingSafeEqual } from 'node:crypto';
@@ -134,7 +134,41 @@ async function sendCpAlert(session) {
       textContent: texto,
     });
   } catch (e) {
-    console.error('cp_alert_failed ' + (e && e.name));
+    console.error('cp_alert_failed');
+  }
+}
+
+// Aviso de venta al usuario. La dirección solo sale de AVISO_VENTA_EMAIL y nunca se loguea.
+async function sendVentaAviso(session, productos) {
+  const to = (process.env.AVISO_VENTA_EMAIL || '').trim();
+  if (!to) { console.error('venta_aviso_skip_no_email'); return; }
+  if (!process.env.BREVO_API_KEY) { console.error('venta_aviso_skip_no_key'); return; }
+  const m = session.metadata || {};
+  const entrega = m.entrega || '';
+  const cp = postalCode(session);
+  const lineas = parseItems(m.items).map(({ id, qty }) => {
+    const p = productos.find((x) => x.id === id);
+    return `- ${p ? p.nombre : id} × ${qty}`;
+  });
+  const total = eurosTxt(session.amount_total);
+  const texto = [
+    `Importe total: ${total} €`,
+    `Envío: ${entrega || '(sin dato)'}`,
+    'Productos:',
+    ...(lineas.length ? lineas : ['- (sin detalle)']),
+    `Código postal: ${entrega === 'recogida' ? 'recogida en tienda' : cp || '(sin código postal)'}`,
+    `Sesión: ${session.id}`,
+    `Ver en Stripe: ${stripeLink(session)}`,
+  ].join('\n');
+  try {
+    await brevo({
+      sender: { name: TITULAR.comercial, email: TITULAR.email },
+      to: [{ email: to }],
+      subject: `Nueva venta en la tienda: ${total} €`,
+      textContent: texto,
+    });
+  } catch (e) {
+    console.error('venta_aviso_failed');
   }
 }
 
@@ -191,6 +225,6 @@ export async function POST(request) {
   if (!session || typeof session !== 'object' || session.payment_status !== 'paid') return json(200, { ok: true });
 
   const productos = await loadProductos();
-  await Promise.allSettled([sendGa4(session, productos), sendCpAlert(session)]);
+  await Promise.allSettled([sendGa4(session, productos), sendCpAlert(session), sendVentaAviso(session, productos)]);
   return json(200, { ok: true });
 }
