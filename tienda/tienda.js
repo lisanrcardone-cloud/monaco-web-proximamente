@@ -348,6 +348,10 @@
     var form = $('form[data-desist]'); if (!form) return;
     var dmsg = $('.desist-msg', form), btn = $('button[type=submit]', form), sending = false;
     var FAIL = 'No hemos podido enviarlo. Escríbenos a contacto@monacobarberia.com con estos datos y cuenta como presentado.';
+    try {
+      var pp = new URLSearchParams(location.search).get('pedido'), pf = form.elements['pedido'];
+      if (pp && pf && !pf.value) pf.value = pp.slice(0, 80);
+    } catch (err) { /* sin parámetro */ }
     function say(t) { dmsg.textContent = t; dmsg.hidden = false; }
     form.addEventListener('submit', function (e) {
       e.preventDefault();

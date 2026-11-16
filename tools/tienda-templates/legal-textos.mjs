@@ -13,6 +13,17 @@ export const TITULAR = {
 
 const T = TITULAR;
 
+// Formulario de desistimiento en texto plano (para el email de confirmación). Mismas líneas que el <blockquote class="legal-form"> de CONDICIONES_HTML.
+export const FORMULARIO_DESISTIMIENTO_TXT = [
+  `A la atención de ${T.nombre} (${T.comercial}), ${T.local}, ${T.email}:`,
+  'Por la presente le comunico que desisto de mi contrato de venta del siguiente bien: ____',
+  'Pedido el / recibido el: ____',
+  'Nombre del consumidor: ____',
+  'Domicilio del consumidor: ____',
+  'Firma del consumidor (solo si se presenta en papel): ____',
+  'Fecha: ____',
+].join('\n');
+
 export const AVISO_LEGAL_HTML = `
   <h2>Titular de la web</h2>
   <ul>
