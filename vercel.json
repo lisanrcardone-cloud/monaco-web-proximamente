@@ -15,7 +15,8 @@
   "crons": [{ "path": "/api/brevo-keepalive", "schedule": "0 8 1 * *" }],
   "functions": {
     "api/checkout.mjs": { "includeFiles": "tienda/productos.json" },
-    "api/desistimiento.mjs": { "includeFiles": "tools/tienda-templates/legal-textos.mjs" }
+    "api/desistimiento.mjs": { "includeFiles": "tools/tienda-templates/legal-textos.mjs" },
+    "api/stripe-webhook.mjs": { "includeFiles": "{tienda/productos.json,tools/tienda-templates/legal-textos.mjs}" }
   },
   "headers": [
     {
