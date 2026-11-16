@@ -1,10 +1,12 @@
 // Función de Vercel (ESM, firma Web). Webhook de Stripe: verifica la firma a mano (HMAC-SHA256, sin SDK)
 // y, para checkout.session.completed pagado, manda `purchase` a GA4 (Measurement Protocol) y avisa por
-// Brevo si el código postal no cuadra con el envío pagado y de cada venta pagada al usuario (AVISO_VENTA_EMAIL).
+// Brevo si el código postal no cuadra con el envío pagado y de cada venta pagada al usuario (AVISO_VENTA_EMAIL) y
+// manda al cliente el email de confirmación con el enlace de desistimiento.
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { createHmac, timingSafeEqual } from 'node:crypto';
 import { TITULAR } from '../tools/tienda-templates/legal-textos.mjs';
+import { emailConfirmacion } from './_confirmacion.mjs';
 
 const MAX_BODY = 65536;
 const MEASUREMENT_ID = 'G-EHWP4106KW';
@@ -172,6 +174,18 @@ async function sendVentaAviso(session, productos) {
   }
 }
 
+// Email de confirmación al cliente (art. 98.7) con el enlace de desistimiento.
+async function sendConfirmacion(session, productos) {
+  const mail = emailConfirmacion(session, productos);
+  if (!mail) { console.error('confirm_mail_skip_no_email'); return; }
+  if (!process.env.BREVO_API_KEY) { console.error('confirm_mail_skip_no_key'); return; }
+  try {
+    await brevo({ sender: { name: TITULAR.comercial, email: TITULAR.email }, ...mail });
+  } catch (e) {
+    console.error('confirm_mail_failed');
+  }
+}
+
 async function post(url, headers, payload) {
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), 10000);
@@ -225,6 +239,6 @@ export async function POST(request) {
   if (!session || typeof session !== 'object' || session.payment_status !== 'paid') return json(200, { ok: true });
 
   const productos = await loadProductos();
-  await Promise.allSettled([sendGa4(session, productos), sendCpAlert(session), sendVentaAviso(session, productos)]);
+  await Promise.allSettled([sendGa4(session, productos), sendCpAlert(session), sendVentaAviso(session, productos), sendConfirmacion(session, productos)]);
   return json(200, { ok: true });
 }

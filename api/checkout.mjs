@@ -98,6 +98,7 @@ export async function POST(request) {
   const ga = parsed.ga && typeof parsed.ga === 'object' && !Array.isArray(parsed.ga) ? parsed.ga : null;
   if (ga && typeof ga.cid === 'string' && /^\d{1,20}\.\d{1,20}$/.test(ga.cid)) form.set('metadata[ga_cid]', ga.cid);
   if (ga && typeof ga.sid === 'string' && /^\d{1,20}$/.test(ga.sid)) form.set('metadata[ga_sid]', ga.sid);
+  form.set('custom_text[after_submit][message]', 'Si cambias de opinión, tienes 14 días desde que lo recibes: [Desistir del contrato aquí](https://www.monacobarberia.com/tienda/desistir).');
   if (entrega === 'recogida') {
     form.set('custom_text[submit][message]', 'Recogida gratis en Mónaco Barbershop, Rúa de Venezuela 71, Vigo. Lunes a sábado, 9:00-20:00. Te avisamos cuando esté listo y lo guardamos 15 días.');
   } else {
