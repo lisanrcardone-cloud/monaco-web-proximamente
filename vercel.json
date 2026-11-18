@@ -10,7 +10,9 @@
     { "source": "/tienda/gracias/index.html", "destination": "/tienda/gracias", "permanent": true },
     { "source": "/tienda/envios-devoluciones/index.html", "destination": "/tienda/envios-devoluciones", "permanent": true },
     { "source": "/tienda/condiciones/index.html", "destination": "/tienda/condiciones", "permanent": true },
-    { "source": "/tienda/desistir/index.html", "destination": "/tienda/desistir", "permanent": true }
+    { "source": "/tienda/desistir/index.html", "destination": "/tienda/desistir", "permanent": true },
+    { "source": "/blog/index.html", "destination": "/blog", "permanent": true },
+    { "source": "/blog/:slug/index.html", "destination": "/blog/:slug", "permanent": true }
   ],
   "crons": [{ "path": "/api/brevo-keepalive", "schedule": "0 8 1 * *" }],
   "functions": {

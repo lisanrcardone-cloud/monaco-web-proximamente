@@ -6,6 +6,8 @@ Barbería premium en Vigo (Rúa de Venezuela 71, CP 36204). Corte, barba y servi
 
 - [Inicio](https://www.monacobarberia.com/): servicios, precios, reseñas reales de Google, mapa y formulario de contacto.
 - [Quiénes somos](https://www.monacobarberia.com/about): historia real del negocio y de su fundador.
+- [Blog](https://www.monacobarberia.com/blog): historias de la barbería y consejos de producto.
+- [Nuestra historia](https://www.monacobarberia.com/blog/nuestra-historia): de cortar en casa a los 13 a abrir Mónaco Barbershop en Vigo, con el vídeo de Felipe Denti.
 - [Contacto](https://www.monacobarberia.com/contact): dirección, teléfono, WhatsApp, email y mapa.
 - [Privacidad](https://www.monacobarberia.com/privacy): política de privacidad.
 - [Sitemap](https://www.monacobarberia.com/sitemap.xml)

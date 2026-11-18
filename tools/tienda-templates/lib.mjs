@@ -18,6 +18,10 @@ const catLinks = () => CATS.map(([id, n]) => `<li><a href="/tienda/productos/#${
 export const cardSub = (p) => `${esc(p.marca)}${p.formato ? ' · ' + esc(p.formato) : ''}`;
 export const productUrl = (p) => `/tienda/producto/${p.slug}`;
 
+// El build activa el enlace "Blog" del pie solo si hay posts aprobados.
+let BLOG = false;
+export const setHayBlog = (v) => { BLOG = !!v; };
+
 const GA = `<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHWP4106KW"></script>
 <script>
@@ -35,7 +39,8 @@ const GA = `<!-- Google tag (gtag.js) -->
     })(window, document, "clarity", "script", "y8hbbvzzyc");
 </script>`;
 
-export function page({ title, description, path, bodyAttrs = '', bodyClass = '', main, productos, jsonld = [], noindex = false }) {
+export function page({ title, description, path, bodyAttrs = '', bodyClass = '', main, productos, jsonld = [], noindex = false, ogType = 'website', image = null, hayBlog = BLOG }) {
+  const img = image || { url: `${SITE}/assets/tienda/og-tienda.jpg`, width: 1200, height: 630, alt: 'Pack Textura de Mónaco Barbershop: spray de sal y polvo texturizante' };
   const ld = jsonld.map((o) => `<script type="application/ld+json">\n${JSON.stringify(o, null, 2)}\n</script>`).join('\n');
   return `<!doctype html>
 <html lang="es">
@@ -45,18 +50,18 @@ export function page({ title, description, path, bodyAttrs = '', bodyClass = '',
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 ${noindex ? '<meta name="robots" content="noindex, nofollow">\n' : ''}<link rel="canonical" href="${SITE}${path}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="${ogType}">
 <meta property="og:site_name" content="Mónaco Barbershop">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${SITE}${path}">
-<meta property="og:image" content="${SITE}/assets/tienda/og-tienda.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Pack Textura de Mónaco Barbershop: spray de sal y polvo texturizante">
+<meta property="og:image" content="${img.url}">
+<meta property="og:image:width" content="${img.width}">
+<meta property="og:image:height" content="${img.height}">
+<meta property="og:image:alt" content="${esc(img.alt)}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="${SITE}/assets/tienda/og-tienda.jpg">
+<meta name="twitter:image" content="${img.url}">
 ${GA}
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=20260826">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260826">
@@ -75,7 +80,7 @@ ${header(productos)}
 <main id="main">
 ${main}
 </main>
-${footer(productos)}
+${footer(productos, hayBlog)}
 <script src="/tienda/tienda.js" defer></script>
 </body>
 </html>
@@ -104,7 +109,7 @@ export function header(productos) {
 </header>`;
 }
 
-export function footer(productos) {
+export function footer(productos, hayBlog = BLOG) {
   const tienda = catLinks();
   return `<footer class="footer">
   <div class="wrap">
@@ -113,7 +118,7 @@ export function footer(productos) {
       <div class="foot-cols">
         <div><h2>Tienda</h2><ul>${tienda}</ul></div>
         <div><h2>Mónaco</h2><ul>
-          <li><a href="/">La barbería</a></li>
+          <li><a href="/">La barbería</a></li>${hayBlog ? '\n          <li><a href="/blog">Blog</a></li>' : ''}
           <li><a href="/contact">Contacto</a></li>
           <li><a class="foot-ig" href="${IG_URL}" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.1" cy="6.9" r=".6" fill="currentColor" stroke="none"/></svg>Instagram</a></li></ul></div>
         <div><h2>Ayuda</h2><ul>
