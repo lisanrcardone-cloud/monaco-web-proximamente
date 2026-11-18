@@ -116,7 +116,13 @@
       "precio": 1250,
       "etiqueta": null,
       "destacado": false,
-      "pasos": null,
+      "pasos": [
+        {"titulo": "1. Pelo húmedo", "texto": "Con el pelo húmedo, no mojado, pulveriza 4 o 5 veces en largos y puntas."},
+        {"titulo": "2. Aprieta", "texto": "Aprieta el pelo con la mano, de abajo arriba."},
+        {"titulo": "3. Seca", "texto": "Seca con el secador dando forma con los dedos."},
+        {"titulo": "4. Resultado", "texto": "Ondas y volumen, sin apelmazar."}
+      ],
+      "video": {"src": "/assets/tienda/videos/spray-sal-marina-v8.mp4", "poster": "/assets/tienda/videos/spray-sal-marina-v8.jpg", "titulo": "Así se usa el spray de sal marina"},
       "ingredientes_destacados": [
         {
           "nombre": "Minerales marinos y extracto de algas",
@@ -1313,6 +1319,7 @@
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
+      "video_de": "spray-sal-marina",
       "ingredientes_destacados": null,
       "faq": [
         {
@@ -1400,6 +1407,7 @@
       "etiqueta": null,
       "destacado": true,
       "pasos": null,
+      "video_de": "spray-sal-marina",
       "ingredientes_destacados": null,
       "faq": [
         {
