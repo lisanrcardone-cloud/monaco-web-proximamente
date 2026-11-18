@@ -249,8 +249,11 @@ details.acc .acc-body{padding:.25rem 0 1rem}
 .compare{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:.6rem}
 .logos{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;padding-block:2rem}
 .reviews-box{display:grid;gap:1rem}
+.pdp-video{margin:0;justify-self:center;width:100%;max-width:360px}
+.pdp-video video{display:block;width:100%;height:auto;aspect-ratio:9/16;border-radius:14px;background:#000}
 @media(max-width:860px){
   .pdp{grid-template-columns:1fr}
+  .pdp-video{max-width:320px}
   .split{grid-template-columns:1fr}
   .stats,.timeline{grid-template-columns:1fr}
   .logos{grid-template-columns:repeat(2,1fr)}

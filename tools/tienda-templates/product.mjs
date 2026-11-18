@@ -6,6 +6,8 @@ export function product(p, productos) {
   const n = p.slug.replace(/^producto-/, '');
   const real = !isPending(p.nombre) && p.imagenes.length > 0 && p.precio != null;
   const hasImg = p.imagenes.length > 0;
+  const src = p.video_de ? (productos || []).find((x) => x.id === p.video_de) : null;
+  const vid = p.video ? { ...p.video, pasos: p.pasos, titulo_sec: 'Cómo usarlo' } : src && src.video && src.pasos ? { ...src.video, pasos: src.pasos, titulo_sec: 'Cómo usar el ' + src.nombre.toLowerCase() } : null;
   const mainMedia = hasImg ? `<img id="g-main-img" src="${esc(p.imagenes[0])}" alt="${esc(p.nombre)}" width="800" height="800">` : hueco('foto principal del producto', '1/1');
   const thumbs = hasImg
     ? p.imagenes.map((src, i) => `<button type="button" class="g-thumb" data-src="${esc(src)}" aria-label="Ver foto ${i + 1}"><img src="${esc(src)}" alt="" width="120" height="120" loading="lazy"></button>`).join('')
@@ -75,7 +77,9 @@ export function product(p, productos) {
 
 ${sec('resultados', 'Resultados reales', `<div class="split">${hueco('antes', '3/4')}${hueco('después', '3/4')}</div>`, 'sec-alt', 'tener fotos de antes y después')}
 ${sec('cifras', 'Cifras', `<div class="stats">${[1, 2, 3].map((i) => hueco('cifra ' + i, '4/3')).join('')}</div>`, '', 'tener cifras reales')}
-${p.pasos
+${vid
+  ? sec('como-usarlo', vid.titulo_sec, `<div class="split"><div class="steps">${vid.pasos.map((x) => `<div><h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div><figure class="pdp-video"><video controls playsinline preload="none" poster="${esc(vid.poster)}" width="720" height="1280" aria-label="${esc(vid.titulo)}"><source src="${esc(vid.src)}" type="video/mp4"></video></figure></div>`, 'sec-alt')
+  : p.pasos
   ? sec('como-usarlo', 'Cómo usarlo', `<div class="steps steps-full">${p.pasos.map((x) => `<div><h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div>`, 'sec-alt')
   : sec('como-usarlo', 'Cómo usarlo', `<div class="split"><div class="steps">${[1, 2, 3, 4].map((i) => `<div><h3>${huecoIn('paso ' + i)}</h3>${hueco('texto del paso ' + i, '16/7')}</div>`).join('')}</div>${hueco('vídeo de uso', '9/16')}</div>`, 'sec-alt', 'tener el modo de uso')}
 ${sec('evolucion', 'Evolución', `<div class="timeline">${[['1', 'día 1'], ['7', 'día 7'], ['30', 'día 30']].map(([k, l]) => `<div><h3>${huecoIn(l)}</h3>${hueco('foto del ' + l, '3/4')}</div>`).join('')}</div>`, '', 'tener fotos de evolución')}
