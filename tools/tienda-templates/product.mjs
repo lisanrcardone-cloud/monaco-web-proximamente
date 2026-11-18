@@ -2,7 +2,7 @@ import { page, hueco, huecoIn, txt, esc, isPending, productUrl, cardSub, CATS, S
 
 const sec = (id, title, inner, cls = '', hiddenMsg = '') => `${hiddenMsg ? `<!-- Oculta hasta ${hiddenMsg}: quitar "hidden" para mostrarla -->\n` : ''}<section class="pdp-sec ${cls}"${id ? ` id="${id}"` : ''}${hiddenMsg ? ' hidden' : ''}><div class="wrap">${title ? `<h2 class="sec-title"><span class="caps">${esc(title)}</span></h2>` : ''}${inner}</div></section>`;
 
-export function product(p, productos) {
+export function product(p, productos, posts = []) {
   const n = p.slug.replace(/^producto-/, '');
   const real = !isPending(p.nombre) && p.imagenes.length > 0 && p.precio != null;
   const hasImg = p.imagenes.length > 0;
@@ -18,6 +18,7 @@ export function product(p, productos) {
   const elige = p.elige || [];
   const eligeOpts = (g) => g.opciones.map((id) => productos.find((x) => x.id === id)).filter(Boolean);
   const eligeHtml = elige.map((g, i) => `<fieldset class="pack-elige"><legend>${esc(g.etiqueta)}</legend><label for="elige-${i}" class="elige-label">Elige tu ${esc(g.etiqueta.toLowerCase())}</label><select id="elige-${i}" name="${esc(g.etiqueta)}" data-elige="${esc(g.etiqueta)}">${eligeOpts(g).map((x) => `<option value="${esc(x.id)}">${esc(x.nombre)}</option>`).join('')}</select></fieldset>`).join('');
+  const delBlog = posts.filter((x) => x.producto === p.slug || (x.secundarios || []).includes(p.slug));
   const crumbName = isPending(p.nombre) ? `Producto ${n}` : p.nombre;
   const ld = [{
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
@@ -90,7 +91,7 @@ ${p.ingredientes_destacados
   : sec('ingredientes-destacados', 'Ingredientes destacados', `<div class="grid3">${[1, 2, 3].map((i) => hueco('ingrediente destacado ' + i, '1/1')).join('')}</div>`, 'sec-alt', 'tener los ingredientes destacados')}
 ${sec('pruebas', 'Pruebas', `<div class="split">${hueco('pruebas y datos', '16/9')}${hueco('pruebas: imagen', '16/9')}</div>`, '', 'tener pruebas y datos')}
 ${sec('faq', 'Preguntas frecuentes', `<div class="faq" style="max-width:780px;margin-inline:auto">${faq}</div>`, 'sec-alt', hasFaq ? '' : 'tener preguntas frecuentes')}
-${sec('gente-real', 'Vídeos de clientes', `<div class="grid4">${[1, 2, 3, 4].map((i) => hueco('vídeo de cliente ' + i, '9/16')).join('')}</div>`, '', 'tener los vídeos de clientes')}
+${delBlog.length ? sec('del-blog', 'Del blog', `<ul class="blog-links">${delBlog.map((x) => `<li><a href="${x.url}">${esc(x.titulo)}</a></li>`).join('')}</ul>`) + '\n' : ''}${sec('gente-real', 'Vídeos de clientes', `<div class="grid4">${[1, 2, 3, 4].map((i) => hueco('vídeo de cliente ' + i, '9/16')).join('')}</div>`, '', 'tener los vídeos de clientes')}
 <!-- Oculta hasta tener logos de prensa: quitar "hidden" para mostrarla -->
 <section class="on-green" aria-label="Prensa" hidden><div class="wrap"><div class="logos">${[1, 2, 3, 4, 5].map((i) => hueco('logo de prensa ' + i, '3/1')).join('')}</div></div></section>
 ${sec('resenas', 'Reseñas', `<div class="reviews-box">${hueco('valoración media y resumen', '16/4')}${hueco('reseñas de clientes', '16/6')}</div>`, '', 'tener reseñas de clientes')}
