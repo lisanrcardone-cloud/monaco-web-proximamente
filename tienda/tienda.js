@@ -295,7 +295,9 @@
     }); });
     var main = $('#add-main'), bar = $('.sticky-add');
     if (main && bar) {
-      var upd = function () { bar.classList.toggle('show', main.getBoundingClientRect().bottom < 0); };
+      var vids = $$('.pdp-video');  // la barra se esconde mientras un vídeo ocupa la franja de abajo, para no taparlo
+      var tapa = function () { var lim = window.innerHeight - (bar.offsetHeight || 84); return vids.some(function (v) { var r = v.getBoundingClientRect(); return r.bottom > lim && r.top < window.innerHeight; }); };
+      var upd = function () { bar.classList.toggle('show', main.getBoundingClientRect().bottom < 0 && !tapa()); };
       window.addEventListener('scroll', upd, { passive: true });
       window.addEventListener('resize', upd);
       upd();
