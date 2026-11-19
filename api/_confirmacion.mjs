@@ -36,7 +36,7 @@ export function emailConfirmacion(session, productos) {
   const envioTxt = entrega === 'recogida' ? 'Recogida en la barbería: gratis' : `Envío a ${entrega === 'baleares' ? 'Baleares' : 'península'}: ${((session.total_details && session.total_details.amount_shipping) || 0) > 0 ? eur(session.total_details.amount_shipping) : 'gratis'}`;
   const plazo = entrega === 'recogida'
     ? [`Recogida en la barbería: ${TITULAR.local}, de lunes a sábado, 9:00-20:00.`, 'Te avisamos cuando esté listo y te lo guardamos 15 días.']
-    : ['Preparamos el pedido en 24-48 h laborables.', entrega === 'baleares' ? 'Entrega con Correos en 3-5 días laborables.' : 'Entrega con Correos en 2-4 días laborables.'];
+    : ['Preparamos el pedido en 24-48 h laborables.', entrega === 'baleares' ? 'En total, lo recibes en 4-7 días laborables (Correos).' : 'En total, lo recibes en 3-6 días laborables (Correos).'];
   const url = `${BASE}/tienda/desistir?pedido=${encodeURIComponent(ref)}`;
   const textContent = [
     nombre ? `Hola, ${nombre}:` : 'Hola:',

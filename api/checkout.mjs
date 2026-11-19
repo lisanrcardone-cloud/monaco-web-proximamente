@@ -118,7 +118,7 @@ export async function POST(request) {
     form.set('custom_text[shipping_address][message]', 'Enviamos a la península y Baleares. No enviamos a Canarias, Ceuta ni Melilla.');
   }
   form.set('success_url', `${origin}/tienda/gracias?session_id={CHECKOUT_SESSION_ID}`);
-  form.set('cancel_url', `${origin}/tienda`);
+  form.set('cancel_url', `${origin}/tienda?carrito=1`);
   items.forEach((it, i) => {
     form.set(`line_items[${i}][quantity]`, String(it.qty));
     form.set(`line_items[${i}][price_data][currency]`, 'eur');

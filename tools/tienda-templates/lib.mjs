@@ -136,7 +136,26 @@ export function footer(productos, hayBlog = BLOG) {
 }
 
 // Tarjeta de producto
-export function card(p, list, index) {
+// Pack: suma de lo que incluye (con "elige", la opción más barata y "desde"). Texto, nunca precio tachado (Omnibus).
+export function ahorroPack(p, productos) {
+  if (p.categoria !== 'packs' || p.precio == null || !Array.isArray(productos)) return '';
+  const precio = (id) => { const x = productos.find((y) => y.id === id); return x ? x.precio : null; };
+  const eur = (c) => (c / 100).toLocaleString('es-ES', { style: 'currency', currency: 'EUR' });
+  let suma = 0;
+  for (const id of p.incluye || []) { const v = precio(id); if (v == null) return ''; suma += v; }
+  for (const g of p.elige || []) {
+    const v = g.opciones.map(precio).filter((x) => x != null);
+    if (!v.length) return '';
+    suma += Math.min(...v);
+  }
+  if (suma <= p.precio) return '';
+  const desde = (p.elige || []).length > 0;
+  return desde
+    ? `<p class="pack-ahorro">Por separado, desde ${eur(suma)}. Te ahorras al menos ${eur(suma - p.precio)}</p>`
+    : `<p class="pack-ahorro">Por separado: ${eur(suma)}. Te ahorras ${eur(suma - p.precio)}</p>`;
+}
+
+export function card(p, list, index, productos) {
   const media = p.imagenes && p.imagenes[0]
     ? `<img src="${esc(p.imagenes[0])}" alt="${esc(p.nombre)}" width="1000" height="1000" loading="lazy">`
     : hueco('foto del producto', '1/1');
@@ -146,6 +165,7 @@ export function card(p, list, index) {
     <h3>${txt(p.nombre)}</h3>
     <p class="card-sub">${cardSub(p)}</p>
     <div class="price" data-price-for="${p.id}"><span class="price-soon">Precio próximamente</span></div>
+    ${ahorroPack(p, productos)}
   </a>`;
 }
 
