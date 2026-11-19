@@ -1,4 +1,4 @@
-import { page, hueco, huecoIn, txt, esc, isPending, productUrl, cardSub, CATS, SITE } from './lib.mjs';
+import { page, ahorroPack, hueco, huecoIn, txt, esc, isPending, productUrl, cardSub, CATS, SITE } from './lib.mjs';
 
 const sec = (id, title, inner, cls = '', hiddenMsg = '') => `${hiddenMsg ? `<!-- Oculta hasta ${hiddenMsg}: quitar "hidden" para mostrarla -->\n` : ''}<section class="pdp-sec ${cls}"${id ? ` id="${id}"` : ''}${hiddenMsg ? ' hidden' : ''}><div class="wrap">${title ? `<h2 class="sec-title"><span class="caps">${esc(title)}</span></h2>` : ''}${inner}</div></section>`;
 
@@ -55,6 +55,7 @@ export function product(p, productos, posts = []) {
     <ul class="benefits">${p.beneficios.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>
     ${incluye.length || elige.length ? `<div class="incluye"><h2>Incluye</h2><ul>${incluye.map((x) => `<li><a href="${productUrl(x)}">${esc(x.nombre)}</a></li>`).join('')}${elige.map((g) => `<li class="incluye-elige">${esc(g.etiqueta)} a elegir</li>`).join('')}</ul></div>` : ''}
     <div class="pdp-price" data-price-for="${p.id}"><span class="price-soon">Precio próximamente</span></div>
+    ${ahorroPack(p, productos)}
     ${eligeHtml}
     <div class="buy">
       <div class="qty" role="group" aria-label="Cantidad"><button type="button" data-pdp-q="-1" aria-label="Menos">&minus;</button><output id="pdp-qty" aria-live="polite">1</output><button type="button" data-pdp-q="1" aria-label="Más">+</button></div>
@@ -97,8 +98,8 @@ ${delBlog.length ? sec('del-blog', 'Del blog', `<ul class="blog-links">${delBlog
 ${sec('resenas', 'Reseñas', `<div class="reviews-box">${hueco('valoración media y resumen', '16/4')}${hueco('reseñas de clientes', '16/6')}</div>`, '', 'tener reseñas de clientes')}
 
 <div class="sticky-add" aria-label="Añadir al carrito">
-  <span class="s-name">${txt(p.nombre)}</span>
-  <button type="button" class="btn" data-add="${p.id}" data-add-label="1" disabled>Precio próximamente</button>
+  <span class="s-name"><span class="s-nm">${txt(p.nombre)}</span><span class="s-price" data-price-for="${p.id}"></span></span>
+  <button type="button" class="btn" data-add="${p.id}" data-add-label="short" disabled>Precio próximamente</button>
 </div>`;
 
   return page({

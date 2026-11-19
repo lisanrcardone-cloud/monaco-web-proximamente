@@ -27,7 +27,7 @@
       });
     } catch (e) { return []; }
   }
-  function loadEntrega() { try { var v = localStorage.getItem(EKEY); return v === 'baleares' || v === 'recogida' ? v : 'peninsula'; } catch (e) { return 'peninsula'; } }
+  function loadEntrega() { try { var v = localStorage.getItem(EKEY); return v === 'baleares' || v === 'peninsula' ? v : 'recogida'; } catch (e) { return 'recogida'; } }
   function saveEntrega() { try { localStorage.setItem(EKEY, entrega); } catch (e) {} }
   /* Packs con elección: clave de línea = id + opts en el orden de elige */
   function optsValid(p, opts) {
@@ -79,7 +79,7 @@
       if (!p) return;
       var ok = p.precio != null;
       b.disabled = !ok;
-      if (b.hasAttribute('data-add-label')) b.textContent = ok ? 'Añadir al carrito' : 'Precio próximamente';
+      if (b.hasAttribute('data-add-label')) b.textContent = ok ? (b.getAttribute('data-add-label') === 'short' ? 'Añadir' : 'Añadir al carrito') : 'Precio próximamente';
     });
     renderCart();
   }
@@ -154,6 +154,7 @@
     $('.ship-p-bal', foot).textContent = eur(envio.baleares);
     $('.cart-shipcost', foot).textContent = cost ? eur(cost) : 'Gratis';
     $('.cart-total', foot).textContent = eur(total + cost);
+    payBtn.textContent = 'Pagar ' + eur(total + cost);
     var miss = $('.cart-miss', foot);
     if (entrega === 'peninsula' && total < envio.umbral_gratis) { miss.textContent = 'Te faltan ' + eur(envio.umbral_gratis - total) + ' para el envío gratis'; miss.hidden = false; } else miss.hidden = true;
     $('.cart-only', foot).hidden = !must;
@@ -181,7 +182,7 @@
     overlay = document.createElement('div'); overlay.className = 'cart-overlay'; overlay.setAttribute('data-cart-overlay', '');
     panel = document.createElement('aside'); panel.className = 'cart-panel'; panel.id = 'cart-panel';
     panel.setAttribute('role', 'dialog'); panel.setAttribute('aria-modal', 'true'); panel.setAttribute('aria-label', 'Carrito'); panel.setAttribute('aria-hidden', 'true');
-    panel.innerHTML = '<div class="cart-head"><h2>Tu carrito</h2><button type="button" class="cart-close" aria-label="Cerrar carrito">&times;</button></div><div class="cart-body" aria-live="polite"></div><div class="cart-foot" hidden><fieldset class="cart-ship"><legend>Entrega</legend><label class="ship-opt"><input type="radio" name="entrega" value="peninsula"><span class="ship-t">Envío a península<small>Correos, 2-4 días laborables</small></span><span class="ship-p ship-p-pen"></span></label><label class="ship-opt"><input type="radio" name="entrega" value="baleares"><span class="ship-t">Envío a Baleares<small>3-5 días laborables</small></span><span class="ship-p ship-p-bal"></span></label><label class="ship-opt"><input type="radio" name="entrega" value="recogida"><span class="ship-t">Recogida en la barbería<small>Rúa de Venezuela 71, Vigo. Lunes a sábado, 9:00-20:00</small></span><span class="ship-p">Gratis</span></label></fieldset><p class="cart-note">No enviamos a Canarias, Ceuta ni Melilla.</p><p class="cart-note cart-miss" hidden></p><p class="cart-note cart-only" hidden>La espuma de rizos es un aerosol y no se puede enviar por mensajería: solo recogida en la barbería.</p><div class="cart-row"><span>Subtotal</span><span class="cart-subtotal"></span></div><div class="cart-row"><span>Envío</span><span class="cart-shipcost"></span></div><div class="cart-row total"><span>Total</span><span class="cart-total"></span></div><label class="cart-accept"><input type="checkbox" name="acepto"><span>He leído y acepto las <a href="/tienda/condiciones" target="_blank" rel="noopener">condiciones de compra</a>.</span></label><p class="cart-note">Usamos tus datos solo para gestionar el pedido. Más información en <a href="/privacy" target="_blank" rel="noopener">Privacidad</a>.</p><p class="cart-msg" role="status" hidden></p><button type="button" class="btn btn-block cart-pay">Pagar</button></div>';
+    panel.innerHTML = '<div class="cart-head"><h2>Tu carrito</h2><button type="button" class="cart-close" aria-label="Cerrar carrito">&times;</button></div><div class="cart-body" aria-live="polite"></div><div class="cart-foot" hidden><fieldset class="cart-ship"><legend>Entrega</legend><label class="ship-opt"><input type="radio" name="entrega" value="recogida"><span class="ship-t">Recogida en la barbería<small>Rúa de Venezuela 71, Vigo. Lunes a sábado, 9:00-20:00</small></span><span class="ship-p">Gratis</span></label><label class="ship-opt"><input type="radio" name="entrega" value="peninsula"><span class="ship-t">Envío a península<small>Correos. Lo recibes en 3-6 días laborables</small></span><span class="ship-p ship-p-pen"></span></label><label class="ship-opt"><input type="radio" name="entrega" value="baleares"><span class="ship-t">Envío a Baleares<small>Lo recibes en 4-7 días laborables</small></span><span class="ship-p ship-p-bal"></span></label></fieldset><p class="cart-note">No enviamos a Canarias, Ceuta ni Melilla.</p><p class="cart-note cart-miss" hidden></p><p class="cart-note cart-only" hidden>La espuma de rizos es un aerosol y no se puede enviar por mensajería: solo recogida en la barbería.</p><div class="cart-row"><span>Subtotal</span><span class="cart-subtotal"></span></div><div class="cart-row"><span>Envío</span><span class="cart-shipcost"></span></div><div class="cart-row total"><span>Total</span><span class="cart-total"></span></div><label class="cart-accept"><input type="checkbox" name="acepto"><span>He leído y acepto las <a href="/tienda/condiciones" target="_blank" rel="noopener">condiciones de compra</a>.</span></label><p class="cart-note">Usamos tus datos solo para gestionar el pedido. Más información en <a href="/privacy" target="_blank" rel="noopener">Privacidad</a>.</p><p class="cart-msg" role="status" hidden></p><button type="button" class="btn btn-block cart-pay">Pagar</button><p class="cart-note cart-metodos">Tarjeta, Bizum, Apple Pay o Google Pay · Pago seguro con Stripe</p></div>';
     document.body.appendChild(overlay); document.body.appendChild(panel);
     body = $('.cart-body', panel); foot = $('.cart-foot', panel); msg = $('.cart-msg', panel); payBtn = $('.cart-pay', panel);
     overlay.addEventListener('click', closeCart);
@@ -297,7 +298,13 @@
     if (main && bar) {
       var vids = $$('.pdp-video');  // la barra se esconde mientras un vídeo ocupa la franja de abajo, para no taparlo
       var tapa = function () { var lim = window.innerHeight - (bar.offsetHeight || 84); return vids.some(function (v) { var r = v.getBoundingClientRect(); return r.bottom > lim && r.top < window.innerHeight; }); };
-      var upd = function () { bar.classList.toggle('show', main.getBoundingClientRect().bottom < 0 && !tapa()); };
+      var mq = window.matchMedia ? window.matchMedia('(max-width:860px)') : null;
+      var upd = function () {
+        var r = main.getBoundingClientRect();
+        // móvil: la barra se ve desde que carga la ficha; se esconde con el botón principal en pantalla (no hay dos botones a la vez) o sobre el vídeo
+        var ver = mq && mq.matches ? !(r.bottom > 0 && r.top < window.innerHeight) : r.bottom < 0;
+        bar.classList.toggle('show', ver && !tapa());
+      };
       window.addEventListener('scroll', upd, { passive: true });
       window.addEventListener('resize', upd);
       upd();
@@ -388,6 +395,10 @@
     fetch('/tienda/productos.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
       catalog = d.productos || d; if (d.envio) envio = d.envio; hydrate(); initPdp(); initListEvents();
       if (pid) { var p = byId(pid); if (p) ev('view_item', { currency: 'EUR', value: value([item(p)]), items: [item(p)] }); }
+      if (/(^|[?&])carrito=1(&|$)/.test(location.search) && cart.length) {
+        openCart(true);
+        try { var u = new URLSearchParams(location.search); u.delete('carrito'); var qs = u.toString(); history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash); } catch (e) {}
+      }
     }).catch(function () { renderCart(); });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();

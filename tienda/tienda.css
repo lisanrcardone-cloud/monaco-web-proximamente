@@ -267,7 +267,10 @@ details.acc .acc-body{padding:.25rem 0 1rem}
   .sticky-add{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.7rem var(--pad);background:var(--paper);border-top:1px solid var(--line);min-height:var(--sticky-h);transform:translateY(110%);visibility:hidden;transition:transform .25s}
   .sticky-add.show{transform:none;visibility:visible}
   .sticky-add .s-name{font-size:.85rem;line-height:1.25;min-width:0;flex:1}
-  .sticky-add .btn{flex:0 0 auto}
+  .sticky-add .s-nm{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+  .sticky-add .s-price{display:block;font-weight:600;color:var(--green);font-size:.95rem}
+  .sticky-add .btn{flex:0 0 auto;padding-inline:1.4rem;white-space:nowrap}
+  .buy .btn{flex:1 1 100%;white-space:nowrap}
   body.pdp-page .footer{padding-bottom:var(--sticky-h)}
 }
 @media(prefers-reduced-motion:reduce){.sticky-add{transition:none}}
@@ -342,6 +345,9 @@ ul.benefits li::before{content:"";position:absolute;left:.2rem;top:.55em;width:.
 .ship-opt:focus-within{outline:2px solid var(--green);outline-offset:2px}
 .cart-note{font-size:.8rem;color:var(--ink-soft)}
 .cart-note[hidden]{display:none}
+.cart-metodos{margin-top:.5rem;text-align:center}
+.pack-ahorro{font-size:.85rem;font-weight:500;color:var(--green);line-height:1.35}
+.card>.pack-ahorro{margin-top:-.3rem}
 .cart-row{display:flex;justify-content:space-between;font-size:.95rem}
 .cart-row.total{font-weight:700;font-size:1.1rem}
 .foot-ig{display:inline-flex;align-items:center;gap:.45rem}

@@ -7,8 +7,8 @@ export function gracias(productos) {
   <p style="margin-bottom:1.5rem">Hemos recibido tu pago.</p>
   <p>Te llega un email con el resumen del pedido. Lo preparamos en 24-48 h laborables.</p>
   <ul style="margin:1rem 0 1.5rem;padding-left:1.2rem;line-height:1.6">
-    <li><strong>Envío a península:</strong> Correos lo entrega en 2-4 días laborables.</li>
-    <li><strong>Envío a Baleares:</strong> 3-5 días laborables.</li>
+    <li><strong>Envío a península:</strong> Correos. Lo recibes en 3-6 días laborables, con la preparación incluida.</li>
+    <li><strong>Envío a Baleares:</strong> lo recibes en 4-7 días laborables, con la preparación incluida.</li>
     <li><strong>Recogida en la barbería:</strong> te avisamos cuando esté listo y te lo guardamos 15 días en ${TITULAR.local}, de lunes a sábado de 9:00 a 20:00.</li>
   </ul>
   <p style="margin-bottom:1.5rem">Si cambias de opinión, tienes 14 días: <a href="/tienda/desistir">Desistir del contrato aquí</a>.</p>
@@ -23,8 +23,8 @@ export function legal(slug, titulo, label, productos, path = `/tienda/${slug}`) 
   <h1 class="it" style="text-align:center">${titulo}</h1>
   ${slug === 'envios-devoluciones' ? `<ul class="envios">
     <li>Preparamos tu pedido en 24-48 h laborables.</li>
-    <li>Península: 4,95 €, gratis en pedidos de 45 € o más. Entrega con Correos en 2-4 días laborables.</li>
-    <li>Baleares: 6,95 €. Entrega en 3-5 días laborables.</li>
+    <li>Península: 4,95 €, gratis en pedidos de 45 € o más. Lo recibes en 3-6 días laborables (Correos).</li>
+    <li>Baleares: 6,95 €. Lo recibes en 4-7 días laborables.</li>
     <li>Recogida gratis en la barbería (Rúa de Venezuela 71, Vigo), de lunes a sábado de 9:00 a 20:00. Te avisamos cuando esté listo y lo guardamos 15 días.</li>
     <li>No enviamos a Canarias, Ceuta ni Melilla.</li>
     <li>La espuma de rizos y el Pack Rizos son aerosoles: solo se pueden recoger en la barbería.</li>

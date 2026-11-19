@@ -56,10 +56,22 @@
     const heroCta = $(".hero-cta");
     if (!sticky || !heroCta) return;
     if (!("IntersectionObserver" in window)) { sticky.classList.add("is-visible"); return; }
+    const reserva = $("#reserva");
+    let heroOut = false;
+    let reservaIn = false;
+    const update = () => sticky.classList.toggle("is-visible", heroOut && !reservaIn);
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => sticky.classList.toggle("is-visible", !e.isIntersecting));
+      entries.forEach(e => { heroOut = !e.isIntersecting; });
+      update();
     }, { rootMargin: "0px 0px -20% 0px" });
     io.observe(heroCta);
+    if (reserva) {
+      const ioReserva = new IntersectionObserver((entries) => {
+        entries.forEach(e => { reservaIn = e.isIntersecting; });
+        update();
+      });
+      ioReserva.observe(reserva);
+    }
   }
 
   function initBooksyCta() {
