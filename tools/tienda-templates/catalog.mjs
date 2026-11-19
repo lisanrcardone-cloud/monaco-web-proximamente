@@ -8,7 +8,7 @@ export function catalog(productos, categorias) {
     return `<section class="cat-sec" id="${c.id}" data-cat-sec="${c.id}">
     <h2 class="cat-title">${esc(c.nombre)}</h2>
     <div class="cat-grid">
-${ps.map((p, i) => card(p, 'catalogo', i)).join('\n')}
+${ps.map((p, i) => card(p, 'catalogo', i, productos)).join('\n')}
     </div>
   </section>`;
   }).join('\n  ');
