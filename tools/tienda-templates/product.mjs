@@ -1,10 +1,10 @@
-import { page, ahorroPack, hueco, huecoIn, txt, esc, isPending, productUrl, cardSub, CATS, SITE } from './lib.mjs';
+import { page, ahorroPack, hueco, huecoIn, txt, esc, isPending, isReal, ENVIO, eur, productUrl, cardSub, CATS, SITE } from './lib.mjs';
 
 const sec = (id, title, inner, cls = '', hiddenMsg = '') => `${hiddenMsg ? `<!-- Oculta hasta ${hiddenMsg}: quitar "hidden" para mostrarla -->\n` : ''}<section class="pdp-sec ${cls}"${id ? ` id="${id}"` : ''}${hiddenMsg ? ' hidden' : ''}><div class="wrap">${title ? `<h2 class="sec-title"><span class="caps">${esc(title)}</span></h2>` : ''}${inner}</div></section>`;
 
 export function product(p, productos, posts = []) {
   const n = p.slug.replace(/^producto-/, '');
-  const real = !isPending(p.nombre) && p.imagenes.length > 0 && p.precio != null;
+  const real = isReal(p);
   const hasImg = p.imagenes.length > 0;
   const src = p.video_de ? (productos || []).find((x) => x.id === p.video_de) : null;
   const vid = p.video ? { ...p.video, pasos: p.pasos, titulo_sec: 'Cómo usarlo' } : src && src.video && src.pasos ? { ...src.video, pasos: src.pasos, titulo_sec: 'Cómo usar el ' + src.nombre.toLowerCase() } : null;
@@ -30,11 +30,42 @@ export function product(p, productos, posts = []) {
     ],
   }];
   if (real) {
+    const rango = (a, b) => ({ '@type': 'PostalCodeRangeSpecification', postalCodeBegin: a, postalCodeEnd: b });
+    const envio = (importe, rangos, dias) => ({
+      '@type': 'OfferShippingDetails',
+      shippingRate: { '@type': 'MonetaryAmount', value: eur(importe), currency: 'EUR' },
+      shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'ES', postalCodeRange: rangos },
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: { '@type': 'QuantitativeValue', minValue: 1, maxValue: 2, unitCode: 'DAY' },
+        transitTime: { '@type': 'QuantitativeValue', minValue: dias[0], maxValue: dias[1], unitCode: 'DAY' },
+      },
+    });
+    const gratis = p.precio >= ENVIO.umbral_gratis;
+    const offers = {
+      '@type': 'Offer', url: SITE + productUrl(p), priceCurrency: 'EUR', price: (p.precio / 100).toFixed(2), availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: { '@type': 'Organization', '@id': SITE + '/#barbershop', name: 'Mónaco Barbershop' },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy', applicableCountry: 'ES',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow', merchantReturnDays: 14,
+        returnMethod: ['https://schema.org/ReturnByMail', 'https://schema.org/ReturnInStore'],
+        returnFees: 'https://schema.org/ReturnFeesCustomerResponsibility',
+      },
+    };
+    if (!p.solo_recogida) {
+      offers.shippingDetails = [
+        envio(gratis ? 0 : ENVIO.peninsula, [rango('01000', '06999'), rango('08000', '34999'), rango('36000', '37999'), rango('39000', '50999')], [3, 6]),
+        envio(ENVIO.baleares, [rango('07000', '07999')], [4, 7]),
+      ];
+    }
     ld.push({
       '@context': 'https://schema.org', '@type': 'Product', name: p.nombre,
+      ...(p.resumen ? { description: p.resumen } : {}),
+      sku: p.id,
       image: p.imagenes.map((i) => (i.startsWith('http') ? i : SITE + i)),
       brand: { '@type': 'Brand', name: p.marca },
-      offers: { '@type': 'Offer', url: SITE + productUrl(p), priceCurrency: 'EUR', price: (p.precio / 100).toFixed(2), availability: 'https://schema.org/InStock' },
+      offers,
     });
   }
 
