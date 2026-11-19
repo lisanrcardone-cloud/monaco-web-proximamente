@@ -184,10 +184,9 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; text-wrap: balance; li
 .hero-cta { margin-top: 2rem; }
 .hero-rating {
   display: inline-flex; align-items: center; gap: .3rem; margin-top: .9rem; font-size: .8rem;
-  color: var(--ink-mute); border-bottom: 1px solid transparent; transition: border-color .3s var(--ease-out);
+  color: var(--ink-mute); border-bottom: 1px solid transparent;
 }
 .hero-rating span { color: var(--accent); }
-.hero-rating:hover, .hero-rating:focus-visible { border-bottom-color: var(--accent); }
 @media (max-width: 779px) {
   .hero-picker { margin-top: 1.6rem; padding: 0; gap: .5rem; background: none; border: none; }
   .hero-picker a {
