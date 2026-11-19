@@ -6,6 +6,10 @@ meta_description: Felipe Denti empezó a cortar el pelo con 13 años en Argentin
 tipo: historia
 categoria: Nuestra historia
 resumen: La historia de Mónaco Barbershop, contada por Felipe Denti.
+email_asunto: Tres meses de Mónaco: gracias
+email_preheader: Abrí el 6 de agosto. Te cuento cómo empezó todo, a los 13 años y en Argentina.
+email_imagen: /assets/blog/nuestra-historia-email.jpg
+email_intro: Hace tres meses, el 6 de agosto, abrí la puerta de Mónaco en la Rúa de Venezuela. Quería darte las gracias por estar desde el principio. Empecé a cortar con 13 años en casa y hoy tengo mi propio local en Vigo, y eso no pasa sin gente que confía en ti. Acabo de abrir un blog y el primer post va de eso: de dónde vengo.
 autor: Felipe Denti
 estado: aprobado
 aprobado_por: usuario (chat 18-nov-2026)
