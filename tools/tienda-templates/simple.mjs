@@ -31,7 +31,12 @@ export function legal(slug, titulo, label, productos, path = `/tienda/${slug}`) 
   </ul>
   ` : ''}${slug === 'envios-devoluciones' ? `<div class="legal">${DEVOLUCIONES_HTML}</div>` : slug === 'condiciones' ? `<div class="legal">${CONDICIONES_HTML}</div>` : slug === 'aviso-legal' ? `<div class="legal">${AVISO_LEGAL_HTML}</div>` : hueco(label, '16/9')}
 </div></section>`;
-  return page({ title: `${titulo} | Tienda Mónaco Barbershop`, description: titulo, path, productos, main });
+  const descripciones = {
+    'envios-devoluciones': 'Envíos y devoluciones de la tienda de Mónaco Barbershop: plazos y precios a península y Baleares, recogida gratis en Vigo y devoluciones en 14 días.',
+    condiciones: 'Condiciones de compra de la tienda online de Mónaco Barbershop, en Vigo: precios, formas de pago, envío, recogida en la barbería y garantías.',
+    'aviso-legal': 'Aviso legal de Mónaco Barbershop, barbería en Vigo: datos del titular, condiciones de uso de la web y de la tienda online, y normativa aplicable.',
+  };
+  return page({ title: `${titulo} | Tienda Mónaco Barbershop`, description: descripciones[slug] || titulo, path, productos, main });
 }
 
 export function desistir(productos) {
@@ -49,5 +54,5 @@ export function desistir(productos) {
     <p class="desist-msg" role="status" hidden></p>
   </form>
 </div></section>`;
-  return page({ title: 'Desistir del contrato | Tienda Mónaco Barbershop', description: 'Desistir del contrato', path: '/tienda/desistir', productos, main });
+  return page({ title: 'Desistir del contrato | Tienda Mónaco Barbershop', description: 'Formulario para desistir de una compra en la tienda de Mónaco Barbershop: tienes 14 días naturales desde que recibes o recoges el pedido.', path: '/tienda/desistir', productos, main });
 }
