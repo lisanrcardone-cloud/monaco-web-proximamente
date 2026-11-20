@@ -1,4 +1,4 @@
-import { page, ahorroPack, hueco, huecoIn, txt, esc, isPending, isReal, ENVIO, eur, productUrl, cardSub, CATS, SITE } from './lib.mjs';
+import { page, ahorroPack, hueco, huecoIn, txt, esc, isPending, isReal, ENVIO, eur, eurEs, productUrl, cardSub, CATS, SITE } from './lib.mjs';
 
 const sec = (id, title, inner, cls = '', hiddenMsg = '') => `${hiddenMsg ? `<!-- Oculta hasta ${hiddenMsg}: quitar "hidden" para mostrarla -->\n` : ''}<section class="pdp-sec ${cls}"${id ? ` id="${id}"` : ''}${hiddenMsg ? ' hidden' : ''}><div class="wrap">${title ? `<h2 class="sec-title"><span class="caps">${esc(title)}</span></h2>` : ''}${inner}</div></section>`;
 
@@ -135,10 +135,19 @@ ${sec('resenas', 'Reseñas', `<div class="reviews-box">${hueco('valoración medi
 
   return page({
     title: `${p.nombre} ${p.marca} | Tienda Mónaco Barbershop`,
-    description: p.resumen,
+    description: metaDescripcion(p),
     path: productUrl(p),
     bodyClass: 'pdp-page',
     bodyAttrs: `data-product-id="${p.id}"`,
     productos, main, jsonld: ld,
   });
+}
+
+// Meta description de la ficha (20-nov, aviso de Bing: descripciones cortas). Resumen + precio + cómo conseguirlo.
+function metaDescripcion(p) {
+  if (!p.resumen) return p.resumen;
+  const base = p.resumen.trim().replace(/\.$/, '') + '.';
+  const precio = p.precio != null ? ` ${eurEs(p.precio)} €.` : '';
+  const entrega = p.solo_recogida ? ' Recógelo gratis en la barbería, en Vigo.' : ' Recogida gratis en la barbería, en Vigo, o envío a península y Baleares.';
+  return base + precio + entrega;
 }
