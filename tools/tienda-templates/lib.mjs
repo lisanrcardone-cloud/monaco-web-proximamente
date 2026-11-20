@@ -1,10 +1,19 @@
 // Utilidades y piezas comunes (cabecera, pie, huecos) de la tienda.
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 export const SITE = 'https://www.monacobarberia.com';
 export const IG_URL = 'https://www.instagram.com/monacobarbershop.oficial/';
 export const IG_HANDLE = '@monacobarbershop.oficial';
 
 export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export const isPending = (t) => /^\[Pendiente/.test(t || '');
+// Un producto es "real" (se indexa y entra en llms.txt) si tiene nombre, foto y precio.
+export const isReal = (p) => !isPending(p.nombre) && p.imagenes.length > 0 && p.precio != null;
+// Importes de envío (céntimos) leídos de tienda/productos.json
+export const ENVIO = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), '../../tienda/productos.json'), 'utf8')).envio;
+export const eur = (c) => (c / 100).toFixed(2);
+export const eurEs = (c) => (c % 100 === 0 ? String(c / 100) : eur(c).replace('.', ','));
 
 // Hueco de bloque con proporción real
 export const hueco = (label, ar = '1/1', extra = '') =>

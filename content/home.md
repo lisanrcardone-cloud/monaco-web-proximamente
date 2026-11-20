@@ -1,6 +1,6 @@
 # Mónaco Barbershop
 
-Barbería premium en Vigo. Corte, barba y servicio personalizado.
+Mónaco Barbershop es una barbería en Vigo, en la Rúa de Venezuela 71 (CP 36204). Abre de lunes a sábado de 9:00 a 20:00 y se reserva por Booksy. Corte desde 17 € y barba desde 10 €.
 
 ## Dirección
 
@@ -15,14 +15,14 @@ Rúa de Venezuela 71, Vigo, CP 36204, España.
 
 ## Horario
 
-Lunes a sábado: 9:00–20:00
+Lunes a sábado: 9:00 a 20:00
 Domingo: Cerrado
 
 ## Servicios
 
-- **Corte** — cortes modernos y clásicos. Desde 17€.
-- **Barba** — recorte, arreglo y perfilado de barba. Desde 10€.
-- **Servicio Personalizado** — te asesoramos buscando el mejor resultado para ti.
+- **Corte**: cortes modernos y clásicos. Desde 17€.
+- **Barba**: recorte, arreglo y perfilado de barba. Desde 10€.
+- **Servicio Personalizado**: te asesoramos buscando el mejor resultado para ti.
 
 ## Reservar
 
@@ -34,3 +34,5 @@ Reserva directo en Booksy, en menos de un minuto: [https://booksy.com/es-es/dl/s
 - [Quiénes somos](https://www.monacobarberia.com/about)
 - [Contacto](https://www.monacobarberia.com/contact)
 - [Privacidad](https://www.monacobarberia.com/privacy)
+- [Tienda online](https://www.monacobarberia.com/tienda)
+- [Blog](https://www.monacobarberia.com/blog)
