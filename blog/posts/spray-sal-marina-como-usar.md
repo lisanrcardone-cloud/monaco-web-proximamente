@@ -66,13 +66,13 @@ El resultado son ondas y volumen sin apelmazar.
 
 **Echarlo con el pelo chorreando.** Primero la toalla. Tiene que estar húmedo, no mojado.
 
-**Pensar que es agua con sal.** Lleva minerales marinos y extracto de algas, que son los que dan forma y volumen, y proteínas de avena para cuidar el pelo.
+**Pensar que es agua con sal.** Lleva minerales marinos y extracto de algas, que son los que dan forma y volumen, y proteínas hidrolizadas de maíz, trigo y soja para cuidar el pelo.
 
 **Olvidarte de los ojos.** Evita que te entre en los ojos. Si pasa, aclara con abundante agua.
 
 ## ¿El spray de sal reseca el pelo?
 
-Es la duda que más sale en los comentarios. Lo que podemos decirte es lo que pone el fabricante: lleva proteínas de avena para cuidar el pelo, filtro UV y protección contra el calor del secador.
+Es la duda que más sale en los comentarios. Lo que podemos decirte es lo que pone el fabricante: lleva proteínas de maíz, trigo y soja y glicerina, que ayudan a que la sal no reseque, además de filtro UV y protección contra el calor del secador.
 
 ## Dónde comprarlo en Vigo y cuándo te llega
 
