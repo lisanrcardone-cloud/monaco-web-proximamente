@@ -413,6 +413,7 @@ ul.benefits li::before{content:"";position:absolute;left:.2rem;top:.55em;width:.
 .post-video{margin:2rem auto;justify-self:center;width:100%;max-width:360px}
 .post-video video{display:block;width:100%;height:auto;aspect-ratio:9/16;border-radius:14px;background:#000}
 .post-body>.post-cta-box{margin-top:2rem}
+.post-cta-box.is-plain{border:0;background:none;padding:0}  /* sin producto: solo el botón de Booksy, sin tarjeta */
 .post-cta-box{display:flex;flex-direction:column;align-items:center;gap:.7rem;text-align:center;padding:1.4rem 1.2rem;border:1px solid var(--line);border-radius:14px;background:var(--paper);margin-bottom:.5rem}
 .post-cta-name{font-family:var(--serif);font-size:1.3rem;color:var(--green)}
 .post-price{font-size:1.4rem;font-weight:600;color:var(--green)}
