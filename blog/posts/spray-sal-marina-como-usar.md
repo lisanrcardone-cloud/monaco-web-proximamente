@@ -50,8 +50,6 @@ El resultado son ondas y volumen sin apelmazar.
 
 [[video]]
 
-[Pendiente: vídeo de Felipe sobre cómo lo aplica él en la barbería: cuántas pulverizaciones, secador o secado al aire, y con qué cortes lo usa]
-
 ## Para quién es el spray de sal
 
 **Pelo liso que se queda plano.** Es el caso del vídeo. El spray le da forma y movimiento al pelo que cae recto y pegado a la cabeza. Si además quieres levantar la raíz, el siguiente paso es el polvo texturizante: los dos juntos son el [Pack Textura](/tienda/producto/pack-textura/).
@@ -71,8 +69,6 @@ El resultado son ondas y volumen sin apelmazar.
 **Pensar que es agua con sal.** Lleva minerales marinos y extracto de algas, que son los que dan forma y volumen, y proteínas de avena para cuidar el pelo.
 
 **Olvidarte de los ojos.** Evita que te entre en los ojos. Si pasa, aclara con abundante agua.
-
-[Pendiente: vídeo de Felipe sobre el error que más ve en los clientes que ya usan spray de sal]
 
 ## ¿El spray de sal reseca el pelo?
 
