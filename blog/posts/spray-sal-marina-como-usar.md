@@ -14,7 +14,7 @@ estado: revisar
 aprobado_por:
 fecha_aprobacion:
 fecha_publicacion:
-video_src: /assets/tienda/videos/spray-sal-marina-v8.mp4
+video_src: /assets/tienda/videos/spray-sal-marina-v9.mp4
 video_poster: /assets/tienda/videos/spray-sal-marina-v8-portada2.jpg
 video_titulo: Así se usa el spray de sal marina
 video_fecha: 2026-11-18
@@ -50,7 +50,7 @@ El resultado son ondas y volumen sin apelmazar.
 
 [[video]]
 
-[Pendiente: opinión de Felipe (audio) sobre cómo lo aplica él en la barbería: cuántas pulverizaciones, secador o secado al aire, y con qué cortes lo usa]
+[Pendiente: vídeo de Felipe sobre cómo lo aplica él en la barbería: cuántas pulverizaciones, secador o secado al aire, y con qué cortes lo usa]
 
 ## Para quién es el spray de sal
 
@@ -59,8 +59,6 @@ El resultado son ondas y volumen sin apelmazar.
 **Pelo con onda o rizo al que le falta volumen.** El spray le da movimiento, y la [espuma de rizos](/tienda/producto/espuma-rizos/) define el rizo y quita el encrespamiento. Los dos van en el [Pack Rizos](/tienda/producto/pack-rizos/). La espuma es un aerosol, así que ese pack solo se puede recoger en la barbería.
 
 **Si buscas un peinado duro que no se mueva.** No es lo tuyo. Su textura es ligera: no apelmaza ni endurece.
-
-[Pendiente: opinión de Felipe (audio) sobre si el spray sirve para pelo fino, para pelo muy corto y para quien tiene entradas]
 
 ## Errores comunes con el spray de sal
 
@@ -74,13 +72,11 @@ El resultado son ondas y volumen sin apelmazar.
 
 **Olvidarte de los ojos.** Evita que te entre en los ojos. Si pasa, aclara con abundante agua.
 
-[Pendiente: opinión de Felipe (audio) sobre el error que más ve en los clientes que ya usan spray de sal]
+[Pendiente: vídeo de Felipe sobre el error que más ve en los clientes que ya usan spray de sal]
 
 ## ¿El spray de sal reseca el pelo?
 
 Es la duda que más sale en los comentarios. Lo que podemos decirte es lo que pone el fabricante: lleva proteínas de avena para cuidar el pelo, filtro UV y protección contra el calor del secador.
-
-[Pendiente: respuesta de Felipe (audio), en una o dos frases, a "¿reseca el pelo?" y "¿se puede usar todos los días?"]
 
 ## Dónde comprarlo en Vigo y cuándo te llega
 
