@@ -72,7 +72,7 @@ El resultado son ondas y volumen sin apelmazar.
 
 ## ¿El spray de sal reseca el pelo?
 
-Es la duda que más sale en los comentarios. Lo que podemos decirte es lo que pone el fabricante: lleva proteínas de maíz, trigo y soja y glicerina, que ayudan a que la sal no reseque, además de filtro UV y protección contra el calor del secador.
+Es la duda que más sale en los comentarios. Lo que podemos decirte es lo que pone el fabricante: lleva proteínas de maíz, trigo y soja para cuidar el pelo, filtro UV y protección contra el calor del secador.
 
 ## Dónde comprarlo en Vigo y cuándo te llega
 
