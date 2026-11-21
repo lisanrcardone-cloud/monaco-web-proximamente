@@ -224,7 +224,7 @@
       "nombre_largo": "Ossion Morfose Hair Styling Wax Matte Hold",
       "formato": "150 ml",
       "resumen": "Fijación fuerte con acabado mate.",
-      "descripcion": "Cera de fijación fuerte y flexible con acabado mate. Da grosor, textura y cuerpo, y vale para todo tipo de pelo; en pelo fino, el acabado mate lo hace parecer más grueso. Es de base acuosa: se va con agua y no deja restos.",
+      "descripcion": "Cera de fijación fuerte con acabado mate. Da grosor, textura y cuerpo, y vale para todo tipo de pelo; en pelo fino, el acabado mate lo hace parecer más grueso. Es de base acuosa: se va con agua y no deja restos.",
       "beneficios": [
         "Fijación fuerte",
         "Acabado mate",
@@ -1065,7 +1065,7 @@
       "beneficios": [
         "Aspecto sano",
         "Aceites vegetales",
-        "Aplicación directa"
+        "Se absorbe sin aclarar"
       ],
       "ingredientes": "Aceites vegetales.",
       "modo_uso": "Echa unas gotas en la palma de la mano, frótalas y aplícalas en la raíz de la barba. Deja que se absorba; no se aclara.",
@@ -1077,16 +1077,16 @@
       "destacado": false,
       "pasos": [
         {
-          "titulo": "Dosifica",
-          "texto": "Usa el cuentagotas para controlar la cantidad."
+          "titulo": "Echa unas gotas",
+          "texto": "Con el cuentagotas, echa unas gotas en la palma de la mano."
         },
         {
-          "titulo": "Aplica en la barba",
-          "texto": "Aplica el aceite directamente en la barba."
+          "titulo": "Frota y aplica",
+          "texto": "Frótalas y aplícalas en la raíz de la barba."
         },
         {
-          "titulo": "Reparte",
-          "texto": "Extiéndelo de la base a las puntas."
+          "titulo": "Deja que se absorba",
+          "texto": "No necesita aclarado."
         }
       ],
       "ingredientes_destacados": [
@@ -1136,12 +1136,12 @@
       "destacado": false,
       "pasos": [
         {
-          "titulo": "Toma dos gotas",
-          "texto": "Saca dos gotas del sérum."
+          "titulo": "Toma unas gotas",
+          "texto": "Con la barba limpia y seca, saca unas gotas del sérum."
         },
         {
           "titulo": "Aplica en la barba",
-          "texto": "Aplícalas directamente en la barba."
+          "texto": "Aplícalas en la raíz y masajea en círculos hasta que se absorba."
         }
       ],
       "ingredientes_destacados": [
