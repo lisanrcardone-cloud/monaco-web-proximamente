@@ -17,7 +17,7 @@ function midBox(p, pr) {
   if (p.tipo === 'producto') {
     return `<aside class="post-cta-box" aria-label="Producto de este artículo"><p class="post-cta-name">${esc(pr.nombre)}</p><p class="post-price">${eur(pr.precio)}</p><a class="btn" href="${productUrl(pr)}">Ver en la tienda</a></aside>`;
   }
-  return `<aside class="post-cta-box" aria-label="Reservar cita">${bookBtn()}</aside>`;
+  return `<aside class="post-cta-box is-plain" aria-label="Reservar cita">${bookBtn()}</aside>`;
 }
 
 function endBlock(p, pr) {
