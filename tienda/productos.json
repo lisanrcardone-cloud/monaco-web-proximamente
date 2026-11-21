@@ -38,11 +38,11 @@
       "nombre_largo": "Ossion Morfose Hair Styling Powder",
       "formato": "20 g",
       "resumen": "Cuerpo y volumen al momento, con acabado mate.",
-      "descripcion": "Un polvo que da cuerpo y textura al pelo fino y levanta el peinado desde la raíz en cuanto lo aplicas. El acabado es mate y la fijación, flexible y natural: el pelo se mueve, pero el peinado aguanta.",
+      "descripcion": "Un polvo que da cuerpo y textura al pelo fino y levanta el peinado desde la raíz en cuanto lo aplicas. El acabado es mate y la fijación, fuerte: el peinado aguanta sin brillo.",
       "beneficios": [
         "Volumen inmediato desde la raíz",
         "Acabado mate",
-        "Fijación flexible",
+        "Fijación fuerte",
         "Ideal para pelo fino"
       ],
       "ingredientes": null,
@@ -81,7 +81,7 @@
         },
         {
           "p": "¿Deja brillo?",
-          "r": "No. El acabado es mate y la fijación, flexible: el pelo se mueve, pero el peinado aguanta."
+          "r": "No. El acabado es mate y la fijación, fuerte."
         },
         {
           "p": "¿Cuándo me llega?",
@@ -99,14 +99,14 @@
       "nombre_largo": "Ossion Morfose Sea Salt Hair Spray",
       "formato": "250 ml",
       "resumen": "Ondas y volumen con efecto playa, sin apelmazar.",
-      "descripcion": "Ondas naturales y volumen, como recién salido del mar. Lleva minerales marinos y extracto de algas para dar forma, y proteínas de avena para cuidar el pelo. Su textura ligera no apelmaza ni endurece, y protege del sol (filtro UV) y del calor del secador.",
+      "descripcion": "Ondas naturales y volumen, como recién salido del mar. Lleva minerales marinos y extracto de algas para dar forma, y proteínas hidrolizadas de maíz, trigo y soja para cuidar el pelo. Su textura ligera no apelmaza ni endurece, y protege del sol (filtro UV) y del calor del secador.",
       "beneficios": [
         "Ondas y volumen naturales",
         "Textura ligera, no apelmaza",
         "Filtro UV",
         "Protege del calor del secador"
       ],
-      "ingredientes": "Minerales marinos, extracto de algas y proteínas de avena.",
+      "ingredientes": "Sal marina, extractos de algas y proteínas hidrolizadas de maíz, trigo y soja.",
       "modo_uso": "Para ondas naturales: pulveriza sobre los largos y las puntas con el pelo húmedo, después sobre las puntas ya secas, y da forma. Para volumen: pulveriza sobre el pelo húmedo, en las raíces, y da forma.",
       "advertencias": "Solo para uso externo. Evita el contacto con los ojos; si ocurre, aclara con abundante agua. Mantener fuera del alcance de los niños y a temperatura ambiente.",
       "fabricante": "Fabricante: Morfose Kişisel Bakım ve Kozmetik Ürünleri San. Tic. A.Ş., Silivri, Estambul (Turquía). Persona responsable en la UE: Morfose GmbH, Am Wickerbach 17, 65719 Hofheim am Taunus (Alemania).",
@@ -129,7 +129,7 @@
           "beneficio": "Aportan forma y volumen al pelo."
         },
         {
-          "nombre": "Proteínas de avena",
+          "nombre": "Proteínas hidrolizadas de maíz, trigo y soja",
           "beneficio": "Ayudan a proteger la salud del pelo."
         }
       ],
@@ -163,7 +163,7 @@
       "nombre_largo": "Ossion Morfose Curl Mousse",
       "formato": "350 ml",
       "resumen": "Rizos definidos, sin encrespamiento y con fijación fuerte.",
-      "descripcion": "Espuma de fijación ultrafuerte para moldear el pelo: define los rizos, quita el encrespamiento y suma volumen. Funciona en pelo seco o húmedo y se reparte fácil con el cepillo.",
+      "descripcion": "Espuma de fijación ultrafuerte para moldear el pelo: define los rizos, quita el encrespamiento y suma volumen. Funciona en pelo seco o húmedo y se reparte fácil con las manos.",
       "beneficios": [
         "Define los rizos",
         "Controla el encrespamiento",
@@ -171,7 +171,7 @@
         "En seco o en húmedo"
       ],
       "ingredientes": null,
-      "modo_uso": "Aplica sobre el pelo seco o húmedo y reparte con el cepillo.",
+      "modo_uso": "Aplica sobre el pelo seco o húmedo y repártela por igual con las manos.",
       "advertencias": "Extremadamente inflamable. Recipiente a presión: no perforar ni quemar, incluso vacío. No exponer al sol ni a más de 50 °C. No pulverizar cerca de llamas, fuentes de calor u objetos incandescentes, y no fumar mientras se usa. No respirar el aerosol ni usarlo en lugares cerrados. Solo para uso externo. Evita el contacto con los ojos; si ocurre, lava enseguida con abundante agua. Mantener fuera del alcance de los niños. No usar en niños menores de 3 años.",
       "fabricante": "Fabricante: Morfose Kişisel Bakım ve Kozmetik Ürünleri San. Tic. A.Ş., Silivri, Estambul (Turquía). Persona responsable en la UE: Morfose GmbH, Am Wickerbach 17, 65719 Hofheim am Taunus (Alemania).",
       "imagenes": [
@@ -191,7 +191,7 @@
         },
         {
           "titulo": "Reparte por el pelo",
-          "texto": "Aplícala de forma uniforme sobre el pelo seco o húmedo y repártela con el cepillo."
+          "texto": "Aplícala de forma uniforme sobre el pelo seco o húmedo y repártela con las manos."
         },
         {
           "titulo": "Sin aclarar",
@@ -202,11 +202,11 @@
       "faq": [
         {
           "p": "¿Funciona en pelo liso?",
-          "r": "Está pensada sobre todo para definir rizos y quitar el encrespamiento, pero también moldea el pelo y le da volumen y fijación."
+          "r": "No es su uso. La marca la ha desarrollado para pelo rizado y ondulado. Para dar volumen al pelo liso, mira el Pack Textura."
         },
         {
           "p": "¿Se aplica en seco o en húmedo?",
-          "r": "En las dos. Agita bien el bote, pon un poco de espuma en la palma de la mano y repártela por el pelo con el cepillo. No se aclara."
+          "r": "En las dos. Agita bien el bote, pon un poco de espuma en la palma de la mano y repártela por el pelo con las manos. No se aclara."
         },
         {
           "p": "¿Me lo podéis enviar a casa?",
@@ -224,7 +224,7 @@
       "nombre_largo": "Ossion Morfose Hair Styling Wax Matte Hold",
       "formato": "150 ml",
       "resumen": "Fijación fuerte con acabado mate.",
-      "descripcion": "Cera de fijación fuerte y flexible con acabado mate. Da grosor, textura y cuerpo, y funciona especialmente bien en pelo corto o corto y rizado. Es de base acuosa: se va con agua y no deja restos.",
+      "descripcion": "Cera de fijación fuerte con acabado mate. Da grosor, textura y cuerpo, y vale para todo tipo de pelo; en pelo fino, el acabado mate lo hace parecer más grueso. Es de base acuosa: se va con agua y no deja restos.",
       "beneficios": [
         "Fijación fuerte",
         "Acabado mate",
@@ -248,7 +248,7 @@
         },
         {
           "titulo": "Aplica en el pelo",
-          "texto": "Repártela por igual sobre el pelo seco o un poco húmedo, en las zonas que quieras peinar."
+          "texto": "Repártela por igual sobre el pelo limpio y seco, en las zonas que quieras peinar."
         },
         {
           "titulo": "Peina a tu gusto",
@@ -259,7 +259,7 @@
       "faq": [
         {
           "p": "¿Qué diferencia hay con las otras ceras?",
-          "r": "La Matte Hold fija fuerte y deja el pelo mate, sin brillo. La Extra Hold fija igual de fuerte pero con brillo, y la Medium Hold fija menos, para peinados con más movimiento."
+          "r": "La Extra Hold es la que más fija y deja brillo. La Matte Hold y la Medium Hold fijan parecido: la Matte deja el pelo mate y la Medium, con brillo y más movimiento."
         },
         {
           "p": "¿Se quita fácil?",
@@ -267,7 +267,7 @@
         },
         {
           "p": "¿Para qué pelo va mejor?",
-          "r": "Para pelo corto o corto y rizado, donde da grosor, textura y cuerpo."
+          "r": "Para todo tipo de pelo. En pelo fino va especialmente bien: el acabado mate lo hace parecer más grueso."
         },
         {
           "p": "¿Cuándo me llega?",
@@ -285,7 +285,7 @@
       "nombre_largo": "Ossion Morfose Hair Styling Wax Extra Hold",
       "formato": "150 ml",
       "resumen": "Fijación fuerte con acabado brillo.",
-      "descripcion": "Cera de fijación fuerte y flexible con acabado brillo. Da grosor, textura y cuerpo, y funciona especialmente bien en pelo corto o corto y rizado. Es de base acuosa: se va con agua y no deja restos. Aroma frutal a melón.",
+      "descripcion": "Cera de fijación fuerte y flexible con acabado brillo. Da grosor, textura y cuerpo. Vale para todo tipo de pelo y va especialmente bien en pelo normal o grueso y en peinados muy marcados. Es de base acuosa: se va con agua y no deja restos. Aroma frutal a melón.",
       "beneficios": [
         "Fijación fuerte",
         "Acabado brillo",
@@ -309,7 +309,7 @@
         },
         {
           "titulo": "Aplica en el pelo",
-          "texto": "Repártela por igual sobre el pelo seco o un poco húmedo, en las zonas que quieras peinar."
+          "texto": "Repártela por igual sobre el pelo limpio y seco, en las zonas que quieras peinar."
         },
         {
           "titulo": "Peina a tu gusto",
@@ -320,7 +320,7 @@
       "faq": [
         {
           "p": "¿Qué diferencia hay con las otras ceras?",
-          "r": "La Extra Hold fija fuerte y deja brillo. La Matte Hold fija igual de fuerte pero con acabado mate, y la Medium Hold fija menos, para peinados con más movimiento."
+          "r": "La Extra Hold es la que más fija y deja brillo. La Matte Hold y la Medium Hold fijan parecido: la Matte deja el pelo mate y la Medium, con brillo y más movimiento."
         },
         {
           "p": "¿Se quita fácil?",
@@ -370,7 +370,7 @@
         },
         {
           "titulo": "Aplica en el pelo",
-          "texto": "Repártela por igual sobre el pelo seco o un poco húmedo, en las zonas que quieras peinar."
+          "texto": "Repártela por igual sobre el pelo limpio y seco, en las zonas que quieras peinar."
         },
         {
           "titulo": "Peina a tu gusto",
@@ -381,7 +381,7 @@
       "faq": [
         {
           "p": "¿Qué diferencia hay con las otras ceras?",
-          "r": "La Medium Hold fija menos que la Matte y la Extra, y deja brillo. Va mejor en pelo más largo o en peinados con movimiento."
+          "r": "La Extra Hold es la que más fija y deja brillo. La Matte Hold y la Medium Hold fijan parecido: la Matte deja el pelo mate y la Medium, con brillo y más movimiento."
         },
         {
           "p": "¿Se quita fácil?",
@@ -702,10 +702,10 @@
       "nombre": "Champú Pro Keratin",
       "nombre_largo": "Linecure Pro Keratin Repair",
       "formato": "300 ml",
-      "resumen": "Fuerza para el pelo frágil. Menos encrespamiento.",
-      "descripcion": "Champú de fórmula vegana para pelo frágil o debilitado. Hidrata y nutre, reduce el encrespamiento y deja una capa que protege y sella la fibra. Más brillo, más textura y mejor peinado.",
+      "resumen": "Para pelo seco y encrespado. Repara y sella la fibra.",
+      "descripcion": "Champú de fórmula vegana para pelo seco y encrespado. Hidrata, nutre y repara, reduce el encrespamiento y deja una capa que protege y sella la fibra. Más brillo, más textura y mejor peinado.",
       "beneficios": [
-        "Fortalece el pelo frágil",
+        "Para pelo seco y encrespado",
         "Reduce el encrespamiento",
         "Protege y sella la fibra",
         "Fórmula vegana"
@@ -754,7 +754,7 @@
       "faq": [
         {
           "p": "¿Para qué pelo es?",
-          "r": "Para pelo frágil o debilitado. Hidrata, nutre, reduce el encrespamiento y deja una capa que protege y sella la fibra."
+          "r": "Para pelo seco y encrespado. Hidrata, nutre, reduce el encrespamiento y deja una capa que protege y sella la fibra."
         },
         {
           "p": "¿Qué lleva?",
@@ -1009,7 +1009,7 @@
         "Con argán y almendra amarga"
       ],
       "ingredientes": "Aceite de argán y aceite de almendras amargas.",
-      "modo_uso": "Aplica un poco en la barba y espera 1-2 minutos. Aclara con agua. Para más efecto, aplica otra vez antes de aclarar.",
+      "modo_uso": "Coge un poco en la palma de la mano y aplícalo en la raíz de la barba. Deja que se absorba bien; no se aclara.",
       "imagenes": [
         "/assets/tienda/productos/barba-balsamo.webp"
       ],
@@ -1018,16 +1018,16 @@
       "destacado": false,
       "pasos": [
         {
-          "titulo": "Aplica en la barba",
-          "texto": "Pon una pequeña cantidad en la barba."
+          "titulo": "Coge un poco",
+          "texto": "Pon una pequeña cantidad en la palma de la mano."
         },
         {
-          "titulo": "Deja actuar",
-          "texto": "Espera de 1 a 2 minutos."
+          "titulo": "Aplica en la raíz",
+          "texto": "Extiéndelo en la base de la barba."
         },
         {
-          "titulo": "Aclara",
-          "texto": "Aclara con agua; para más efecto, aplica una vez más antes de aclarar."
+          "titulo": "Deja que se absorba",
+          "texto": "No necesita aclarado."
         }
       ],
       "ingredientes_destacados": [
@@ -1039,7 +1039,7 @@
       "faq": [
         {
           "p": "¿Se aclara?",
-          "r": "Sí. Aplica un poco en la barba, deja actuar 1 o 2 minutos y aclara con agua. Para más efecto, aplica otra vez antes de aclarar."
+          "r": "No. Se aplica en la raíz de la barba y se deja absorber."
         },
         {
           "p": "¿Qué lleva?",
@@ -1065,10 +1065,10 @@
       "beneficios": [
         "Aspecto sano",
         "Aceites vegetales",
-        "Aplicación directa"
+        "Se absorbe sin aclarar"
       ],
       "ingredientes": "Aceites vegetales.",
-      "modo_uso": "Aplica directamente en la barba, de la base a las puntas.",
+      "modo_uso": "Echa unas gotas en la palma de la mano, frótalas y aplícalas en la raíz de la barba. Deja que se absorba; no se aclara.",
       "imagenes": [
         "/assets/tienda/productos/barba-aceite.webp"
       ],
@@ -1077,16 +1077,16 @@
       "destacado": false,
       "pasos": [
         {
-          "titulo": "Dosifica",
-          "texto": "Usa el cuentagotas para controlar la cantidad."
+          "titulo": "Echa unas gotas",
+          "texto": "Con el cuentagotas, echa unas gotas en la palma de la mano."
         },
         {
-          "titulo": "Aplica en la barba",
-          "texto": "Aplica el aceite directamente en la barba."
+          "titulo": "Frota y aplica",
+          "texto": "Frótalas y aplícalas en la raíz de la barba."
         },
         {
-          "titulo": "Reparte",
-          "texto": "Extiéndelo de la base a las puntas."
+          "titulo": "Deja que se absorba",
+          "texto": "No necesita aclarado."
         }
       ],
       "ingredientes_destacados": [
@@ -1098,7 +1098,7 @@
       "faq": [
         {
           "p": "¿Cómo se aplica?",
-          "r": "Con el cuentagotas, directamente en la barba, y lo repartes de la base a las puntas."
+          "r": "Con el cuentagotas, echa unas gotas en la palma, frota las manos y aplícalo en la raíz de la barba. No se aclara."
         },
         {
           "p": "¿Cuánto trae?",
@@ -1124,10 +1124,10 @@
       "beneficios": [
         "Barba cuidada",
         "Evita la irritación",
-        "Dos gotas bastan"
+        "Unas gotas bastan"
       ],
       "ingredientes": null,
-      "modo_uso": "Pon dos gotas y aplícalas directamente en la barba.",
+      "modo_uso": "Con la barba limpia y seca, aplica unas gotas en la raíz con el cuentagotas y masajea en círculos hasta que se absorba. No se aclara.",
       "imagenes": [
         "/assets/tienda/productos/barba-serum.webp"
       ],
@@ -1136,12 +1136,12 @@
       "destacado": false,
       "pasos": [
         {
-          "titulo": "Toma dos gotas",
-          "texto": "Saca dos gotas del sérum."
+          "titulo": "Toma unas gotas",
+          "texto": "Con la barba limpia y seca, saca unas gotas del sérum."
         },
         {
           "titulo": "Aplica en la barba",
-          "texto": "Aplícalas directamente en la barba."
+          "texto": "Aplícalas en la raíz y masajea en círculos hasta que se absorba."
         }
       ],
       "ingredientes_destacados": [
@@ -1153,7 +1153,7 @@
       "faq": [
         {
           "p": "¿Cuánto hay que poner?",
-          "r": "Dos gotas, aplicadas directamente en la barba."
+          "r": "Unas gotas, en la raíz de la barba limpia y seca, con un masaje en círculos."
         },
         {
           "p": "¿Sirve si me pica la piel debajo de la barba?",
@@ -1179,10 +1179,10 @@
       "beneficios": [
         "Limpia la barba",
         "Hidrata mientras lava",
-        "Vale para pelo y barba"
+        "Deja la barba suave y fácil de peinar"
       ],
       "ingredientes": null,
-      "modo_uso": "Aplica sobre el pelo y la barba bien mojados. Masajea con los dedos hasta hacer espuma y aclara con abundante agua.",
+      "modo_uso": "Aplica sobre la barba húmeda, masajea con los dedos hasta hacer espuma y aclara con abundante agua. Repite si hace falta.",
       "imagenes": [
         "/assets/tienda/productos/barba-champu.webp"
       ],
@@ -1192,7 +1192,7 @@
       "pasos": [
         {
           "titulo": "Moja bien",
-          "texto": "Aplica el champú sobre el pelo y la barba bien mojados."
+          "texto": "Aplica el champú sobre la barba húmeda."
         },
         {
           "titulo": "Haz espuma",
@@ -1212,7 +1212,7 @@
       "faq": [
         {
           "p": "¿Lo puedo usar también en el pelo?",
-          "r": "Sí. Se aplica sobre el pelo y la barba bien mojados, se masajea hasta hacer espuma y se aclara."
+          "r": "No es lo que recomienda la marca: está hecho para la barba y la piel de debajo. Para el pelo, elige uno de nuestros champús Linecure."
         },
         {
           "p": "¿Qué hace?",
