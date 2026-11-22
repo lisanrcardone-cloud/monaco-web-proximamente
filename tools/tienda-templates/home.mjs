@@ -104,7 +104,7 @@ ${CINTA_DEFS}
 
 <section class="follow-sec" id="siguenos">
   <div class="follow-band"><div class="wrap"><div class="follow"><span class="it">Síguenos</span><a href="https://www.instagram.com/monacobarbershop.oficial/" rel="noopener" target="_blank">@monacobarbershop.oficial</a></div></div></div>
-  ${IG.length ? `<div class="grid6">${IG.slice(0, 6).map((x) => `<a href="${esc(x.permalink)}" target="_blank" rel="noopener" data-ig="1"><img src="${esc(x.img)}" alt="${esc(x.alt)}" width="600" height="600" loading="lazy" decoding="async"></a>`).join('')}</div>` : '<!-- Sin fotos en tienda/instagram.json: la cuadrícula no se muestra (pendiente en MONACO.md) -->'}
+  ${IG.length ? `<div class="grid6 grid5">${IG.slice(0, 5).map((x) => `<a href="${esc(x.permalink)}" target="_blank" rel="noopener" data-ig="1" aria-label="Ver este reel en Instagram"><img src="${esc(x.img)}" alt="${esc(x.alt)}" width="600" height="600" loading="lazy" decoding="async"><svg class="ig-play" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg></a>`).join('')}</div>` : '<!-- Sin fotos en tienda/instagram.json: la cuadrícula no se muestra (pendiente en MONACO.md) -->'}
 </section>`;
 
   return page({

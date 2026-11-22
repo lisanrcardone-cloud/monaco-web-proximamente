@@ -69,6 +69,7 @@
           "texto": "No necesita aclarado."
         }
       ],
+      "video": {"src": "/assets/tienda/videos/polvo-texturizante.mp4", "poster": "/assets/tienda/videos/polvo-texturizante-portada.jpg", "titulo": "Así se usa el polvo texturizante"},
       "ingredientes_destacados": null,
       "faq": [
         {
@@ -1453,6 +1454,7 @@
       "etiqueta": null,
       "destacado": false,
       "pasos": null,
+      "video_de": "polvo-texturizante",
       "ingredientes_destacados": null,
       "faq": [
         {
