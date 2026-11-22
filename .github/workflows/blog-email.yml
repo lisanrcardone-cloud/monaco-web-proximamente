@@ -1,0 +1,43 @@
+name: Email del blog a Brevo
+on:
+  push:
+    branches: [main]
+    paths: ['blog/posts/**']
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Slug del post ya publicado (por ejemplo nuestra-historia)'
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: blog-email
+  cancel-in-progress: false
+jobs:
+  email:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Crear campaña para los posts nuevos aprobados
+        if: github.event_name == 'push'
+        env:
+          BREVO_MARKETING_KEY: ${{ secrets.BREVO_MARKETING_KEY }}
+          BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
+          BLOG_EMAIL_MODO: ${{ secrets.BLOG_EMAIL_MODO }}
+          SHA_ANTES: ${{ github.event.before }}
+          SHA_AHORA: ${{ github.sha }}
+        run: node tools/blog-email.mjs --desde "$SHA_ANTES" --hasta "$SHA_AHORA"
+      - name: Crear campaña a mano para un post
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          BREVO_MARKETING_KEY: ${{ secrets.BREVO_MARKETING_KEY }}
+          BREVO_LIST_ID: ${{ secrets.BREVO_LIST_ID }}
+          BLOG_EMAIL_MODO: ${{ secrets.BLOG_EMAIL_MODO }}
+          SLUG: ${{ inputs.slug }}
+        run: |
+          if ! printf '%s' "$SLUG" | grep -Eq '^[a-z0-9-]+$'; then echo "::error::Slug no válido"; exit 1; fi
+          node tools/blog-email.mjs "$SLUG"
