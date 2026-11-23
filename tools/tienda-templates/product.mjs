@@ -77,7 +77,7 @@ export function product(p, productos, posts = []) {
 <section class="wrap pdp" aria-label="Producto">
   <div class="gallery">
     <div class="g-main"${p.textura ? ` data-tex="${p.textura}"` : ''}>${mainMedia}</div>
-    <div class="g-thumbs">${thumbs}</div>
+    ${hasImg && p.imagenes.length < 2 ? '' : `<div class="g-thumbs">${thumbs}</div>`}
   </div>
   <div class="pdp-info">
     <h1>${txt(p.nombre)}</h1>
