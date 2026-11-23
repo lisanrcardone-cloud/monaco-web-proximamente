@@ -38,7 +38,7 @@ const GA = `<!-- Google tag (gtag.js) -->
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-EHWP4106KW');
+  gtag('config', 'G-EHWP4106KW', (function () { try { var q = location.search; if (/[?&]interno=1/.test(q)) localStorage.setItem('mb_interno', '1'); if (/[?&]interno=0/.test(q)) localStorage.removeItem('mb_interno'); return localStorage.getItem('mb_interno') ? { traffic_type: 'internal' } : {}; } catch (e) { return {}; } })());
 </script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
