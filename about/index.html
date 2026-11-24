@@ -33,18 +33,34 @@
 <div class="bg-texture" aria-hidden="true"></div>
 <a class="skip-link" href="#main">Saltar al contenido</a>
 
-<nav class="nav" id="nav">
+<nav class="nav nav--full" id="nav">
   <div class="wrap">
     <a href="/"><img src="/assets/logo-wordmark-nav.png" alt="Mónaco Barbershop" class="nav-mark-logo" width="384" height="102"></a>
     <div class="nav-links">
       <a href="/#servicios">Servicios</a>
       <a href="/about">Quiénes somos</a>
       <a href="/tienda/">Tienda</a>
+      <a href="/blog">Blog</a>
+      <a href="/#donde-encontrarnos">Dónde encontrarnos</a>
       <a href="/contact">Contacto</a>
       <a href="https://booksy.com/es-es/dl/show-business/187597" class="nav-cta-booksy" target="_blank" rel="noopener">Reservar en Booksy</a>
     </div>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg class="ham-open" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="ham-close" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </nav>
+
+<div class="nav-mobile-menu" id="nav-mobile-menu" role="dialog" aria-label="Menú principal" aria-modal="true">
+  <a href="/#servicios">Servicios</a>
+  <a href="/about">Quiénes somos</a>
+  <a href="/tienda/">Tienda</a>
+  <a href="/blog">Blog</a>
+  <a href="/#donde-encontrarnos">Dónde encontrarnos</a>
+  <a href="/contact">Contacto</a>
+  <a href="https://booksy.com/es-es/dl/show-business/187597" class="nav-mobile-cta" target="_blank" rel="noopener">Reservar en Booksy</a>
+</div>
 
 <main id="main">
   <section class="section" aria-labelledby="about-h" style="padding-top:120px;">
@@ -69,6 +85,7 @@
       <a href="/#servicios">Servicios</a>
       <a href="/about">Quiénes somos</a>
       <a href="/tienda/">Tienda</a>
+      <a href="/blog">Blog</a>
       <a href="/contact">Contacto</a>
       <a href="https://booksy.com/es-es/dl/show-business/187597" target="_blank" rel="noopener">Reservar en Booksy</a>
     </div>
@@ -99,5 +116,6 @@
   <span class="footer-copy">© 2026 · Vigo · Todos los derechos reservados · <a href="/aviso-legal" style="text-decoration:underline">Aviso legal</a> · <a href="/privacy" style="text-decoration:underline">Privacidad</a></span>
 </footer>
 
+<script defer src="/main.js?v=20261119a"></script>
 </body>
 </html>
