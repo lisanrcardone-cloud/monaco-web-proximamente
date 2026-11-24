@@ -36,3 +36,7 @@ Reserva directo en Booksy, en menos de un minuto: [https://booksy.com/es-es/dl/s
 - [Privacidad](https://www.monacobarberia.com/privacy)
 - [Tienda online](https://www.monacobarberia.com/tienda)
 - [Blog](https://www.monacobarberia.com/blog)
+- [Nuestra historia (blog)](https://www.monacobarberia.com/blog/nuestra-historia)
+- [Polvo texturizante](https://www.monacobarberia.com/tienda/producto/polvo-texturizante)
+- [Spray de sal marina](https://www.monacobarberia.com/tienda/producto/spray-sal-marina)
+- [Pack Textura](https://www.monacobarberia.com/tienda/producto/pack-textura)
