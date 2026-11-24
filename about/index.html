@@ -28,6 +28,35 @@
     })(window, document, "clarity", "script", "y8hbbvzzyc");
 </script>
 <link rel="stylesheet" href="/styles.min.css?v=20261119a">
+<style>
+.page-body{padding-top:120px;padding-bottom:3rem}
+.page-body .wrap{max-width:760px}
+.page-body h1{font-size:clamp(2rem,6vw,3.2rem);margin-bottom:1rem}
+.page-body h2{font-size:clamp(1.45rem,4vw,2rem);margin:2.6rem 0 .9rem}
+.page-body h3{font-size:clamp(1.1rem,3vw,1.3rem);margin:1.6rem 0 .5rem}
+.page-body p,.page-body li{font-size:1.02rem;line-height:1.65;color:var(--ink-soft)}
+.page-body p{margin:0 0 .9rem}
+.page-body ul,.page-body ol{margin:0 0 1rem 1.2rem}
+.page-body li{margin-bottom:.35rem}
+.page-body p a,.page-body li a,.page-body blockquote a{text-decoration:underline;text-underline-offset:3px;font-weight:500;color:var(--ink)}
+.svc-prices{list-style:none;margin:0 0 1rem!important;padding:0;border-top:1px solid var(--line)}
+.svc-prices li{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line);margin:0}
+.svc-prices li span:last-child{white-space:nowrap;font-weight:600;color:var(--ink)}
+.svc-quote{margin:1.4rem 0;padding:1rem 1.2rem;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.svc-quote p{margin:0 0 .4rem;font-style:italic}
+.svc-quote cite{font-style:normal;font-size:.9rem;color:var(--ink-mute)}
+.page-body .btn.hero-cta{display:inline-flex;align-items:center;min-height:48px;margin:.4rem 0 1rem}
+.svc-note{font-size:.9rem!important;color:var(--ink-mute)!important}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {"@type":"AboutPage","@id":"https://www.monacobarberia.com/about#webpage","url":"https://www.monacobarberia.com/about","name":"Quiénes somos","about":{"@id":"https://www.monacobarberia.com/#barbershop"},"mainEntity":{"@id":"https://www.monacobarberia.com/#barbershop"}},
+  {"@type":"Person","@id":"https://www.monacobarberia.com/about#felipe-denti","name":"Felipe Denti","jobTitle":"Barbero y fundador de Mónaco Barbershop","worksFor":{"@id":"https://www.monacobarberia.com/#barbershop"}}
+ ]
+}
+</script>
 </head>
 <body>
 <div class="bg-texture" aria-hidden="true"></div>
@@ -63,7 +92,7 @@
 </div>
 
 <main id="main">
-  <section class="section" aria-labelledby="about-h" style="padding-top:120px;">
+  <section class="section page-body" aria-labelledby="about-h">
     <div class="wrap">
       <p class="kicker kicker-block">Quiénes somos</p>
       <h1 id="about-h">Nuestra historia</h1>
@@ -73,7 +102,23 @@
       <p class="section-lead">Mónaco Barbershop nace con la idea de ir más allá de un corte de pelo. Nuestra experiencia y dedicación nos empujan a buscar siempre la mejora constante: en la calidad del servicio, en la atención y el asesoramiento, y en el resultado final para cada cliente.</p>
       <p class="section-lead"><strong>Felipe Denti</strong></p>
       <p class="section-lead"><a href="/blog/nuestra-historia" style="display:inline-flex;align-items:center;min-height:44px;font-weight:500;text-decoration:underline;text-underline-offset:3px">Lee la historia completa</a></p>
-      <p class="section-lead">Nos encuentras en Rúa de Venezuela 71, Vigo, CP 36204. Abrimos de lunes a sábado, de 9:00 a 20:00.</p>
+      <h2>De Argentina a Vigo</h2>
+      <p>Felipe empezó a cortar el pelo a los 13 años. A los 14 entró a trabajar en una barbería y con 17 abrió la suya en Argentina. A los 20 la tuvo que cerrar y se mudó a España.</p>
+      <p>Tras casi un año y medio en España y meses buscando local, encontró el número 71 de la Rúa de Venezuela, en el centro de Vigo. Fueron casi dos meses de obras hasta dejarlo listo. Mónaco Barbershop abrió el 6 de agosto de 2026.</p>
+      <h2>Qué hacemos</h2>
+      <ul>
+        <li><a href="/corte-de-pelo-hombre-vigo">Corte de pelo de hombre</a>: lavado, asesoramiento, corte adaptado a tu estilo, tu tipo de cabello y la forma de tu cara, y peinado. 17 €.</li>
+        <li><a href="/arreglo-barba-vigo">Arreglo de barba</a>: recorte, arreglo y perfilado. 10 €. Con corte de pelo, 27 €.</li>
+        <li>Servicio personalizado: te asesoramos buscando el mejor resultado para ti.</li>
+      </ul>
+      <p>Y en la <a href="/tienda/">tienda online</a>, los mismos productos que usamos en tu corte, para que te los lleves a casa.</p>
+      <h2>Horario y dónde estamos</h2>
+      <p>Nos encuentras en Rúa de Venezuela 71, Vigo, CP 36204. Abrimos de lunes a sábado, de 9:00 a 20:00. El domingo está cerrado.</p>
+      <p><a href="https://maps.app.goo.gl/ELZu3Q2MX5FgQXV87" target="_blank" rel="noopener">Ver Mónaco en Google Maps</a> · <a href="/contact">Contacto</a> · <a href="/preguntas-frecuentes">Preguntas frecuentes</a></p>
+      <div id="reserva">
+        <h2>Reserva tu cita</h2>
+        <a href="https://booksy.com/es-es/dl/show-business/187597" class="btn" target="_blank" rel="noopener">Reservar en Booksy</a>
+      </div>
     </div>
   </section>
 </main>

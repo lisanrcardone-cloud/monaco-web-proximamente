@@ -16,6 +16,21 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.monacobarberia.com/corte-de-pelo-hombre-vigo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.monacobarberia.com/arreglo-barba-vigo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.monacobarberia.com/preguntas-frecuentes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.monacobarberia.com/privacy</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

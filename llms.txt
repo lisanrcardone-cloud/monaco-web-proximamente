@@ -9,6 +9,9 @@ Barbería premium en Vigo (Rúa de Venezuela 71, CP 36204). Corte, barba y servi
 - [Blog](https://www.monacobarberia.com/blog): historias de la barbería y consejos de producto.
 - [Nuestra historia](https://www.monacobarberia.com/blog/nuestra-historia): de cortar en casa a los 13 a abrir Mónaco Barbershop en Vigo, con el vídeo de Felipe Denti.
 - [Contacto](https://www.monacobarberia.com/contact): dirección, teléfono, WhatsApp, email y mapa.
+- [Corte de pelo de hombre en Vigo](https://www.monacobarberia.com/corte-de-pelo-hombre-vigo): qué incluye, precios de corte (desde 14 €) y reserva.
+- [Arreglo de barba en Vigo](https://www.monacobarberia.com/arreglo-barba-vigo): recorte, arreglo y perfilado por 10 €, combinaciones con corte y afeitado.
+- [Preguntas frecuentes](https://www.monacobarberia.com/preguntas-frecuentes): reservas, horario, precios, pago, tienda online y envíos.
 - [Privacidad](https://www.monacobarberia.com/privacy): política de privacidad.
 - [Tienda](https://www.monacobarberia.com/tienda): tienda online con recogida en la barbería o envío.
 - [Todos los productos](https://www.monacobarberia.com/tienda/productos): catálogo completo por categorías.
@@ -19,8 +22,10 @@ Barbería premium en Vigo (Rúa de Venezuela 71, CP 36204). Corte, barba y servi
 
 ## Servicios y precios reales
 
-- Corte: cortes modernos y clásicos. Desde 17€.
-- Barba: recorte, arreglo y perfilado de barba. Desde 10€.
+- Corte de pelo: lavado, asesoramiento, corte adaptado y peinado, con bebida o café. 17 €, 40 min.
+- Corte de pelo + barba: 27 €, 50 min. Corte de pelo + afeitado de barba: 22 €, 50 min.
+- Corte de jubilado: 15 €. Corte niño (hasta 10 años): 15 €. Rapado de cabeza: 14 €.
+- Recorte de la barba (recorte, arreglo y perfilado): 10 €, 15 min.
 - Servicio Personalizado: asesoramiento para el mejor resultado.
 
 Reservar: [Booksy](https://booksy.com/es-es/dl/show-business/187597)
