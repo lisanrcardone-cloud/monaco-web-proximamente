@@ -71,6 +71,7 @@ section[id],[id].anchor{scroll-margin-top:calc(var(--head-h) + 12px)}
 .nav a:hover,.nav button.nav-btn:hover{color:var(--gold-text)}
 .has-sub{position:relative}
 .sub{display:none;position:absolute;top:100%;left:0;min-width:300px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:.5rem;box-shadow:0 12px 30px rgba(27,42,34,.12)}
+.has-sub--end .sub{left:auto;right:0}
 .has-sub.open .sub{display:block}
 @media(hover:hover) and (min-width:861px){.has-sub:hover .sub{display:block}}
 .sub a{display:flex;width:100%;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:.95rem;border-radius:8px;padding:.6rem .8rem}
