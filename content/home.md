@@ -33,6 +33,13 @@ Reserva directo en Booksy, en menos de un minuto: [https://booksy.com/es-es/dl/s
 - [Inicio](https://www.monacobarberia.com/)
 - [Quiénes somos](https://www.monacobarberia.com/about)
 - [Contacto](https://www.monacobarberia.com/contact)
+- [Corte de pelo de hombre en Vigo](https://www.monacobarberia.com/corte-de-pelo-hombre-vigo): Corte de pelo de hombre en Vigo, en la Rúa de Venezuela 71: lavado, asesoramiento, corte y peinado por 17 €, con bebida o café. Reserva en Booksy.
+- [Arreglo de barba en Vigo](https://www.monacobarberia.com/arreglo-barba-vigo): Arreglo de barba en Vigo, en la Rúa de Venezuela 71: recorte, arreglo y perfilado por 10 €. Con corte de pelo, 27 €. Reserva tu cita en Booksy.
+- [Preguntas frecuentes](https://www.monacobarberia.com/preguntas-frecuentes): Cómo reservar, horario, precios, pago, tienda online y envíos de Mónaco Barbershop, la barbería de la Rúa de Venezuela 71, en Vigo.
 - [Privacidad](https://www.monacobarberia.com/privacy)
 - [Tienda online](https://www.monacobarberia.com/tienda)
 - [Blog](https://www.monacobarberia.com/blog)
+- [Nuestra historia (blog)](https://www.monacobarberia.com/blog/nuestra-historia)
+- [Polvo texturizante](https://www.monacobarberia.com/tienda/producto/polvo-texturizante)
+- [Spray de sal marina](https://www.monacobarberia.com/tienda/producto/spray-sal-marina)
+- [Pack Textura](https://www.monacobarberia.com/tienda/producto/pack-textura)

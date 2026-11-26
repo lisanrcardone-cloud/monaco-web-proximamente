@@ -28,23 +28,59 @@
     })(window, document, "clarity", "script", "y8hbbvzzyc");
 </script>
 <link rel="stylesheet" href="/styles.min.css?v=20261119a">
+<style>
+.page-body{padding-top:120px;padding-bottom:3rem}
+.page-body .wrap{max-width:760px}
+.page-body h1{font-size:clamp(2rem,6vw,3.2rem);margin-bottom:1rem}
+.page-body h2{font-size:clamp(1.45rem,4vw,2rem);margin:2.6rem 0 .9rem}
+.page-body h3{font-size:clamp(1.1rem,3vw,1.3rem);margin:1.6rem 0 .5rem}
+.page-body p,.page-body li{font-size:1.02rem;line-height:1.65;color:var(--ink-soft)}
+.page-body p{margin:0 0 .9rem}
+.page-body ul,.page-body ol{margin:0 0 1rem 1.2rem}
+.page-body li{margin-bottom:.35rem}
+.page-body p a,.page-body li a,.page-body blockquote a{text-decoration:underline;text-underline-offset:3px;font-weight:500;color:var(--ink)}
+.svc-prices{list-style:none;margin:0 0 1rem!important;padding:0;border-top:1px solid var(--line)}
+.svc-prices li{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line);margin:0}
+.svc-prices li span:last-child{white-space:nowrap;font-weight:600;color:var(--ink)}
+.svc-quote{margin:1.4rem 0;padding:1rem 1.2rem;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.svc-quote p{margin:0 0 .4rem;font-style:italic}
+.svc-quote cite{font-style:normal;font-size:.9rem;color:var(--ink-mute)}
+.page-body .btn.hero-cta{display:inline-flex;align-items:center;min-height:48px;margin:.4rem 0 1rem}
+.svc-note{font-size:.9rem!important;color:var(--ink-mute)!important}
+</style>
 </head>
 <body>
 <div class="bg-texture" aria-hidden="true"></div>
 <a class="skip-link" href="#main">Saltar al contenido</a>
 
-<nav class="nav" id="nav">
+<nav class="nav nav--full" id="nav">
   <div class="wrap">
     <a href="/"><img src="/assets/logo-wordmark-nav.png" alt="Mónaco Barbershop" class="nav-mark-logo" width="384" height="102"></a>
     <div class="nav-links">
       <a href="/#servicios">Servicios</a>
       <a href="/about">Quiénes somos</a>
       <a href="/tienda/">Tienda</a>
+      <a href="/blog">Blog</a>
+      <a href="/#donde-encontrarnos">Dónde encontrarnos</a>
       <a href="/contact">Contacto</a>
       <a href="https://booksy.com/es-es/dl/show-business/187597" class="nav-cta-booksy" target="_blank" rel="noopener">Reservar en Booksy</a>
     </div>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg class="ham-open" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="ham-close" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </nav>
+
+<div class="nav-mobile-menu" id="nav-mobile-menu" role="dialog" aria-label="Menú principal" aria-modal="true">
+  <a href="/#servicios">Servicios</a>
+  <a href="/about">Quiénes somos</a>
+  <a href="/tienda/">Tienda</a>
+  <a href="/blog">Blog</a>
+  <a href="/#donde-encontrarnos">Dónde encontrarnos</a>
+  <a href="/contact">Contacto</a>
+  <a href="https://booksy.com/es-es/dl/show-business/187597" class="nav-mobile-cta" target="_blank" rel="noopener">Reservar en Booksy</a>
+</div>
 
 <main id="main">
   <section class="section" id="donde-encontrarnos" aria-labelledby="contact-h" style="padding-top:120px;">
@@ -67,6 +103,25 @@
       </div>
     </div>
   </section>
+
+  <section class="section page-body" style="padding-top:2rem" aria-label="Más información">
+    <div class="wrap">
+      <h2>Cómo reservar</h2>
+      <p>La forma más rápida es <a href="https://booksy.com/es-es/dl/show-business/187597" target="_blank" rel="noopener">Booksy</a>: eliges el servicio, el día y la hora. Si tienes dudas antes, escríbenos por WhatsApp.</p>
+      <h2>Horario</h2>
+      <p>De lunes a sábado, de 9:00 a 20:00. El domingo está cerrado.</p>
+      <h2>Cómo llegar</h2>
+      <p>Estamos en la Rúa de Venezuela 71, 36204 Vigo, en el centro de la ciudad. <a href="https://maps.app.goo.gl/ELZu3Q2MX5FgQXV87" target="_blank" rel="noopener">Abrir la ficha en Google Maps</a> para ver la ruta y las opiniones.</p>
+      <h2>Pedidos de la tienda online</h2>
+      <p>Si tu duda es sobre un pedido, escríbenos a <a href="mailto:contacto@monacobarberia.com">contacto@monacobarberia.com</a>. Plazos y devoluciones en <a href="/tienda/envios-devoluciones">envíos y devoluciones</a>.</p>
+      <h2>Antes de venir</h2>
+      <ul>
+        <li><a href="/corte-de-pelo-hombre-vigo">Corte de pelo de hombre en Vigo</a>: qué incluye y precios.</li>
+        <li><a href="/arreglo-barba-vigo">Arreglo de barba en Vigo</a>: barba sola, con corte o con afeitado.</li>
+        <li><a href="/preguntas-frecuentes">Preguntas frecuentes</a>: reservas, pago, tienda y envíos.</li>
+      </ul>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
@@ -76,6 +131,7 @@
       <a href="/#servicios">Servicios</a>
       <a href="/about">Quiénes somos</a>
       <a href="/tienda/">Tienda</a>
+      <a href="/blog">Blog</a>
       <a href="/contact">Contacto</a>
       <a href="https://booksy.com/es-es/dl/show-business/187597" target="_blank" rel="noopener">Reservar en Booksy</a>
     </div>
@@ -106,5 +162,6 @@
   <span class="footer-copy">© 2026 · Vigo · Todos los derechos reservados · <a href="/aviso-legal" style="text-decoration:underline">Aviso legal</a> · <a href="/privacy" style="text-decoration:underline">Privacidad</a></span>
 </footer>
 
+<script defer src="/main.js?v=20261119a"></script>
 </body>
 </html>

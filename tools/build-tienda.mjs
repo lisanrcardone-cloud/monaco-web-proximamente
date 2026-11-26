@@ -53,7 +53,8 @@ const tienda = [
 ].join('\n');
 out('llms.txt', readFileSync(join(root, 'tools/llms-base.md'), 'utf8').replace('{{TIENDA}}', tienda));
 
-const U = [['/', 'monthly', '1.0'], ['/about', 'monthly', '0.5'], ['/contact', 'monthly', '0.5'], ['/privacy', 'monthly', '0.5'],
+const U = [['/', 'monthly', '1.0'], ['/about', 'monthly', '0.5'], ['/contact', 'monthly', '0.5'],
+  ['/corte-de-pelo-hombre-vigo', 'monthly', '0.8'], ['/arreglo-barba-vigo', 'monthly', '0.8'], ['/preguntas-frecuentes', 'monthly', '0.5'], ['/privacy', 'monthly', '0.5'],
   ['/aviso-legal', 'yearly', '0.2'], ['/tienda', 'weekly', '0.8'], ['/tienda/productos', 'weekly', '0.7'],
   ...productos.map((p) => [`/tienda/producto/${p.slug}`, 'weekly', '0.6']),
   ['/tienda/envios-devoluciones', 'yearly', '0.2'], ['/tienda/condiciones', 'yearly', '0.2'], ['/tienda/desistir', 'yearly', '0.2'], ...blogSitemapUrls(posts)];

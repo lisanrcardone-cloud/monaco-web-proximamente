@@ -107,7 +107,8 @@ export function header(productos) {
           <ul class="sub" id="sub-productos">${subs}</ul></li>
         <li><a href="/tienda/#mas-vendidos">Más vendidos</a></li>
         <li><a href="/tienda/#packs">Packs</a></li>
-        <li><a href="/">La barbería</a></li>
+        <li class="has-sub has-sub--end"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="sub-barberia">La barbería <span class="chev" aria-hidden="true"></span></button>
+          <ul class="sub" id="sub-barberia"><li><a href="/#servicios">Servicios</a></li><li><a href="/about">Quiénes somos</a></li><li><a href="/tienda/">Tienda</a></li><li><a href="/blog">Blog</a></li><li><a href="/#donde-encontrarnos">Dónde encontrarnos</a></li><li><a href="/contact">Contacto</a></li><li><a href="/">Inicio de la barbería</a></li></ul></li>
       </ul>
     </nav>
     <div class="head-actions">
@@ -127,7 +128,8 @@ export function footer(productos, hayBlog = BLOG) {
       <div class="foot-cols">
         <div><h2>Tienda</h2><ul>${tienda}</ul></div>
         <div><h2>Mónaco</h2><ul>
-          <li><a href="/">La barbería</a></li>${hayBlog ? '\n          <li><a href="/blog">Blog</a></li>' : ''}
+          <li><a href="/">La barbería</a></li>
+          <li><a href="/about">Quiénes somos</a></li>${hayBlog ? '\n          <li><a href="/blog">Blog</a></li>' : ''}
           <li><a href="/contact">Contacto</a></li>
           <li><a class="foot-ig" href="${IG_URL}" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.1" cy="6.9" r=".6" fill="currentColor" stroke="none"/></svg>Instagram</a></li></ul></div>
         <div><h2>Ayuda</h2><ul>
