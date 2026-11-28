@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { home } from './tienda-templates/home.mjs';
 import { catalog } from './tienda-templates/catalog.mjs';
 import { product } from './tienda-templates/product.mjs';
-import { SITE, setHayBlog } from './tienda-templates/lib.mjs';
+import { SITE, setHayBlog, isReal, ENVIO, eurEs } from './tienda-templates/lib.mjs';
 import { buildBlog, blogSitemapUrls } from './build-blog.mjs';
 import { gracias, legal, desistir } from './tienda-templates/simple.mjs';
 
@@ -37,7 +37,24 @@ out('tienda/condiciones/index.html', legal('condiciones', 'Condiciones de compra
 out('tienda/desistir/index.html', desistir(productos));
 out('aviso-legal/index.html', legal('aviso-legal', 'Aviso legal', 'aviso legal', productos, '/aviso-legal'));
 
-const U = [['/', 'monthly', '1.0'], ['/about', 'monthly', '0.5'], ['/contact', 'monthly', '0.5'], ['/privacy', 'monthly', '0.5'],
+// llms.txt: plantilla tools/llms-base.md + bloque de tienda generado desde productos.json
+const precioEs = (c) => (c / 100).toFixed(2).replace('.', ',');
+const tienda = [
+  '## Tienda online', '',
+  `Tienda de Mónaco Barbershop: productos de peinado, champús, barba, tratamientos y packs, los mismos que se usan en la barbería. Envío a la península por ${eurEs(ENVIO.peninsula)} € (gratis desde ${eurEs(ENVIO.umbral_gratis)} €) en 3-6 días laborables, a Baleares por ${eurEs(ENVIO.baleares)} € en 4-7 días laborables. No se envía a Canarias, Ceuta ni Melilla. Recogida gratis en la barbería (Rúa de Venezuela 71, Vigo), de lunes a sábado de 9:00 a 20:00. La espuma de rizos y el Pack Rizos son aerosoles: solo recogida en la barbería. Devolución en 14 días naturales.`,
+  ...categorias.flatMap((c) => {
+    const ps = productos.filter((p) => p.categoria === c.id && isReal(p));
+    if (!ps.length) return [];
+    return ['', `### ${c.nombre}`, ...ps.map((p) => {
+      const r = String(p.resumen || '').trim();
+      return `- [${p.nombre}](${SITE}/tienda/producto/${p.slug}): ${r}${r && !/[.!?]$/.test(r) ? '.' : ''} ${precioEs(p.precio)} € (${p.marca}).${p.solo_recogida ? ' Solo recogida en la barbería.' : ''}`;
+    })];
+  }),
+].join('\n');
+out('llms.txt', readFileSync(join(root, 'tools/llms-base.md'), 'utf8').replace('{{TIENDA}}', tienda));
+
+const U = [['/', 'monthly', '1.0'], ['/about', 'monthly', '0.5'], ['/contact', 'monthly', '0.5'],
+  ['/corte-de-pelo-hombre-vigo', 'monthly', '0.8'], ['/arreglo-barba-vigo', 'monthly', '0.8'], ['/preguntas-frecuentes', 'monthly', '0.5'], ['/privacy', 'monthly', '0.5'],
   ['/aviso-legal', 'yearly', '0.2'], ['/tienda', 'weekly', '0.8'], ['/tienda/productos', 'weekly', '0.7'],
   ...productos.map((p) => [`/tienda/producto/${p.slug}`, 'weekly', '0.6']),
   ['/tienda/envios-devoluciones', 'yearly', '0.2'], ['/tienda/condiciones', 'yearly', '0.2'], ['/tienda/desistir', 'yearly', '0.2'], ...blogSitemapUrls(posts)];

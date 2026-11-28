@@ -17,7 +17,7 @@ function midBox(p, pr) {
   if (p.tipo === 'producto') {
     return `<aside class="post-cta-box" aria-label="Producto de este artículo"><p class="post-cta-name">${esc(pr.nombre)}</p><p class="post-price">${eur(pr.precio)}</p><a class="btn" href="${productUrl(pr)}">Ver en la tienda</a></aside>`;
   }
-  return `<aside class="post-cta-box" aria-label="Reservar cita">${bookBtn()}</aside>`;
+  return `<aside class="post-cta-box is-plain" aria-label="Reservar cita">${bookBtn()}</aside>`;
 }
 
 function endBlock(p, pr) {
@@ -29,7 +29,7 @@ function endBlock(p, pr) {
 </aside>`;
   }
   return `<aside class="post-end" aria-label="Visítanos">
-  <div class="post-end-copy"><h2>Te esperamos en la Rúa de Venezuela 71, Vigo.</h2><p>De lunes a sábado, de 9:00 a 20:00.</p>${bookBtn(' btn-gold')}</div>
+  <div class="post-end-copy"><h2>Te esperamos en la Rúa de Venezuela 71, Vigo.</h2><p>De lunes a sábado, de 9:00 a 20:00.</p>${bookBtn(' btn-gold')}<p>¿Quieres los productos que usamos en tus cortes? <a href="/tienda/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Están en nuestra tienda online</a>.</p></div>
 </aside>`;
 }
 

@@ -14,7 +14,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-EHWP4106KW');
+  gtag('config', 'G-EHWP4106KW', (function () { try { var q = location.search; if (/[?&]interno=1/.test(q)) localStorage.setItem('mb_interno', '1'); if (/[?&]interno=0/.test(q)) localStorage.removeItem('mb_interno'); return localStorage.getItem('mb_interno') ? { traffic_type: 'internal' } : {}; } catch (e) { return {}; } })());
 </script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -46,6 +46,8 @@
   "@type": ["Barbershop", "Organization"],
   "@id": "https://www.monacobarberia.com/#barbershop",
   "name": "Mónaco Barbershop",
+  "alternateName": ["Monaco BarberShop", "Barbería Mónaco"],
+  "description": "Barbería en Vigo, en la Rúa de Venezuela 71: corte, barba y servicio personalizado. Abre de lunes a sábado de 9:00 a 20:00 y se reserva por Booksy. Tienda online con los productos de peinado y cuidado que usamos en la barbería.",
   "priceRange": "€€",
   "telephone": "+34698140641",
   "email": "contacto@monacobarberia.com",
@@ -123,11 +125,11 @@
     <img src="assets/logo-wordmark-nav.png" alt="Mónaco Barbershop" class="nav-mark-logo" width="384" height="102">
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
-      <a href="#casa">La casa</a>
-      <a href="#quienes-somos">Quiénes somos</a>
+      <a href="/about">Quiénes somos</a>
       <a href="/tienda/">Tienda</a>
+      <a href="/blog">Blog</a>
       <a href="#donde-encontrarnos">Dónde encontrarnos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="/contact">Contacto</a>
       <a href="https://booksy.com/es-es/dl/show-business/187597" class="nav-cta-booksy" target="_blank" rel="noopener">Reservar en Booksy</a>
     </div>
     <button class="nav-hamburger" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -139,11 +141,11 @@
 
 <div class="nav-mobile-menu" id="nav-mobile-menu" role="dialog" aria-label="Menú principal" aria-modal="true">
   <a href="#servicios">Servicios</a>
-  <a href="#casa">La casa</a>
-  <a href="#quienes-somos">Quiénes somos</a>
+  <a href="/about">Quiénes somos</a>
   <a href="/tienda/">Tienda</a>
+  <a href="/blog">Blog</a>
   <a href="#donde-encontrarnos">Dónde encontrarnos</a>
-  <a href="#contacto">Contacto</a>
+  <a href="/contact">Contacto</a>
   <a href="https://booksy.com/es-es/dl/show-business/187597" class="nav-mobile-cta" target="_blank" rel="noopener">Reservar en Booksy</a>
 </div>
 
@@ -154,7 +156,7 @@
   <section class="hero">
     <div class="hero-tint" aria-hidden="true"></div>
     <div class="hero-inner">
-      <p class="kicker">Barbershop · Vigo</p>
+      <p class="kicker">Barbería · Vigo</p>
       <h1>Tu mejor versión <em>siempre</em></h1>
       <p class="hero-sub">Corte, barba y servicio personalizado en Vigo.</p>
       <span class="hero-rating"><span aria-hidden="true">★</span> 5.0 · 28 reseñas en Google · 61 en Booksy</span>
@@ -206,6 +208,7 @@
           <p>Te asesoramos buscando el mejor resultado para ti.</p>
         </a>
       </div>
+      <p class="bento-more" style="margin-top:1.2rem;text-align:center;font-size:.95rem;color:var(--ink-soft)">Más detalle: <a href="/corte-de-pelo-hombre-vigo" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px;font-weight:500">corte de pelo de hombre</a> · <a href="/arreglo-barba-vigo" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px;font-weight:500">arreglo de barba</a> · <a href="/preguntas-frecuentes" style="display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px;font-weight:500">preguntas frecuentes</a></p>
     </div>
   </section>
 
@@ -215,7 +218,8 @@
         <p class="kicker kicker-block">La casa</p>
         <h2 id="casa-h">Nuestra forma de hacer barbería</h2>
         <p>Cuando te cuidas, todo lo demás se nota. Atención profesional, herramientas y productos de primera calidad.</p>
-        <p>Los mismos productos que usamos en tu corte, para que te los lleves a casa. <a href="/tienda/">Ver la tienda →</a></p>
+        <p>Los mismos productos que usamos en tu corte, para que te los lleves a casa: <a href="/tienda/productos/#peinado">ceras y productos de peinado</a>, <a href="/tienda/productos/#barba">cuidado de barba</a> y <a href="/tienda/productos/#champus">champús</a>. <a href="/tienda/">Ver la tienda →</a></p>
+        <p>Para empezar: el <a href="/tienda/producto/polvo-texturizante">polvo texturizante para dar volumen con acabado mate</a>, el <a href="/tienda/producto/spray-sal-marina">spray de sal marina para ondas con efecto playa</a> o los dos juntos en el <a href="/tienda/producto/pack-textura">Pack Textura</a>.</p>
       </div>
       <div class="split-block" data-reveal aria-hidden="true"></div>
     </div>
@@ -232,6 +236,7 @@
         <p class="section-lead">A los 12 años empecé a interesarme en este hermoso oficio, y al año siguiente ya estaba cortando. Con esfuerzo y amor por este trabajo, ese chico de 13 años que arrancó en Argentina, a los 21 trae Mónaco Barbershop a España. Una forma de vivir, aprender y crecer a través de este oficio.</p>
         <p class="section-lead">Mónaco Barbershop nace con la idea de ir más allá de un corte de pelo. Nuestra experiencia y dedicación nos empujan a buscar siempre la mejora constante: en la calidad del servicio, en la atención y el asesoramiento, y en el resultado final para cada cliente.</p>
         <p class="section-lead"><strong>Felipe Denti</strong></p>
+        <p class="section-lead"><a href="/about" style="display:inline-flex;align-items:center;min-height:44px;font-weight:500;text-decoration:underline;text-underline-offset:3px">Más sobre quiénes somos</a> · <a href="/blog/nuestra-historia" style="display:inline-flex;align-items:center;min-height:44px;font-weight:500;text-decoration:underline;text-underline-offset:3px">Lee la historia de Felipe en el blog</a></p>
       </div>
       <div class="quienes-img-placeholder" aria-hidden="true"></div>
     </div>
@@ -279,7 +284,7 @@
       <div class="donde-text" data-reveal>
         <p class="kicker kicker-block">Dónde encontrarnos</p>
         <h2 id="donde-h">Vigo, Rúa de Venezuela</h2>
-        <p class="section-lead">Rúa de Venezuela 71, Vigo, CP 36204.</p>
+        <p class="section-lead">Mónaco Barbershop es una barbería en Vigo, en la Rúa de Venezuela 71 (CP 36204). Abre de lunes a sábado de 9:00 a 20:00 y se reserva por Booksy. Corte desde 17 € y barba desde 10 €.</p>
       </div>
       <div class="donde-map" data-reveal>
         <iframe
@@ -329,10 +334,11 @@
     <div class="footer-links">
       <a href="#servicios">Servicios</a>
       <a href="#casa">La casa</a>
-      <a href="#quienes-somos">Quiénes somos</a>
+      <a href="/about">Quiénes somos</a>
       <a href="/tienda/">Tienda</a>
+      <a href="/blog">Blog</a>
       <a href="#donde-encontrarnos">Dónde encontrarnos</a>
-      <a href="#contacto">Contacto</a>
+      <a href="/contact">Contacto</a>
       <a href="https://maps.app.goo.gl/ELZu3Q2MX5FgQXV87" target="_blank" rel="noopener">Ver todas las reseñas en Google →</a>
       <a href="https://booksy.com/es-es/dl/show-business/187597" target="_blank" rel="noopener">Reservar en Booksy</a>
     </div>

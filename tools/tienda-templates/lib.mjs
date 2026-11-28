@@ -1,10 +1,19 @@
 // Utilidades y piezas comunes (cabecera, pie, huecos) de la tienda.
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 export const SITE = 'https://www.monacobarberia.com';
 export const IG_URL = 'https://www.instagram.com/monacobarbershop.oficial/';
 export const IG_HANDLE = '@monacobarbershop.oficial';
 
 export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export const isPending = (t) => /^\[Pendiente/.test(t || '');
+// Un producto es "real" (se indexa y entra en llms.txt) si tiene nombre, foto y precio.
+export const isReal = (p) => !isPending(p.nombre) && p.imagenes.length > 0 && p.precio != null;
+// Importes de envío (céntimos) leídos de tienda/productos.json
+export const ENVIO = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), '../../tienda/productos.json'), 'utf8')).envio;
+export const eur = (c) => (c / 100).toFixed(2);
+export const eurEs = (c) => (c % 100 === 0 ? String(c / 100) : eur(c).replace('.', ','));
 
 // Hueco de bloque con proporción real
 export const hueco = (label, ar = '1/1', extra = '') =>
@@ -29,7 +38,7 @@ const GA = `<!-- Google tag (gtag.js) -->
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-EHWP4106KW');
+  gtag('config', 'G-EHWP4106KW', (function () { try { var q = location.search; if (/[?&]interno=1/.test(q)) localStorage.setItem('mb_interno', '1'); if (/[?&]interno=0/.test(q)) localStorage.removeItem('mb_interno'); return localStorage.getItem('mb_interno') ? { traffic_type: 'internal' } : {}; } catch (e) { return {}; } })());
 </script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -98,7 +107,8 @@ export function header(productos) {
           <ul class="sub" id="sub-productos">${subs}</ul></li>
         <li><a href="/tienda/#mas-vendidos">Más vendidos</a></li>
         <li><a href="/tienda/#packs">Packs</a></li>
-        <li><a href="/">La barbería</a></li>
+        <li class="has-sub has-sub--end"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="sub-barberia">La barbería <span class="chev" aria-hidden="true"></span></button>
+          <ul class="sub" id="sub-barberia"><li><a href="/#servicios">Servicios</a></li><li><a href="/about">Quiénes somos</a></li><li><a href="/tienda/">Tienda</a></li><li><a href="/blog">Blog</a></li><li><a href="/#donde-encontrarnos">Dónde encontrarnos</a></li><li><a href="/contact">Contacto</a></li><li><a href="/">Inicio de la barbería</a></li></ul></li>
       </ul>
     </nav>
     <div class="head-actions">
@@ -118,7 +128,8 @@ export function footer(productos, hayBlog = BLOG) {
       <div class="foot-cols">
         <div><h2>Tienda</h2><ul>${tienda}</ul></div>
         <div><h2>Mónaco</h2><ul>
-          <li><a href="/">La barbería</a></li>${hayBlog ? '\n          <li><a href="/blog">Blog</a></li>' : ''}
+          <li><a href="/">La barbería</a></li>
+          <li><a href="/about">Quiénes somos</a></li>${hayBlog ? '\n          <li><a href="/blog">Blog</a></li>' : ''}
           <li><a href="/contact">Contacto</a></li>
           <li><a class="foot-ig" href="${IG_URL}" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.1" cy="6.9" r=".6" fill="currentColor" stroke="none"/></svg>Instagram</a></li></ul></div>
         <div><h2>Ayuda</h2><ul>

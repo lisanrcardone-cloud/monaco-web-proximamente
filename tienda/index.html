@@ -25,7 +25,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-EHWP4106KW');
+  gtag('config', 'G-EHWP4106KW', (function () { try { var q = location.search; if (/[?&]interno=1/.test(q)) localStorage.setItem('mb_interno', '1'); if (/[?&]interno=0/.test(q)) localStorage.removeItem('mb_interno'); return localStorage.getItem('mb_interno') ? { traffic_type: 'internal' } : {}; } catch (e) { return {}; } })());
 </script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -56,7 +56,8 @@
           <ul class="sub" id="sub-productos"><li><a href="/tienda/productos/#peinado">Peinado</a></li><li><a href="/tienda/productos/#champus">Champús</a></li><li><a href="/tienda/productos/#barba">Barba</a></li><li><a href="/tienda/productos/#tratamientos">Tratamientos</a></li><li><a href="/tienda/productos/#packs">Packs</a></li><li><a href="/tienda/productos/">Ver todo</a></li></ul></li>
         <li><a href="/tienda/#mas-vendidos">Más vendidos</a></li>
         <li><a href="/tienda/#packs">Packs</a></li>
-        <li><a href="/">La barbería</a></li>
+        <li class="has-sub has-sub--end"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="sub-barberia">La barbería <span class="chev" aria-hidden="true"></span></button>
+          <ul class="sub" id="sub-barberia"><li><a href="/#servicios">Servicios</a></li><li><a href="/about">Quiénes somos</a></li><li><a href="/tienda/">Tienda</a></li><li><a href="/blog">Blog</a></li><li><a href="/#donde-encontrarnos">Dónde encontrarnos</a></li><li><a href="/contact">Contacto</a></li><li><a href="/">Inicio de la barbería</a></li></ul></li>
       </ul>
     </nav>
     <div class="head-actions">
@@ -345,9 +346,15 @@
   </div>
 </section>
 
+<section class="sec bg-white" id="sobre-la-tienda" aria-label="Sobre la tienda">
+  <div class="wrap">
+    <p>En la tienda online de Mónaco Barbershop, barbería de Vigo en la Rúa de Venezuela 71, tienes los mismos productos que usamos en tu corte: ceras Medium, Extra y Matte Hold, polvo texturizante, spray de sal marina, espuma de rizos, champús, productos de barba y packs. Compras online y lo recoges gratis en la barbería, de lunes a sábado de 9:00 a 20:00, o te lo enviamos a la península (gratis desde 45 €) o a Baleares.</p>
+  </div>
+</section>
+
 <section class="follow-sec" id="siguenos">
   <div class="follow-band"><div class="wrap"><div class="follow"><span class="it">Síguenos</span><a href="https://www.instagram.com/monacobarbershop.oficial/" rel="noopener" target="_blank">@monacobarbershop.oficial</a></div></div></div>
-  <!-- Sin fotos en tienda/instagram.json: la cuadrícula no se muestra (pendiente en MONACO.md) -->
+  <div class="grid6 grid5"><a href="https://www.instagram.com/reel/De4Ow_wtP_J/" target="_blank" rel="noopener" data-ig="1" aria-label="Ver este reel en Instagram"><img src="/assets/tienda/instagram/De4Ow_wtP_J.jpg" alt="Reel de Mónaco: atender a un cliente con la cámara delante" width="600" height="600" loading="lazy" decoding="async"><svg class="ig-play" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg></a><a href="https://www.instagram.com/reel/DecMDCwh3_M/" target="_blank" rel="noopener" data-ig="1" aria-label="Ver este reel en Instagram"><img src="/assets/tienda/instagram/DecMDCwh3_M.jpg" alt="Reel de Mónaco: warrior cut" width="600" height="600" loading="lazy" decoding="async"><svg class="ig-play" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg></a><a href="https://www.instagram.com/reel/DeuMj-uNbSM/" target="_blank" rel="noopener" data-ig="1" aria-label="Ver este reel en Instagram"><img src="/assets/tienda/instagram/DeuMj-uNbSM.jpg" alt="Reel de Mónaco: degradado en la barbería" width="600" height="600" loading="lazy" decoding="async"><svg class="ig-play" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg></a><a href="https://www.instagram.com/reel/DfzgUX7tYzj/" target="_blank" rel="noopener" data-ig="1" aria-label="Ver este reel en Instagram"><img src="/assets/tienda/instagram/DfzgUX7tYzj.jpg" alt="Reel de Mónaco: corte clásico y elegante" width="600" height="600" loading="lazy" decoding="async"><svg class="ig-play" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg></a><a href="https://www.instagram.com/reel/Dfo2fhRRtnH/" target="_blank" rel="noopener" data-ig="1" aria-label="Ver este reel en Instagram"><img src="/assets/tienda/instagram/Dfo2fhRRtnH.jpg" alt="Reel de Mónaco: taper fade con polvo texturizante" width="600" height="600" loading="lazy" decoding="async"><svg class="ig-play" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg></a></div>
 </section>
 </main>
 <footer class="footer">
@@ -358,6 +365,7 @@
         <div><h2>Tienda</h2><ul><li><a href="/tienda/productos/#peinado">Peinado</a></li><li><a href="/tienda/productos/#champus">Champús</a></li><li><a href="/tienda/productos/#barba">Barba</a></li><li><a href="/tienda/productos/#tratamientos">Tratamientos</a></li><li><a href="/tienda/productos/#packs">Packs</a></li><li><a href="/tienda/productos/">Ver todo</a></li></ul></div>
         <div><h2>Mónaco</h2><ul>
           <li><a href="/">La barbería</a></li>
+          <li><a href="/about">Quiénes somos</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/contact">Contacto</a></li>
           <li><a class="foot-ig" href="https://www.instagram.com/monacobarbershop.oficial/" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.1" cy="6.9" r=".6" fill="currentColor" stroke="none"/></svg>Instagram</a></li></ul></div>
