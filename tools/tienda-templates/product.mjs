@@ -10,7 +10,7 @@ export function product(p, productos, posts = []) {
   const vid = p.video ? { ...p.video, pasos: p.pasos, titulo_sec: 'Cómo usarlo' } : src && src.video && src.pasos ? { ...src.video, pasos: src.pasos, titulo_sec: 'Cómo usar el ' + src.nombre.toLowerCase() } : null;
   const mainMedia = hasImg ? `<img id="g-main-img" src="${esc(p.imagenes[0])}" alt="${esc(p.nombre)}" width="800" height="800">` : hueco('foto principal del producto', '1/1');
   const thumbs = hasImg
-    ? p.imagenes.map((src, i) => `<button type="button" class="g-thumb" data-src="${esc(src)}" aria-label="Ver foto ${i + 1}"><img src="${esc(src)}" alt="" width="120" height="120" loading="lazy"></button>`).join('')
+    ? p.imagenes.map((src, i) => `<button type="button" class="g-thumb" data-src="${esc(src)}" aria-label="Ver foto ${i + 1}"><img src="${esc(src)}" alt="${esc(p.nombre)}, foto ${i + 1}" width="120" height="120" loading="lazy"></button>`).join('')
     : [1, 2, 3, 4].map((i) => `<div>${hueco('miniatura ' + i, '1/1')}</div>`).join('');
 
   const catName = (CATS.find(([id]) => id === p.categoria) || [, p.categoria])[1];
