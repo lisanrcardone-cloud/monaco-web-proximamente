@@ -10,6 +10,7 @@ import { product } from './tienda-templates/product.mjs';
 import { SITE, setHayBlog, isReal, ENVIO, eurEs } from './tienda-templates/lib.mjs';
 import { buildBlog, blogSitemapUrls } from './build-blog.mjs';
 import { gracias, legal, desistir } from './tienda-templates/simple.mjs';
+import { googleFeed } from './tienda-templates/feed.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const { productos, categorias } = JSON.parse(readFileSync(join(root, 'tienda/productos.json'), 'utf8'));
@@ -52,6 +53,7 @@ const tienda = [
   }),
 ].join('\n');
 out('llms.txt', readFileSync(join(root, 'tools/llms-base.md'), 'utf8').replace('{{TIENDA}}', tienda));
+out('tienda/feed-google.xml', googleFeed(productos, categorias));
 
 const U = [['/', 'monthly', '1.0'], ['/about', 'monthly', '0.5'], ['/contact', 'monthly', '0.5'],
   ['/corte-de-pelo-hombre-vigo', 'monthly', '0.8'], ['/arreglo-barba-vigo', 'monthly', '0.8'], ['/preguntas-frecuentes', 'monthly', '0.5'], ['/privacy', 'monthly', '0.5'],
