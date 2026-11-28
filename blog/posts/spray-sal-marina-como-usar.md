@@ -10,10 +10,10 @@ resumen: Pelo húmedo, 4 o 5 pulverizaciones, aprietas y secas dando forma con l
 producto: spray-sal-marina
 secundarios: pack-textura, pack-rizos
 autor: Equipo de Mónaco Barbershop
-estado: revisar
-aprobado_por:
-fecha_aprobacion:
-fecha_publicacion:
+estado: aprobado
+aprobado_por: usuario (OK en el chat)
+fecha_aprobacion: 2026-11-28
+fecha_publicacion: 2026-11-28
 video_src: /assets/tienda/videos/spray-sal-marina-v9.mp4
 video_poster: /assets/tienda/videos/spray-sal-marina-v8-portada2.jpg
 video_titulo: Así se usa el spray de sal marina

@@ -186,6 +186,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.monacobarberia.com/blog/spray-sal-marina-como-usar</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.monacobarberia.com/blog/nuestra-historia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
